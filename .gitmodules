@@ -1,0 +1,3 @@
+[submodule "users-service/src/main/resources/protomodules"]
+	path = users-service/src/main/resources/protomodules
+	url = https://github.com/ruziba3vich/protomodules.git
