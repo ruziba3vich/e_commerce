@@ -1,0 +1,80 @@
+syntax = "proto3";
+
+import "google/protobuf/wrappers.proto";
+import "google/protobuf/empty.proto";
+
+package com.prodonik.genprotos;
+
+message Product {
+    string id = 1;
+    string name = 2;
+    google.protobuf.StringValue description = 3;
+    double price = 4;
+    int32 stock_quantity = 5;
+    string category_id = 6;
+}
+
+message Category {
+    string id = 1;
+    string name = 2;
+    google.protobuf.StringValue description = 3;
+    repeated Product products = 4;
+}
+
+message ProductId {
+    string id = 1;
+}
+
+message ProductName {
+    string name = 1;
+}
+
+message ProductRequest {
+    Product product = 1;
+}
+
+message DeleteProductRequest {
+    string id = 1;
+}
+
+message GetAllProductsResponse {
+    repeated Product products = 1;
+}
+
+service ProductService {
+    rpc CreateProduct(ProductRequest) returns (Product);
+    rpc UpdateProduct(ProductRequest) returns (Product);
+    rpc GetProductById(ProductId) returns (Product);
+    rpc GetProductByName(ProductName) returns (Product);
+    rpc GetAllProducts(google.protobuf.Empty) returns (GetAllProductsResponse);
+    rpc DeleteProduct(DeleteProductRequest) returns (google.protobuf.Empty);
+}
+
+message CategoryId {
+    string id = 1;
+}
+
+message CategoryName {
+    string name = 1;
+}
+
+message CategoryRequest {
+    Category category = 1;
+}
+
+message DeleteCategoryRequest {
+    string id = 1;
+}
+
+message GetAllCategoriesResponse {
+    repeated Category categories = 1;
+}
+
+service CategoryService {
+    rpc CreateCategory(CategoryRequest) returns (Category);
+    rpc UpdateCategory(CategoryRequest) returns (Category);
+    rpc GetCategoryById(CategoryId) returns (Category);
+    rpc GetCategoryByName(CategoryName) returns (Category);
+    rpc GetAllCategories(google.protobuf.Empty) returns (GetAllCategoriesResponse);
+    rpc DeleteCategory(DeleteCategoryRequest) returns (google.protobuf.Empty);
+}
