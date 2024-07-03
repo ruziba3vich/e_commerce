@@ -4,6 +4,8 @@ import com.google.protobuf.Empty;
 import com.prodonik.genprotos.*;
 import com.prodonik.genprotos.Products.DeleteProductRequest;
 import com.prodonik.genprotos.Products.GetAllProductsResponse;
+import com.prodonik.genprotos.Products.GetByRequest;
+import com.prodonik.genprotos.Products.GetByResponse;
 import com.prodonik.genprotos.Products.Product;
 import com.prodonik.genprotos.Products.ProductId;
 import com.prodonik.genprotos.Products.ProductName;
@@ -93,6 +95,24 @@ public class ProductServiceGrpcImpl extends ProductServiceGrpc.ProductServiceImp
         logger.info("GET ALL PRODUCTS HAS BEEN CALLED");
         streamObserver.onNext(
             this.productStorage.getAllProducts()
+        );
+        streamObserver.onCompleted();
+    }
+
+    @Override
+    public void getProductsByCategoryName(GetByRequest request, StreamObserver<GetByResponse> streamObserver) {
+        logger.info("GET PRODUCTS BY CATEGORY NAME HAS BEEN CALLED");
+        streamObserver.onNext(
+            this.productStorage.getProductsByCategoryName(request)
+        );
+        streamObserver.onCompleted();
+    }
+
+    @Override
+    public void getProductsByCategoryId(GetByRequest request, StreamObserver<GetByResponse> streamObserver) {
+        logger.info("GET PRODUCTS BY CATEGORY ID HAS BEEN CALLED");
+        streamObserver.onNext(
+            this.productStorage.getProductsByCategoryId(request)
         );
         streamObserver.onCompleted();
     }

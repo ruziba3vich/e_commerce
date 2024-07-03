@@ -6,5 +6,5 @@ sudo mv protoc-gen-grpc-java /usr/local/bin/
 
 which protoc-gen-grpc-java
 
-protoc --java_out=src/main/java --proto_path=src/main/resources/protomodules/protos src/main/resources/protomodules/protos/users.proto
-protoc --grpc-java_out=src/main/java --proto_path=src/main/resources/protomodules/protos src/main/resources/protomodules/protos/users.proto
+protoc --java_out=src/main/java --proto_path=src/main/resources/productmodules/protos src/main/resources/productmodules/protos/products.proto
+protoc --grpc-java_out=src/main/java --proto_path=src/main/resources/productmodules/protos src/main/resources/productmodules/protos/products.proto

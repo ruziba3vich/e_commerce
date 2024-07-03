@@ -44,7 +44,7 @@ public class CategoryServiceGrpcImpl extends CategoryServiceImplBase {
     public void updateCategory(CategoryRequest request, StreamObserver<Category> responseObserver) {
         logger.info("UPDATE CATEGORY HAS BEEN CALLED");
         try {
-            Category updatedCategory = categoryStorage.updateCategoryById(UUID.fromString(request.getCategory().getId()), request.getCategory());
+            Category updatedCategory = categoryStorage.updateCategoryById(UUID.fromString(request.getCategory().getCategoryId()), request.getCategory());
             responseObserver.onNext(updatedCategory);
             responseObserver.onCompleted();
         } catch (CategoryDoesNotExsistException e) {

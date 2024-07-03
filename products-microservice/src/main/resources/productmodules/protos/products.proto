@@ -2,8 +2,11 @@ syntax = "proto3";
 
 import "google/protobuf/wrappers.proto";
 import "google/protobuf/empty.proto";
+import "google/protobuf/timestamp.proto";
 
 package com.prodonik.genprotos;
+
+// ----------------------------------- Products service -------------------------------------------- //
 
 message Product {
     string id = 1;
@@ -12,13 +15,7 @@ message Product {
     double price = 4;
     int32 stock_quantity = 5;
     string category_id = 6;
-}
-
-message Category {
-    string id = 1;
-    string name = 2;
-    google.protobuf.StringValue description = 3;
-    repeated Product products = 4;
+    string seller_id = 7;
 }
 
 message ProductId {
@@ -41,6 +38,14 @@ message GetAllProductsResponse {
     repeated Product products = 1;
 }
 
+message GetByRequest {
+    string reuier = 1;
+}
+
+message GetByResponse {
+    repeated Product products = 1;
+}
+
 service ProductService {
     rpc CreateProduct(ProductRequest) returns (Product);
     rpc UpdateProduct(ProductRequest) returns (Product);
@@ -48,6 +53,33 @@ service ProductService {
     rpc GetProductByName(ProductName) returns (Product);
     rpc GetAllProducts(google.protobuf.Empty) returns (GetAllProductsResponse);
     rpc DeleteProduct(DeleteProductRequest) returns (google.protobuf.Empty);
+    rpc GetProductsByCategoryName(GetByRequest) returns (GetByResponse);
+    rpc GetProductsByCategoryId(GetByRequest) returns (GetByResponse);
+}
+
+// ----------------------------------- Purchase service -------------------------------------------- //
+
+message RemoveProductsRequest {
+    string product_id = 1;
+    int32 number_of_products = 2;
+    string client_id = 3;
+}
+
+message RemoveProductsResponse {
+    string message = 1;
+    bool error_occured = 2;
+}
+
+service PurchaseService {
+    rpc RemoveProducts(RemoveProductsRequest) returns (RemoveProductsResponse);
+}
+
+// ----------------------------------- Category service -------------------------------------------- //
+
+message Category {
+    string category_id = 1;
+    string name = 2;
+    google.protobuf.StringValue description = 3;
 }
 
 message CategoryId {
@@ -77,4 +109,43 @@ service CategoryService {
     rpc GetCategoryByName(CategoryName) returns (Category);
     rpc GetAllCategories(google.protobuf.Empty) returns (GetAllCategoriesResponse);
     rpc DeleteCategory(DeleteCategoryRequest) returns (google.protobuf.Empty);
+}
+
+
+// ----------------------------------- History service -------------------------------------------- //
+
+message GetProductsHistoryRequest {
+    string client_id = 1;
+}
+
+message CreateProductsHistoryRequest {
+    string product_id = 1;
+    int32 number_of_bought_products = 2;
+    string client_id = 3;
+    google.protobuf.Timestamp bought_at = 4;
+}
+
+message ProductsHistoryResponse {
+    string history_id = 1;
+    string product_id = 2;
+    int32 number_of_bought_products = 3;
+    string client_id = 4;
+    google.protobuf.Timestamp bought_at = 5;
+}
+
+message CreateProductsHistoryResponse {
+    string history_id = 1;
+    string product_id = 2;
+    int32 number_of_bought_products = 3;
+    string client_id = 4;
+    google.protobuf.Timestamp bought_at = 5;
+}
+
+message GetProductsHistoryResponse {
+    repeated CreateProductsHistoryResponse products = 1;
+}
+
+service HistoryService {
+    rpc GetProductsHistory(GetProductsHistoryRequest) returns (GetProductsHistoryResponse);
+    rpc CreateHistory(CreateProductsHistoryRequest) returns (CreateProductsHistoryResponse);
 }

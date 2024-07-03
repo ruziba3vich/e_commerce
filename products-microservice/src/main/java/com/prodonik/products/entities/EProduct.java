@@ -6,6 +6,7 @@ import java.util.UUID;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
@@ -18,7 +19,7 @@ import lombok.Data;
 public class EProduct {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
 
     @NotNull
@@ -35,9 +36,24 @@ public class EProduct {
     private BigDecimal price;
 
     @NotNull
-    @Column(nullable = false)
+    @Column(name = "stock_quantity", nullable = false)
     private int stockQuantity;
 
     @Column(name = "category_id", nullable = false)
     private UUID categoryId;
+
+    @Column(name = "seller_id", nullable = false)
+    private UUID sellerId;
 }
+
+/*
+
+    string id = 1;
+    string name = 2;
+    google.protobuf.StringValue description = 3;
+    double price = 4;
+    int32 stock_quantity = 5;
+    string category_id = 6;
+    string seller_id = 7;
+
+*/

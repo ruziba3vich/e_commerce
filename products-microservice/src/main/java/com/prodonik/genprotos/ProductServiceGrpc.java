@@ -201,6 +201,68 @@ public final class ProductServiceGrpc {
     return getDeleteProductMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.prodonik.genprotos.Products.GetByRequest,
+      com.prodonik.genprotos.Products.GetByResponse> getGetProductsByCategoryNameMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetProductsByCategoryName",
+      requestType = com.prodonik.genprotos.Products.GetByRequest.class,
+      responseType = com.prodonik.genprotos.Products.GetByResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.prodonik.genprotos.Products.GetByRequest,
+      com.prodonik.genprotos.Products.GetByResponse> getGetProductsByCategoryNameMethod() {
+    io.grpc.MethodDescriptor<com.prodonik.genprotos.Products.GetByRequest, com.prodonik.genprotos.Products.GetByResponse> getGetProductsByCategoryNameMethod;
+    if ((getGetProductsByCategoryNameMethod = ProductServiceGrpc.getGetProductsByCategoryNameMethod) == null) {
+      synchronized (ProductServiceGrpc.class) {
+        if ((getGetProductsByCategoryNameMethod = ProductServiceGrpc.getGetProductsByCategoryNameMethod) == null) {
+          ProductServiceGrpc.getGetProductsByCategoryNameMethod = getGetProductsByCategoryNameMethod =
+              io.grpc.MethodDescriptor.<com.prodonik.genprotos.Products.GetByRequest, com.prodonik.genprotos.Products.GetByResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetProductsByCategoryName"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.prodonik.genprotos.Products.GetByRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.prodonik.genprotos.Products.GetByResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new ProductServiceMethodDescriptorSupplier("GetProductsByCategoryName"))
+              .build();
+        }
+      }
+    }
+    return getGetProductsByCategoryNameMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.prodonik.genprotos.Products.GetByRequest,
+      com.prodonik.genprotos.Products.GetByResponse> getGetProductsByCategoryIdMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetProductsByCategoryId",
+      requestType = com.prodonik.genprotos.Products.GetByRequest.class,
+      responseType = com.prodonik.genprotos.Products.GetByResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.prodonik.genprotos.Products.GetByRequest,
+      com.prodonik.genprotos.Products.GetByResponse> getGetProductsByCategoryIdMethod() {
+    io.grpc.MethodDescriptor<com.prodonik.genprotos.Products.GetByRequest, com.prodonik.genprotos.Products.GetByResponse> getGetProductsByCategoryIdMethod;
+    if ((getGetProductsByCategoryIdMethod = ProductServiceGrpc.getGetProductsByCategoryIdMethod) == null) {
+      synchronized (ProductServiceGrpc.class) {
+        if ((getGetProductsByCategoryIdMethod = ProductServiceGrpc.getGetProductsByCategoryIdMethod) == null) {
+          ProductServiceGrpc.getGetProductsByCategoryIdMethod = getGetProductsByCategoryIdMethod =
+              io.grpc.MethodDescriptor.<com.prodonik.genprotos.Products.GetByRequest, com.prodonik.genprotos.Products.GetByResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetProductsByCategoryId"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.prodonik.genprotos.Products.GetByRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.prodonik.genprotos.Products.GetByResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new ProductServiceMethodDescriptorSupplier("GetProductsByCategoryId"))
+              .build();
+        }
+      }
+    }
+    return getGetProductsByCategoryIdMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -291,6 +353,20 @@ public final class ProductServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteProductMethod(), responseObserver);
     }
 
+    /**
+     */
+    public void getProductsByCategoryName(com.prodonik.genprotos.Products.GetByRequest request,
+        io.grpc.stub.StreamObserver<com.prodonik.genprotos.Products.GetByResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetProductsByCategoryNameMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void getProductsByCategoryId(com.prodonik.genprotos.Products.GetByRequest request,
+        io.grpc.stub.StreamObserver<com.prodonik.genprotos.Products.GetByResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetProductsByCategoryIdMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -335,6 +411,20 @@ public final class ProductServiceGrpc {
                 com.prodonik.genprotos.Products.DeleteProductRequest,
                 com.google.protobuf.Empty>(
                   this, METHODID_DELETE_PRODUCT)))
+          .addMethod(
+            getGetProductsByCategoryNameMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.prodonik.genprotos.Products.GetByRequest,
+                com.prodonik.genprotos.Products.GetByResponse>(
+                  this, METHODID_GET_PRODUCTS_BY_CATEGORY_NAME)))
+          .addMethod(
+            getGetProductsByCategoryIdMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.prodonik.genprotos.Products.GetByRequest,
+                com.prodonik.genprotos.Products.GetByResponse>(
+                  this, METHODID_GET_PRODUCTS_BY_CATEGORY_ID)))
           .build();
     }
   }
@@ -400,6 +490,22 @@ public final class ProductServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteProductMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void getProductsByCategoryName(com.prodonik.genprotos.Products.GetByRequest request,
+        io.grpc.stub.StreamObserver<com.prodonik.genprotos.Products.GetByResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetProductsByCategoryNameMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void getProductsByCategoryId(com.prodonik.genprotos.Products.GetByRequest request,
+        io.grpc.stub.StreamObserver<com.prodonik.genprotos.Products.GetByResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetProductsByCategoryIdMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -456,6 +562,20 @@ public final class ProductServiceGrpc {
     public com.google.protobuf.Empty deleteProduct(com.prodonik.genprotos.Products.DeleteProductRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteProductMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.prodonik.genprotos.Products.GetByResponse getProductsByCategoryName(com.prodonik.genprotos.Products.GetByRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetProductsByCategoryNameMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.prodonik.genprotos.Products.GetByResponse getProductsByCategoryId(com.prodonik.genprotos.Products.GetByRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetProductsByCategoryIdMethod(), getCallOptions(), request);
     }
   }
 
@@ -520,6 +640,22 @@ public final class ProductServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteProductMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.prodonik.genprotos.Products.GetByResponse> getProductsByCategoryName(
+        com.prodonik.genprotos.Products.GetByRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetProductsByCategoryNameMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.prodonik.genprotos.Products.GetByResponse> getProductsByCategoryId(
+        com.prodonik.genprotos.Products.GetByRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetProductsByCategoryIdMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_PRODUCT = 0;
@@ -528,6 +664,8 @@ public final class ProductServiceGrpc {
   private static final int METHODID_GET_PRODUCT_BY_NAME = 3;
   private static final int METHODID_GET_ALL_PRODUCTS = 4;
   private static final int METHODID_DELETE_PRODUCT = 5;
+  private static final int METHODID_GET_PRODUCTS_BY_CATEGORY_NAME = 6;
+  private static final int METHODID_GET_PRODUCTS_BY_CATEGORY_ID = 7;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -569,6 +707,14 @@ public final class ProductServiceGrpc {
         case METHODID_DELETE_PRODUCT:
           serviceImpl.deleteProduct((com.prodonik.genprotos.Products.DeleteProductRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_GET_PRODUCTS_BY_CATEGORY_NAME:
+          serviceImpl.getProductsByCategoryName((com.prodonik.genprotos.Products.GetByRequest) request,
+              (io.grpc.stub.StreamObserver<com.prodonik.genprotos.Products.GetByResponse>) responseObserver);
+          break;
+        case METHODID_GET_PRODUCTS_BY_CATEGORY_ID:
+          serviceImpl.getProductsByCategoryId((com.prodonik.genprotos.Products.GetByRequest) request,
+              (io.grpc.stub.StreamObserver<com.prodonik.genprotos.Products.GetByResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -637,6 +783,8 @@ public final class ProductServiceGrpc {
               .addMethod(getGetProductByNameMethod())
               .addMethod(getGetAllProductsMethod())
               .addMethod(getDeleteProductMethod())
+              .addMethod(getGetProductsByCategoryNameMethod())
+              .addMethod(getGetProductsByCategoryIdMethod())
               .build();
         }
       }

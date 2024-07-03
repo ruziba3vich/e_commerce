@@ -91,6 +91,18 @@ public final class Products {
      */
     com.google.protobuf.ByteString
         getCategoryIdBytes();
+
+    /**
+     * <code>string seller_id = 7;</code>
+     * @return The sellerId.
+     */
+    java.lang.String getSellerId();
+    /**
+     * <code>string seller_id = 7;</code>
+     * @return The bytes for sellerId.
+     */
+    com.google.protobuf.ByteString
+        getSellerIdBytes();
   }
   /**
    * Protobuf type {@code com.prodonik.genprotos.Product}
@@ -117,6 +129,7 @@ public final class Products {
       id_ = "";
       name_ = "";
       categoryId_ = "";
+      sellerId_ = "";
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
@@ -298,6 +311,45 @@ public final class Products {
       }
     }
 
+    public static final int SELLER_ID_FIELD_NUMBER = 7;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object sellerId_ = "";
+    /**
+     * <code>string seller_id = 7;</code>
+     * @return The sellerId.
+     */
+    @java.lang.Override
+    public java.lang.String getSellerId() {
+      java.lang.Object ref = sellerId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sellerId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string seller_id = 7;</code>
+     * @return The bytes for sellerId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSellerIdBytes() {
+      java.lang.Object ref = sellerId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        sellerId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -330,6 +382,9 @@ public final class Products {
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(categoryId_)) {
         com.google.protobuf.GeneratedMessage.writeString(output, 6, categoryId_);
       }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(sellerId_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 7, sellerId_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -359,6 +414,9 @@ public final class Products {
       }
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(categoryId_)) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(6, categoryId_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(sellerId_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(7, sellerId_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -391,6 +449,8 @@ public final class Products {
           != other.getStockQuantity()) return false;
       if (!getCategoryId()
           .equals(other.getCategoryId())) return false;
+      if (!getSellerId()
+          .equals(other.getSellerId())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -417,6 +477,8 @@ public final class Products {
       hash = (53 * hash) + getStockQuantity();
       hash = (37 * hash) + CATEGORY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getCategoryId().hashCode();
+      hash = (37 * hash) + SELLER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSellerId().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -564,6 +626,7 @@ public final class Products {
         price_ = 0D;
         stockQuantity_ = 0;
         categoryId_ = "";
+        sellerId_ = "";
         return this;
       }
 
@@ -619,6 +682,9 @@ public final class Products {
         if (((from_bitField0_ & 0x00000020) != 0)) {
           result.categoryId_ = categoryId_;
         }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.sellerId_ = sellerId_;
+        }
         result.bitField0_ |= to_bitField0_;
       }
 
@@ -656,6 +722,11 @@ public final class Products {
         if (!other.getCategoryId().isEmpty()) {
           categoryId_ = other.categoryId_;
           bitField0_ |= 0x00000020;
+          onChanged();
+        }
+        if (!other.getSellerId().isEmpty()) {
+          sellerId_ = other.sellerId_;
+          bitField0_ |= 0x00000040;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -716,6 +787,11 @@ public final class Products {
                 bitField0_ |= 0x00000020;
                 break;
               } // case 50
+              case 58: {
+                sellerId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 58
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -1134,6 +1210,78 @@ public final class Products {
         return this;
       }
 
+      private java.lang.Object sellerId_ = "";
+      /**
+       * <code>string seller_id = 7;</code>
+       * @return The sellerId.
+       */
+      public java.lang.String getSellerId() {
+        java.lang.Object ref = sellerId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          sellerId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string seller_id = 7;</code>
+       * @return The bytes for sellerId.
+       */
+      public com.google.protobuf.ByteString
+          getSellerIdBytes() {
+        java.lang.Object ref = sellerId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          sellerId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string seller_id = 7;</code>
+       * @param value The sellerId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSellerId(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        sellerId_ = value;
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string seller_id = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSellerId() {
+        sellerId_ = getDefaultInstance().getSellerId();
+        bitField0_ = (bitField0_ & ~0x00000040);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string seller_id = 7;</code>
+       * @param value The bytes for sellerId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSellerIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        sellerId_ = value;
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+
       // @@protoc_insertion_point(builder_scope:com.prodonik.genprotos.Product)
     }
 
@@ -1180,1251 +1328,6 @@ public final class Products {
 
     @java.lang.Override
     public com.prodonik.genprotos.Products.Product getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface CategoryOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.prodonik.genprotos.Category)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>string id = 1;</code>
-     * @return The id.
-     */
-    java.lang.String getId();
-    /**
-     * <code>string id = 1;</code>
-     * @return The bytes for id.
-     */
-    com.google.protobuf.ByteString
-        getIdBytes();
-
-    /**
-     * <code>string name = 2;</code>
-     * @return The name.
-     */
-    java.lang.String getName();
-    /**
-     * <code>string name = 2;</code>
-     * @return The bytes for name.
-     */
-    com.google.protobuf.ByteString
-        getNameBytes();
-
-    /**
-     * <code>.google.protobuf.StringValue description = 3;</code>
-     * @return Whether the description field is set.
-     */
-    boolean hasDescription();
-    /**
-     * <code>.google.protobuf.StringValue description = 3;</code>
-     * @return The description.
-     */
-    com.google.protobuf.StringValue getDescription();
-    /**
-     * <code>.google.protobuf.StringValue description = 3;</code>
-     */
-    com.google.protobuf.StringValueOrBuilder getDescriptionOrBuilder();
-
-    /**
-     * <code>repeated .com.prodonik.genprotos.Product products = 4;</code>
-     */
-    java.util.List<com.prodonik.genprotos.Products.Product> 
-        getProductsList();
-    /**
-     * <code>repeated .com.prodonik.genprotos.Product products = 4;</code>
-     */
-    com.prodonik.genprotos.Products.Product getProducts(int index);
-    /**
-     * <code>repeated .com.prodonik.genprotos.Product products = 4;</code>
-     */
-    int getProductsCount();
-    /**
-     * <code>repeated .com.prodonik.genprotos.Product products = 4;</code>
-     */
-    java.util.List<? extends com.prodonik.genprotos.Products.ProductOrBuilder> 
-        getProductsOrBuilderList();
-    /**
-     * <code>repeated .com.prodonik.genprotos.Product products = 4;</code>
-     */
-    com.prodonik.genprotos.Products.ProductOrBuilder getProductsOrBuilder(
-        int index);
-  }
-  /**
-   * Protobuf type {@code com.prodonik.genprotos.Category}
-   */
-  public static final class Category extends
-      com.google.protobuf.GeneratedMessage implements
-      // @@protoc_insertion_point(message_implements:com.prodonik.genprotos.Category)
-      CategoryOrBuilder {
-  private static final long serialVersionUID = 0L;
-    static {
-      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
-        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
-        /* major= */ 4,
-        /* minor= */ 27,
-        /* patch= */ 2,
-        /* suffix= */ "",
-        Category.class.getName());
-    }
-    // Use Category.newBuilder() to construct.
-    private Category(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
-      super(builder);
-    }
-    private Category() {
-      id_ = "";
-      name_ = "";
-      products_ = java.util.Collections.emptyList();
-    }
-
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.prodonik.genprotos.Products.internal_static_com_prodonik_genprotos_Category_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.prodonik.genprotos.Products.internal_static_com_prodonik_genprotos_Category_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.prodonik.genprotos.Products.Category.class, com.prodonik.genprotos.Products.Category.Builder.class);
-    }
-
-    private int bitField0_;
-    public static final int ID_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object id_ = "";
-    /**
-     * <code>string id = 1;</code>
-     * @return The id.
-     */
-    @java.lang.Override
-    public java.lang.String getId() {
-      java.lang.Object ref = id_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        id_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string id = 1;</code>
-     * @return The bytes for id.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getIdBytes() {
-      java.lang.Object ref = id_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        id_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int NAME_FIELD_NUMBER = 2;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object name_ = "";
-    /**
-     * <code>string name = 2;</code>
-     * @return The name.
-     */
-    @java.lang.Override
-    public java.lang.String getName() {
-      java.lang.Object ref = name_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        name_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string name = 2;</code>
-     * @return The bytes for name.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getNameBytes() {
-      java.lang.Object ref = name_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        name_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int DESCRIPTION_FIELD_NUMBER = 3;
-    private com.google.protobuf.StringValue description_;
-    /**
-     * <code>.google.protobuf.StringValue description = 3;</code>
-     * @return Whether the description field is set.
-     */
-    @java.lang.Override
-    public boolean hasDescription() {
-      return ((bitField0_ & 0x00000001) != 0);
-    }
-    /**
-     * <code>.google.protobuf.StringValue description = 3;</code>
-     * @return The description.
-     */
-    @java.lang.Override
-    public com.google.protobuf.StringValue getDescription() {
-      return description_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : description_;
-    }
-    /**
-     * <code>.google.protobuf.StringValue description = 3;</code>
-     */
-    @java.lang.Override
-    public com.google.protobuf.StringValueOrBuilder getDescriptionOrBuilder() {
-      return description_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : description_;
-    }
-
-    public static final int PRODUCTS_FIELD_NUMBER = 4;
-    @SuppressWarnings("serial")
-    private java.util.List<com.prodonik.genprotos.Products.Product> products_;
-    /**
-     * <code>repeated .com.prodonik.genprotos.Product products = 4;</code>
-     */
-    @java.lang.Override
-    public java.util.List<com.prodonik.genprotos.Products.Product> getProductsList() {
-      return products_;
-    }
-    /**
-     * <code>repeated .com.prodonik.genprotos.Product products = 4;</code>
-     */
-    @java.lang.Override
-    public java.util.List<? extends com.prodonik.genprotos.Products.ProductOrBuilder> 
-        getProductsOrBuilderList() {
-      return products_;
-    }
-    /**
-     * <code>repeated .com.prodonik.genprotos.Product products = 4;</code>
-     */
-    @java.lang.Override
-    public int getProductsCount() {
-      return products_.size();
-    }
-    /**
-     * <code>repeated .com.prodonik.genprotos.Product products = 4;</code>
-     */
-    @java.lang.Override
-    public com.prodonik.genprotos.Products.Product getProducts(int index) {
-      return products_.get(index);
-    }
-    /**
-     * <code>repeated .com.prodonik.genprotos.Product products = 4;</code>
-     */
-    @java.lang.Override
-    public com.prodonik.genprotos.Products.ProductOrBuilder getProductsOrBuilder(
-        int index) {
-      return products_.get(index);
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(id_)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 1, id_);
-      }
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 2, name_);
-      }
-      if (((bitField0_ & 0x00000001) != 0)) {
-        output.writeMessage(3, getDescription());
-      }
-      for (int i = 0; i < products_.size(); i++) {
-        output.writeMessage(4, products_.get(i));
-      }
-      getUnknownFields().writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(id_)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, id_);
-      }
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, name_);
-      }
-      if (((bitField0_ & 0x00000001) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getDescription());
-      }
-      for (int i = 0; i < products_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, products_.get(i));
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.prodonik.genprotos.Products.Category)) {
-        return super.equals(obj);
-      }
-      com.prodonik.genprotos.Products.Category other = (com.prodonik.genprotos.Products.Category) obj;
-
-      if (!getId()
-          .equals(other.getId())) return false;
-      if (!getName()
-          .equals(other.getName())) return false;
-      if (hasDescription() != other.hasDescription()) return false;
-      if (hasDescription()) {
-        if (!getDescription()
-            .equals(other.getDescription())) return false;
-      }
-      if (!getProductsList()
-          .equals(other.getProductsList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + getId().hashCode();
-      hash = (37 * hash) + NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getName().hashCode();
-      if (hasDescription()) {
-        hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
-        hash = (53 * hash) + getDescription().hashCode();
-      }
-      if (getProductsCount() > 0) {
-        hash = (37 * hash) + PRODUCTS_FIELD_NUMBER;
-        hash = (53 * hash) + getProductsList().hashCode();
-      }
-      hash = (29 * hash) + getUnknownFields().hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.prodonik.genprotos.Products.Category parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.prodonik.genprotos.Products.Category parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.prodonik.genprotos.Products.Category parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.prodonik.genprotos.Products.Category parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.prodonik.genprotos.Products.Category parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.prodonik.genprotos.Products.Category parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.prodonik.genprotos.Products.Category parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.prodonik.genprotos.Products.Category parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public static com.prodonik.genprotos.Products.Category parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-
-    public static com.prodonik.genprotos.Products.Category parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.prodonik.genprotos.Products.Category parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.prodonik.genprotos.Products.Category parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.prodonik.genprotos.Products.Category prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code com.prodonik.genprotos.Category}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.prodonik.genprotos.Category)
-        com.prodonik.genprotos.Products.CategoryOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.prodonik.genprotos.Products.internal_static_com_prodonik_genprotos_Category_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.prodonik.genprotos.Products.internal_static_com_prodonik_genprotos_Category_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.prodonik.genprotos.Products.Category.class, com.prodonik.genprotos.Products.Category.Builder.class);
-      }
-
-      // Construct using com.prodonik.genprotos.Products.Category.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessage
-                .alwaysUseFieldBuilders) {
-          getDescriptionFieldBuilder();
-          getProductsFieldBuilder();
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        bitField0_ = 0;
-        id_ = "";
-        name_ = "";
-        description_ = null;
-        if (descriptionBuilder_ != null) {
-          descriptionBuilder_.dispose();
-          descriptionBuilder_ = null;
-        }
-        if (productsBuilder_ == null) {
-          products_ = java.util.Collections.emptyList();
-        } else {
-          products_ = null;
-          productsBuilder_.clear();
-        }
-        bitField0_ = (bitField0_ & ~0x00000008);
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.prodonik.genprotos.Products.internal_static_com_prodonik_genprotos_Category_descriptor;
-      }
-
-      @java.lang.Override
-      public com.prodonik.genprotos.Products.Category getDefaultInstanceForType() {
-        return com.prodonik.genprotos.Products.Category.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.prodonik.genprotos.Products.Category build() {
-        com.prodonik.genprotos.Products.Category result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.prodonik.genprotos.Products.Category buildPartial() {
-        com.prodonik.genprotos.Products.Category result = new com.prodonik.genprotos.Products.Category(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(com.prodonik.genprotos.Products.Category result) {
-        if (productsBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) != 0)) {
-            products_ = java.util.Collections.unmodifiableList(products_);
-            bitField0_ = (bitField0_ & ~0x00000008);
-          }
-          result.products_ = products_;
-        } else {
-          result.products_ = productsBuilder_.build();
-        }
-      }
-
-      private void buildPartial0(com.prodonik.genprotos.Products.Category result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.id_ = id_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.name_ = name_;
-        }
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.description_ = descriptionBuilder_ == null
-              ? description_
-              : descriptionBuilder_.build();
-          to_bitField0_ |= 0x00000001;
-        }
-        result.bitField0_ |= to_bitField0_;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.prodonik.genprotos.Products.Category) {
-          return mergeFrom((com.prodonik.genprotos.Products.Category)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.prodonik.genprotos.Products.Category other) {
-        if (other == com.prodonik.genprotos.Products.Category.getDefaultInstance()) return this;
-        if (!other.getId().isEmpty()) {
-          id_ = other.id_;
-          bitField0_ |= 0x00000001;
-          onChanged();
-        }
-        if (!other.getName().isEmpty()) {
-          name_ = other.name_;
-          bitField0_ |= 0x00000002;
-          onChanged();
-        }
-        if (other.hasDescription()) {
-          mergeDescription(other.getDescription());
-        }
-        if (productsBuilder_ == null) {
-          if (!other.products_.isEmpty()) {
-            if (products_.isEmpty()) {
-              products_ = other.products_;
-              bitField0_ = (bitField0_ & ~0x00000008);
-            } else {
-              ensureProductsIsMutable();
-              products_.addAll(other.products_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.products_.isEmpty()) {
-            if (productsBuilder_.isEmpty()) {
-              productsBuilder_.dispose();
-              productsBuilder_ = null;
-              products_ = other.products_;
-              bitField0_ = (bitField0_ & ~0x00000008);
-              productsBuilder_ = 
-                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
-                   getProductsFieldBuilder() : null;
-            } else {
-              productsBuilder_.addAllMessages(other.products_);
-            }
-          }
-        }
-        this.mergeUnknownFields(other.getUnknownFields());
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                id_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 10
-              case 18: {
-                name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 18
-              case 26: {
-                input.readMessage(
-                    getDescriptionFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 26
-              case 34: {
-                com.prodonik.genprotos.Products.Product m =
-                    input.readMessage(
-                        com.prodonik.genprotos.Products.Product.parser(),
-                        extensionRegistry);
-                if (productsBuilder_ == null) {
-                  ensureProductsIsMutable();
-                  products_.add(m);
-                } else {
-                  productsBuilder_.addMessage(m);
-                }
-                break;
-              } // case 34
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.unwrapIOException();
-        } finally {
-          onChanged();
-        } // finally
-        return this;
-      }
-      private int bitField0_;
-
-      private java.lang.Object id_ = "";
-      /**
-       * <code>string id = 1;</code>
-       * @return The id.
-       */
-      public java.lang.String getId() {
-        java.lang.Object ref = id_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          id_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string id = 1;</code>
-       * @return The bytes for id.
-       */
-      public com.google.protobuf.ByteString
-          getIdBytes() {
-        java.lang.Object ref = id_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          id_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string id = 1;</code>
-       * @param value The id to set.
-       * @return This builder for chaining.
-       */
-      public Builder setId(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        id_ = value;
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string id = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearId() {
-        id_ = getDefaultInstance().getId();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string id = 1;</code>
-       * @param value The bytes for id to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
-        id_ = value;
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object name_ = "";
-      /**
-       * <code>string name = 2;</code>
-       * @return The name.
-       */
-      public java.lang.String getName() {
-        java.lang.Object ref = name_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          name_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string name = 2;</code>
-       * @return The bytes for name.
-       */
-      public com.google.protobuf.ByteString
-          getNameBytes() {
-        java.lang.Object ref = name_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          name_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string name = 2;</code>
-       * @param value The name to set.
-       * @return This builder for chaining.
-       */
-      public Builder setName(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        name_ = value;
-        bitField0_ |= 0x00000002;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string name = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearName() {
-        name_ = getDefaultInstance().getName();
-        bitField0_ = (bitField0_ & ~0x00000002);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string name = 2;</code>
-       * @param value The bytes for name to set.
-       * @return This builder for chaining.
-       */
-      public Builder setNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
-        name_ = value;
-        bitField0_ |= 0x00000002;
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.StringValue description_;
-      private com.google.protobuf.SingleFieldBuilder<
-          com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder> descriptionBuilder_;
-      /**
-       * <code>.google.protobuf.StringValue description = 3;</code>
-       * @return Whether the description field is set.
-       */
-      public boolean hasDescription() {
-        return ((bitField0_ & 0x00000004) != 0);
-      }
-      /**
-       * <code>.google.protobuf.StringValue description = 3;</code>
-       * @return The description.
-       */
-      public com.google.protobuf.StringValue getDescription() {
-        if (descriptionBuilder_ == null) {
-          return description_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : description_;
-        } else {
-          return descriptionBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.google.protobuf.StringValue description = 3;</code>
-       */
-      public Builder setDescription(com.google.protobuf.StringValue value) {
-        if (descriptionBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          description_ = value;
-        } else {
-          descriptionBuilder_.setMessage(value);
-        }
-        bitField0_ |= 0x00000004;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.StringValue description = 3;</code>
-       */
-      public Builder setDescription(
-          com.google.protobuf.StringValue.Builder builderForValue) {
-        if (descriptionBuilder_ == null) {
-          description_ = builderForValue.build();
-        } else {
-          descriptionBuilder_.setMessage(builderForValue.build());
-        }
-        bitField0_ |= 0x00000004;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.StringValue description = 3;</code>
-       */
-      public Builder mergeDescription(com.google.protobuf.StringValue value) {
-        if (descriptionBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0) &&
-            description_ != null &&
-            description_ != com.google.protobuf.StringValue.getDefaultInstance()) {
-            getDescriptionBuilder().mergeFrom(value);
-          } else {
-            description_ = value;
-          }
-        } else {
-          descriptionBuilder_.mergeFrom(value);
-        }
-        if (description_ != null) {
-          bitField0_ |= 0x00000004;
-          onChanged();
-        }
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.StringValue description = 3;</code>
-       */
-      public Builder clearDescription() {
-        bitField0_ = (bitField0_ & ~0x00000004);
-        description_ = null;
-        if (descriptionBuilder_ != null) {
-          descriptionBuilder_.dispose();
-          descriptionBuilder_ = null;
-        }
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.StringValue description = 3;</code>
-       */
-      public com.google.protobuf.StringValue.Builder getDescriptionBuilder() {
-        bitField0_ |= 0x00000004;
-        onChanged();
-        return getDescriptionFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.google.protobuf.StringValue description = 3;</code>
-       */
-      public com.google.protobuf.StringValueOrBuilder getDescriptionOrBuilder() {
-        if (descriptionBuilder_ != null) {
-          return descriptionBuilder_.getMessageOrBuilder();
-        } else {
-          return description_ == null ?
-              com.google.protobuf.StringValue.getDefaultInstance() : description_;
-        }
-      }
-      /**
-       * <code>.google.protobuf.StringValue description = 3;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilder<
-          com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder> 
-          getDescriptionFieldBuilder() {
-        if (descriptionBuilder_ == null) {
-          descriptionBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder>(
-                  getDescription(),
-                  getParentForChildren(),
-                  isClean());
-          description_ = null;
-        }
-        return descriptionBuilder_;
-      }
-
-      private java.util.List<com.prodonik.genprotos.Products.Product> products_ =
-        java.util.Collections.emptyList();
-      private void ensureProductsIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
-          products_ = new java.util.ArrayList<com.prodonik.genprotos.Products.Product>(products_);
-          bitField0_ |= 0x00000008;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilder<
-          com.prodonik.genprotos.Products.Product, com.prodonik.genprotos.Products.Product.Builder, com.prodonik.genprotos.Products.ProductOrBuilder> productsBuilder_;
-
-      /**
-       * <code>repeated .com.prodonik.genprotos.Product products = 4;</code>
-       */
-      public java.util.List<com.prodonik.genprotos.Products.Product> getProductsList() {
-        if (productsBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(products_);
-        } else {
-          return productsBuilder_.getMessageList();
-        }
-      }
-      /**
-       * <code>repeated .com.prodonik.genprotos.Product products = 4;</code>
-       */
-      public int getProductsCount() {
-        if (productsBuilder_ == null) {
-          return products_.size();
-        } else {
-          return productsBuilder_.getCount();
-        }
-      }
-      /**
-       * <code>repeated .com.prodonik.genprotos.Product products = 4;</code>
-       */
-      public com.prodonik.genprotos.Products.Product getProducts(int index) {
-        if (productsBuilder_ == null) {
-          return products_.get(index);
-        } else {
-          return productsBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <code>repeated .com.prodonik.genprotos.Product products = 4;</code>
-       */
-      public Builder setProducts(
-          int index, com.prodonik.genprotos.Products.Product value) {
-        if (productsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureProductsIsMutable();
-          products_.set(index, value);
-          onChanged();
-        } else {
-          productsBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .com.prodonik.genprotos.Product products = 4;</code>
-       */
-      public Builder setProducts(
-          int index, com.prodonik.genprotos.Products.Product.Builder builderForValue) {
-        if (productsBuilder_ == null) {
-          ensureProductsIsMutable();
-          products_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          productsBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .com.prodonik.genprotos.Product products = 4;</code>
-       */
-      public Builder addProducts(com.prodonik.genprotos.Products.Product value) {
-        if (productsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureProductsIsMutable();
-          products_.add(value);
-          onChanged();
-        } else {
-          productsBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .com.prodonik.genprotos.Product products = 4;</code>
-       */
-      public Builder addProducts(
-          int index, com.prodonik.genprotos.Products.Product value) {
-        if (productsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureProductsIsMutable();
-          products_.add(index, value);
-          onChanged();
-        } else {
-          productsBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .com.prodonik.genprotos.Product products = 4;</code>
-       */
-      public Builder addProducts(
-          com.prodonik.genprotos.Products.Product.Builder builderForValue) {
-        if (productsBuilder_ == null) {
-          ensureProductsIsMutable();
-          products_.add(builderForValue.build());
-          onChanged();
-        } else {
-          productsBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .com.prodonik.genprotos.Product products = 4;</code>
-       */
-      public Builder addProducts(
-          int index, com.prodonik.genprotos.Products.Product.Builder builderForValue) {
-        if (productsBuilder_ == null) {
-          ensureProductsIsMutable();
-          products_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          productsBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .com.prodonik.genprotos.Product products = 4;</code>
-       */
-      public Builder addAllProducts(
-          java.lang.Iterable<? extends com.prodonik.genprotos.Products.Product> values) {
-        if (productsBuilder_ == null) {
-          ensureProductsIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, products_);
-          onChanged();
-        } else {
-          productsBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .com.prodonik.genprotos.Product products = 4;</code>
-       */
-      public Builder clearProducts() {
-        if (productsBuilder_ == null) {
-          products_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
-          onChanged();
-        } else {
-          productsBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .com.prodonik.genprotos.Product products = 4;</code>
-       */
-      public Builder removeProducts(int index) {
-        if (productsBuilder_ == null) {
-          ensureProductsIsMutable();
-          products_.remove(index);
-          onChanged();
-        } else {
-          productsBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .com.prodonik.genprotos.Product products = 4;</code>
-       */
-      public com.prodonik.genprotos.Products.Product.Builder getProductsBuilder(
-          int index) {
-        return getProductsFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .com.prodonik.genprotos.Product products = 4;</code>
-       */
-      public com.prodonik.genprotos.Products.ProductOrBuilder getProductsOrBuilder(
-          int index) {
-        if (productsBuilder_ == null) {
-          return products_.get(index);  } else {
-          return productsBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <code>repeated .com.prodonik.genprotos.Product products = 4;</code>
-       */
-      public java.util.List<? extends com.prodonik.genprotos.Products.ProductOrBuilder> 
-           getProductsOrBuilderList() {
-        if (productsBuilder_ != null) {
-          return productsBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(products_);
-        }
-      }
-      /**
-       * <code>repeated .com.prodonik.genprotos.Product products = 4;</code>
-       */
-      public com.prodonik.genprotos.Products.Product.Builder addProductsBuilder() {
-        return getProductsFieldBuilder().addBuilder(
-            com.prodonik.genprotos.Products.Product.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .com.prodonik.genprotos.Product products = 4;</code>
-       */
-      public com.prodonik.genprotos.Products.Product.Builder addProductsBuilder(
-          int index) {
-        return getProductsFieldBuilder().addBuilder(
-            index, com.prodonik.genprotos.Products.Product.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .com.prodonik.genprotos.Product products = 4;</code>
-       */
-      public java.util.List<com.prodonik.genprotos.Products.Product.Builder> 
-           getProductsBuilderList() {
-        return getProductsFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilder<
-          com.prodonik.genprotos.Products.Product, com.prodonik.genprotos.Products.Product.Builder, com.prodonik.genprotos.Products.ProductOrBuilder> 
-          getProductsFieldBuilder() {
-        if (productsBuilder_ == null) {
-          productsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              com.prodonik.genprotos.Products.Product, com.prodonik.genprotos.Products.Product.Builder, com.prodonik.genprotos.Products.ProductOrBuilder>(
-                  products_,
-                  ((bitField0_ & 0x00000008) != 0),
-                  getParentForChildren(),
-                  isClean());
-          products_ = null;
-        }
-        return productsBuilder_;
-      }
-
-      // @@protoc_insertion_point(builder_scope:com.prodonik.genprotos.Category)
-    }
-
-    // @@protoc_insertion_point(class_scope:com.prodonik.genprotos.Category)
-    private static final com.prodonik.genprotos.Products.Category DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.prodonik.genprotos.Products.Category();
-    }
-
-    public static com.prodonik.genprotos.Products.Category getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<Category>
-        PARSER = new com.google.protobuf.AbstractParser<Category>() {
-      @java.lang.Override
-      public Category parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
-      }
-    };
-
-    public static com.google.protobuf.Parser<Category> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<Category> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.prodonik.genprotos.Products.Category getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -5270,6 +4173,3435 @@ public final class Products {
 
   }
 
+  public interface GetByRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.prodonik.genprotos.GetByRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string reuier = 1;</code>
+     * @return The reuier.
+     */
+    java.lang.String getReuier();
+    /**
+     * <code>string reuier = 1;</code>
+     * @return The bytes for reuier.
+     */
+    com.google.protobuf.ByteString
+        getReuierBytes();
+  }
+  /**
+   * Protobuf type {@code com.prodonik.genprotos.GetByRequest}
+   */
+  public static final class GetByRequest extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:com.prodonik.genprotos.GetByRequest)
+      GetByRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 27,
+        /* patch= */ 2,
+        /* suffix= */ "",
+        GetByRequest.class.getName());
+    }
+    // Use GetByRequest.newBuilder() to construct.
+    private GetByRequest(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private GetByRequest() {
+      reuier_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.prodonik.genprotos.Products.internal_static_com_prodonik_genprotos_GetByRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.prodonik.genprotos.Products.internal_static_com_prodonik_genprotos_GetByRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.prodonik.genprotos.Products.GetByRequest.class, com.prodonik.genprotos.Products.GetByRequest.Builder.class);
+    }
+
+    public static final int REUIER_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object reuier_ = "";
+    /**
+     * <code>string reuier = 1;</code>
+     * @return The reuier.
+     */
+    @java.lang.Override
+    public java.lang.String getReuier() {
+      java.lang.Object ref = reuier_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        reuier_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string reuier = 1;</code>
+     * @return The bytes for reuier.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getReuierBytes() {
+      java.lang.Object ref = reuier_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        reuier_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(reuier_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, reuier_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(reuier_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, reuier_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.prodonik.genprotos.Products.GetByRequest)) {
+        return super.equals(obj);
+      }
+      com.prodonik.genprotos.Products.GetByRequest other = (com.prodonik.genprotos.Products.GetByRequest) obj;
+
+      if (!getReuier()
+          .equals(other.getReuier())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + REUIER_FIELD_NUMBER;
+      hash = (53 * hash) + getReuier().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.prodonik.genprotos.Products.GetByRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.prodonik.genprotos.Products.GetByRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.prodonik.genprotos.Products.GetByRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.prodonik.genprotos.Products.GetByRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.prodonik.genprotos.Products.GetByRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.prodonik.genprotos.Products.GetByRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.prodonik.genprotos.Products.GetByRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.prodonik.genprotos.Products.GetByRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.prodonik.genprotos.Products.GetByRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.prodonik.genprotos.Products.GetByRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.prodonik.genprotos.Products.GetByRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.prodonik.genprotos.Products.GetByRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.prodonik.genprotos.Products.GetByRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.prodonik.genprotos.GetByRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.prodonik.genprotos.GetByRequest)
+        com.prodonik.genprotos.Products.GetByRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.prodonik.genprotos.Products.internal_static_com_prodonik_genprotos_GetByRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.prodonik.genprotos.Products.internal_static_com_prodonik_genprotos_GetByRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.prodonik.genprotos.Products.GetByRequest.class, com.prodonik.genprotos.Products.GetByRequest.Builder.class);
+      }
+
+      // Construct using com.prodonik.genprotos.Products.GetByRequest.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        reuier_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.prodonik.genprotos.Products.internal_static_com_prodonik_genprotos_GetByRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public com.prodonik.genprotos.Products.GetByRequest getDefaultInstanceForType() {
+        return com.prodonik.genprotos.Products.GetByRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.prodonik.genprotos.Products.GetByRequest build() {
+        com.prodonik.genprotos.Products.GetByRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.prodonik.genprotos.Products.GetByRequest buildPartial() {
+        com.prodonik.genprotos.Products.GetByRequest result = new com.prodonik.genprotos.Products.GetByRequest(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.prodonik.genprotos.Products.GetByRequest result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.reuier_ = reuier_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.prodonik.genprotos.Products.GetByRequest) {
+          return mergeFrom((com.prodonik.genprotos.Products.GetByRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.prodonik.genprotos.Products.GetByRequest other) {
+        if (other == com.prodonik.genprotos.Products.GetByRequest.getDefaultInstance()) return this;
+        if (!other.getReuier().isEmpty()) {
+          reuier_ = other.reuier_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                reuier_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object reuier_ = "";
+      /**
+       * <code>string reuier = 1;</code>
+       * @return The reuier.
+       */
+      public java.lang.String getReuier() {
+        java.lang.Object ref = reuier_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          reuier_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string reuier = 1;</code>
+       * @return The bytes for reuier.
+       */
+      public com.google.protobuf.ByteString
+          getReuierBytes() {
+        java.lang.Object ref = reuier_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          reuier_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string reuier = 1;</code>
+       * @param value The reuier to set.
+       * @return This builder for chaining.
+       */
+      public Builder setReuier(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        reuier_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string reuier = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearReuier() {
+        reuier_ = getDefaultInstance().getReuier();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string reuier = 1;</code>
+       * @param value The bytes for reuier to set.
+       * @return This builder for chaining.
+       */
+      public Builder setReuierBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        reuier_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:com.prodonik.genprotos.GetByRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:com.prodonik.genprotos.GetByRequest)
+    private static final com.prodonik.genprotos.Products.GetByRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.prodonik.genprotos.Products.GetByRequest();
+    }
+
+    public static com.prodonik.genprotos.Products.GetByRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GetByRequest>
+        PARSER = new com.google.protobuf.AbstractParser<GetByRequest>() {
+      @java.lang.Override
+      public GetByRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<GetByRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GetByRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.prodonik.genprotos.Products.GetByRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface GetByResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.prodonik.genprotos.GetByResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated .com.prodonik.genprotos.Product products = 1;</code>
+     */
+    java.util.List<com.prodonik.genprotos.Products.Product> 
+        getProductsList();
+    /**
+     * <code>repeated .com.prodonik.genprotos.Product products = 1;</code>
+     */
+    com.prodonik.genprotos.Products.Product getProducts(int index);
+    /**
+     * <code>repeated .com.prodonik.genprotos.Product products = 1;</code>
+     */
+    int getProductsCount();
+    /**
+     * <code>repeated .com.prodonik.genprotos.Product products = 1;</code>
+     */
+    java.util.List<? extends com.prodonik.genprotos.Products.ProductOrBuilder> 
+        getProductsOrBuilderList();
+    /**
+     * <code>repeated .com.prodonik.genprotos.Product products = 1;</code>
+     */
+    com.prodonik.genprotos.Products.ProductOrBuilder getProductsOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code com.prodonik.genprotos.GetByResponse}
+   */
+  public static final class GetByResponse extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:com.prodonik.genprotos.GetByResponse)
+      GetByResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 27,
+        /* patch= */ 2,
+        /* suffix= */ "",
+        GetByResponse.class.getName());
+    }
+    // Use GetByResponse.newBuilder() to construct.
+    private GetByResponse(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private GetByResponse() {
+      products_ = java.util.Collections.emptyList();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.prodonik.genprotos.Products.internal_static_com_prodonik_genprotos_GetByResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.prodonik.genprotos.Products.internal_static_com_prodonik_genprotos_GetByResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.prodonik.genprotos.Products.GetByResponse.class, com.prodonik.genprotos.Products.GetByResponse.Builder.class);
+    }
+
+    public static final int PRODUCTS_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private java.util.List<com.prodonik.genprotos.Products.Product> products_;
+    /**
+     * <code>repeated .com.prodonik.genprotos.Product products = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.prodonik.genprotos.Products.Product> getProductsList() {
+      return products_;
+    }
+    /**
+     * <code>repeated .com.prodonik.genprotos.Product products = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.prodonik.genprotos.Products.ProductOrBuilder> 
+        getProductsOrBuilderList() {
+      return products_;
+    }
+    /**
+     * <code>repeated .com.prodonik.genprotos.Product products = 1;</code>
+     */
+    @java.lang.Override
+    public int getProductsCount() {
+      return products_.size();
+    }
+    /**
+     * <code>repeated .com.prodonik.genprotos.Product products = 1;</code>
+     */
+    @java.lang.Override
+    public com.prodonik.genprotos.Products.Product getProducts(int index) {
+      return products_.get(index);
+    }
+    /**
+     * <code>repeated .com.prodonik.genprotos.Product products = 1;</code>
+     */
+    @java.lang.Override
+    public com.prodonik.genprotos.Products.ProductOrBuilder getProductsOrBuilder(
+        int index) {
+      return products_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < products_.size(); i++) {
+        output.writeMessage(1, products_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < products_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, products_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.prodonik.genprotos.Products.GetByResponse)) {
+        return super.equals(obj);
+      }
+      com.prodonik.genprotos.Products.GetByResponse other = (com.prodonik.genprotos.Products.GetByResponse) obj;
+
+      if (!getProductsList()
+          .equals(other.getProductsList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getProductsCount() > 0) {
+        hash = (37 * hash) + PRODUCTS_FIELD_NUMBER;
+        hash = (53 * hash) + getProductsList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.prodonik.genprotos.Products.GetByResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.prodonik.genprotos.Products.GetByResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.prodonik.genprotos.Products.GetByResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.prodonik.genprotos.Products.GetByResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.prodonik.genprotos.Products.GetByResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.prodonik.genprotos.Products.GetByResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.prodonik.genprotos.Products.GetByResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.prodonik.genprotos.Products.GetByResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.prodonik.genprotos.Products.GetByResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.prodonik.genprotos.Products.GetByResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.prodonik.genprotos.Products.GetByResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.prodonik.genprotos.Products.GetByResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.prodonik.genprotos.Products.GetByResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.prodonik.genprotos.GetByResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.prodonik.genprotos.GetByResponse)
+        com.prodonik.genprotos.Products.GetByResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.prodonik.genprotos.Products.internal_static_com_prodonik_genprotos_GetByResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.prodonik.genprotos.Products.internal_static_com_prodonik_genprotos_GetByResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.prodonik.genprotos.Products.GetByResponse.class, com.prodonik.genprotos.Products.GetByResponse.Builder.class);
+      }
+
+      // Construct using com.prodonik.genprotos.Products.GetByResponse.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        if (productsBuilder_ == null) {
+          products_ = java.util.Collections.emptyList();
+        } else {
+          products_ = null;
+          productsBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.prodonik.genprotos.Products.internal_static_com_prodonik_genprotos_GetByResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public com.prodonik.genprotos.Products.GetByResponse getDefaultInstanceForType() {
+        return com.prodonik.genprotos.Products.GetByResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.prodonik.genprotos.Products.GetByResponse build() {
+        com.prodonik.genprotos.Products.GetByResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.prodonik.genprotos.Products.GetByResponse buildPartial() {
+        com.prodonik.genprotos.Products.GetByResponse result = new com.prodonik.genprotos.Products.GetByResponse(this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(com.prodonik.genprotos.Products.GetByResponse result) {
+        if (productsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            products_ = java.util.Collections.unmodifiableList(products_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.products_ = products_;
+        } else {
+          result.products_ = productsBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(com.prodonik.genprotos.Products.GetByResponse result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.prodonik.genprotos.Products.GetByResponse) {
+          return mergeFrom((com.prodonik.genprotos.Products.GetByResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.prodonik.genprotos.Products.GetByResponse other) {
+        if (other == com.prodonik.genprotos.Products.GetByResponse.getDefaultInstance()) return this;
+        if (productsBuilder_ == null) {
+          if (!other.products_.isEmpty()) {
+            if (products_.isEmpty()) {
+              products_ = other.products_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureProductsIsMutable();
+              products_.addAll(other.products_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.products_.isEmpty()) {
+            if (productsBuilder_.isEmpty()) {
+              productsBuilder_.dispose();
+              productsBuilder_ = null;
+              products_ = other.products_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              productsBuilder_ = 
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                   getProductsFieldBuilder() : null;
+            } else {
+              productsBuilder_.addAllMessages(other.products_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                com.prodonik.genprotos.Products.Product m =
+                    input.readMessage(
+                        com.prodonik.genprotos.Products.Product.parser(),
+                        extensionRegistry);
+                if (productsBuilder_ == null) {
+                  ensureProductsIsMutable();
+                  products_.add(m);
+                } else {
+                  productsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<com.prodonik.genprotos.Products.Product> products_ =
+        java.util.Collections.emptyList();
+      private void ensureProductsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          products_ = new java.util.ArrayList<com.prodonik.genprotos.Products.Product>(products_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.prodonik.genprotos.Products.Product, com.prodonik.genprotos.Products.Product.Builder, com.prodonik.genprotos.Products.ProductOrBuilder> productsBuilder_;
+
+      /**
+       * <code>repeated .com.prodonik.genprotos.Product products = 1;</code>
+       */
+      public java.util.List<com.prodonik.genprotos.Products.Product> getProductsList() {
+        if (productsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(products_);
+        } else {
+          return productsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .com.prodonik.genprotos.Product products = 1;</code>
+       */
+      public int getProductsCount() {
+        if (productsBuilder_ == null) {
+          return products_.size();
+        } else {
+          return productsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .com.prodonik.genprotos.Product products = 1;</code>
+       */
+      public com.prodonik.genprotos.Products.Product getProducts(int index) {
+        if (productsBuilder_ == null) {
+          return products_.get(index);
+        } else {
+          return productsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .com.prodonik.genprotos.Product products = 1;</code>
+       */
+      public Builder setProducts(
+          int index, com.prodonik.genprotos.Products.Product value) {
+        if (productsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureProductsIsMutable();
+          products_.set(index, value);
+          onChanged();
+        } else {
+          productsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.prodonik.genprotos.Product products = 1;</code>
+       */
+      public Builder setProducts(
+          int index, com.prodonik.genprotos.Products.Product.Builder builderForValue) {
+        if (productsBuilder_ == null) {
+          ensureProductsIsMutable();
+          products_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          productsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.prodonik.genprotos.Product products = 1;</code>
+       */
+      public Builder addProducts(com.prodonik.genprotos.Products.Product value) {
+        if (productsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureProductsIsMutable();
+          products_.add(value);
+          onChanged();
+        } else {
+          productsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.prodonik.genprotos.Product products = 1;</code>
+       */
+      public Builder addProducts(
+          int index, com.prodonik.genprotos.Products.Product value) {
+        if (productsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureProductsIsMutable();
+          products_.add(index, value);
+          onChanged();
+        } else {
+          productsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.prodonik.genprotos.Product products = 1;</code>
+       */
+      public Builder addProducts(
+          com.prodonik.genprotos.Products.Product.Builder builderForValue) {
+        if (productsBuilder_ == null) {
+          ensureProductsIsMutable();
+          products_.add(builderForValue.build());
+          onChanged();
+        } else {
+          productsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.prodonik.genprotos.Product products = 1;</code>
+       */
+      public Builder addProducts(
+          int index, com.prodonik.genprotos.Products.Product.Builder builderForValue) {
+        if (productsBuilder_ == null) {
+          ensureProductsIsMutable();
+          products_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          productsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.prodonik.genprotos.Product products = 1;</code>
+       */
+      public Builder addAllProducts(
+          java.lang.Iterable<? extends com.prodonik.genprotos.Products.Product> values) {
+        if (productsBuilder_ == null) {
+          ensureProductsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, products_);
+          onChanged();
+        } else {
+          productsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.prodonik.genprotos.Product products = 1;</code>
+       */
+      public Builder clearProducts() {
+        if (productsBuilder_ == null) {
+          products_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          productsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.prodonik.genprotos.Product products = 1;</code>
+       */
+      public Builder removeProducts(int index) {
+        if (productsBuilder_ == null) {
+          ensureProductsIsMutable();
+          products_.remove(index);
+          onChanged();
+        } else {
+          productsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.prodonik.genprotos.Product products = 1;</code>
+       */
+      public com.prodonik.genprotos.Products.Product.Builder getProductsBuilder(
+          int index) {
+        return getProductsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .com.prodonik.genprotos.Product products = 1;</code>
+       */
+      public com.prodonik.genprotos.Products.ProductOrBuilder getProductsOrBuilder(
+          int index) {
+        if (productsBuilder_ == null) {
+          return products_.get(index);  } else {
+          return productsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .com.prodonik.genprotos.Product products = 1;</code>
+       */
+      public java.util.List<? extends com.prodonik.genprotos.Products.ProductOrBuilder> 
+           getProductsOrBuilderList() {
+        if (productsBuilder_ != null) {
+          return productsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(products_);
+        }
+      }
+      /**
+       * <code>repeated .com.prodonik.genprotos.Product products = 1;</code>
+       */
+      public com.prodonik.genprotos.Products.Product.Builder addProductsBuilder() {
+        return getProductsFieldBuilder().addBuilder(
+            com.prodonik.genprotos.Products.Product.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .com.prodonik.genprotos.Product products = 1;</code>
+       */
+      public com.prodonik.genprotos.Products.Product.Builder addProductsBuilder(
+          int index) {
+        return getProductsFieldBuilder().addBuilder(
+            index, com.prodonik.genprotos.Products.Product.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .com.prodonik.genprotos.Product products = 1;</code>
+       */
+      public java.util.List<com.prodonik.genprotos.Products.Product.Builder> 
+           getProductsBuilderList() {
+        return getProductsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.prodonik.genprotos.Products.Product, com.prodonik.genprotos.Products.Product.Builder, com.prodonik.genprotos.Products.ProductOrBuilder> 
+          getProductsFieldBuilder() {
+        if (productsBuilder_ == null) {
+          productsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+              com.prodonik.genprotos.Products.Product, com.prodonik.genprotos.Products.Product.Builder, com.prodonik.genprotos.Products.ProductOrBuilder>(
+                  products_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          products_ = null;
+        }
+        return productsBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:com.prodonik.genprotos.GetByResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:com.prodonik.genprotos.GetByResponse)
+    private static final com.prodonik.genprotos.Products.GetByResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.prodonik.genprotos.Products.GetByResponse();
+    }
+
+    public static com.prodonik.genprotos.Products.GetByResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GetByResponse>
+        PARSER = new com.google.protobuf.AbstractParser<GetByResponse>() {
+      @java.lang.Override
+      public GetByResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<GetByResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GetByResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.prodonik.genprotos.Products.GetByResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface RemoveProductsRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.prodonik.genprotos.RemoveProductsRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string product_id = 1;</code>
+     * @return The productId.
+     */
+    java.lang.String getProductId();
+    /**
+     * <code>string product_id = 1;</code>
+     * @return The bytes for productId.
+     */
+    com.google.protobuf.ByteString
+        getProductIdBytes();
+
+    /**
+     * <code>int32 number_of_products = 2;</code>
+     * @return The numberOfProducts.
+     */
+    int getNumberOfProducts();
+
+    /**
+     * <code>string client_id = 3;</code>
+     * @return The clientId.
+     */
+    java.lang.String getClientId();
+    /**
+     * <code>string client_id = 3;</code>
+     * @return The bytes for clientId.
+     */
+    com.google.protobuf.ByteString
+        getClientIdBytes();
+  }
+  /**
+   * Protobuf type {@code com.prodonik.genprotos.RemoveProductsRequest}
+   */
+  public static final class RemoveProductsRequest extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:com.prodonik.genprotos.RemoveProductsRequest)
+      RemoveProductsRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 27,
+        /* patch= */ 2,
+        /* suffix= */ "",
+        RemoveProductsRequest.class.getName());
+    }
+    // Use RemoveProductsRequest.newBuilder() to construct.
+    private RemoveProductsRequest(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private RemoveProductsRequest() {
+      productId_ = "";
+      clientId_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.prodonik.genprotos.Products.internal_static_com_prodonik_genprotos_RemoveProductsRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.prodonik.genprotos.Products.internal_static_com_prodonik_genprotos_RemoveProductsRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.prodonik.genprotos.Products.RemoveProductsRequest.class, com.prodonik.genprotos.Products.RemoveProductsRequest.Builder.class);
+    }
+
+    public static final int PRODUCT_ID_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object productId_ = "";
+    /**
+     * <code>string product_id = 1;</code>
+     * @return The productId.
+     */
+    @java.lang.Override
+    public java.lang.String getProductId() {
+      java.lang.Object ref = productId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        productId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string product_id = 1;</code>
+     * @return The bytes for productId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getProductIdBytes() {
+      java.lang.Object ref = productId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        productId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int NUMBER_OF_PRODUCTS_FIELD_NUMBER = 2;
+    private int numberOfProducts_ = 0;
+    /**
+     * <code>int32 number_of_products = 2;</code>
+     * @return The numberOfProducts.
+     */
+    @java.lang.Override
+    public int getNumberOfProducts() {
+      return numberOfProducts_;
+    }
+
+    public static final int CLIENT_ID_FIELD_NUMBER = 3;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object clientId_ = "";
+    /**
+     * <code>string client_id = 3;</code>
+     * @return The clientId.
+     */
+    @java.lang.Override
+    public java.lang.String getClientId() {
+      java.lang.Object ref = clientId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        clientId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string client_id = 3;</code>
+     * @return The bytes for clientId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getClientIdBytes() {
+      java.lang.Object ref = clientId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        clientId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(productId_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, productId_);
+      }
+      if (numberOfProducts_ != 0) {
+        output.writeInt32(2, numberOfProducts_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(clientId_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 3, clientId_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(productId_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, productId_);
+      }
+      if (numberOfProducts_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, numberOfProducts_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(clientId_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(3, clientId_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.prodonik.genprotos.Products.RemoveProductsRequest)) {
+        return super.equals(obj);
+      }
+      com.prodonik.genprotos.Products.RemoveProductsRequest other = (com.prodonik.genprotos.Products.RemoveProductsRequest) obj;
+
+      if (!getProductId()
+          .equals(other.getProductId())) return false;
+      if (getNumberOfProducts()
+          != other.getNumberOfProducts()) return false;
+      if (!getClientId()
+          .equals(other.getClientId())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + PRODUCT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getProductId().hashCode();
+      hash = (37 * hash) + NUMBER_OF_PRODUCTS_FIELD_NUMBER;
+      hash = (53 * hash) + getNumberOfProducts();
+      hash = (37 * hash) + CLIENT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getClientId().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.prodonik.genprotos.Products.RemoveProductsRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.prodonik.genprotos.Products.RemoveProductsRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.prodonik.genprotos.Products.RemoveProductsRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.prodonik.genprotos.Products.RemoveProductsRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.prodonik.genprotos.Products.RemoveProductsRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.prodonik.genprotos.Products.RemoveProductsRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.prodonik.genprotos.Products.RemoveProductsRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.prodonik.genprotos.Products.RemoveProductsRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.prodonik.genprotos.Products.RemoveProductsRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.prodonik.genprotos.Products.RemoveProductsRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.prodonik.genprotos.Products.RemoveProductsRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.prodonik.genprotos.Products.RemoveProductsRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.prodonik.genprotos.Products.RemoveProductsRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.prodonik.genprotos.RemoveProductsRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.prodonik.genprotos.RemoveProductsRequest)
+        com.prodonik.genprotos.Products.RemoveProductsRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.prodonik.genprotos.Products.internal_static_com_prodonik_genprotos_RemoveProductsRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.prodonik.genprotos.Products.internal_static_com_prodonik_genprotos_RemoveProductsRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.prodonik.genprotos.Products.RemoveProductsRequest.class, com.prodonik.genprotos.Products.RemoveProductsRequest.Builder.class);
+      }
+
+      // Construct using com.prodonik.genprotos.Products.RemoveProductsRequest.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        productId_ = "";
+        numberOfProducts_ = 0;
+        clientId_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.prodonik.genprotos.Products.internal_static_com_prodonik_genprotos_RemoveProductsRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public com.prodonik.genprotos.Products.RemoveProductsRequest getDefaultInstanceForType() {
+        return com.prodonik.genprotos.Products.RemoveProductsRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.prodonik.genprotos.Products.RemoveProductsRequest build() {
+        com.prodonik.genprotos.Products.RemoveProductsRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.prodonik.genprotos.Products.RemoveProductsRequest buildPartial() {
+        com.prodonik.genprotos.Products.RemoveProductsRequest result = new com.prodonik.genprotos.Products.RemoveProductsRequest(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.prodonik.genprotos.Products.RemoveProductsRequest result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.productId_ = productId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.numberOfProducts_ = numberOfProducts_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.clientId_ = clientId_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.prodonik.genprotos.Products.RemoveProductsRequest) {
+          return mergeFrom((com.prodonik.genprotos.Products.RemoveProductsRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.prodonik.genprotos.Products.RemoveProductsRequest other) {
+        if (other == com.prodonik.genprotos.Products.RemoveProductsRequest.getDefaultInstance()) return this;
+        if (!other.getProductId().isEmpty()) {
+          productId_ = other.productId_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (other.getNumberOfProducts() != 0) {
+          setNumberOfProducts(other.getNumberOfProducts());
+        }
+        if (!other.getClientId().isEmpty()) {
+          clientId_ = other.clientId_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                productId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 16: {
+                numberOfProducts_ = input.readInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+              case 26: {
+                clientId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object productId_ = "";
+      /**
+       * <code>string product_id = 1;</code>
+       * @return The productId.
+       */
+      public java.lang.String getProductId() {
+        java.lang.Object ref = productId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          productId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string product_id = 1;</code>
+       * @return The bytes for productId.
+       */
+      public com.google.protobuf.ByteString
+          getProductIdBytes() {
+        java.lang.Object ref = productId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          productId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string product_id = 1;</code>
+       * @param value The productId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProductId(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        productId_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string product_id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearProductId() {
+        productId_ = getDefaultInstance().getProductId();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string product_id = 1;</code>
+       * @param value The bytes for productId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProductIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        productId_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private int numberOfProducts_ ;
+      /**
+       * <code>int32 number_of_products = 2;</code>
+       * @return The numberOfProducts.
+       */
+      @java.lang.Override
+      public int getNumberOfProducts() {
+        return numberOfProducts_;
+      }
+      /**
+       * <code>int32 number_of_products = 2;</code>
+       * @param value The numberOfProducts to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNumberOfProducts(int value) {
+
+        numberOfProducts_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 number_of_products = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearNumberOfProducts() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        numberOfProducts_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object clientId_ = "";
+      /**
+       * <code>string client_id = 3;</code>
+       * @return The clientId.
+       */
+      public java.lang.String getClientId() {
+        java.lang.Object ref = clientId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          clientId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string client_id = 3;</code>
+       * @return The bytes for clientId.
+       */
+      public com.google.protobuf.ByteString
+          getClientIdBytes() {
+        java.lang.Object ref = clientId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          clientId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string client_id = 3;</code>
+       * @param value The clientId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setClientId(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        clientId_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string client_id = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearClientId() {
+        clientId_ = getDefaultInstance().getClientId();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string client_id = 3;</code>
+       * @param value The bytes for clientId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setClientIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        clientId_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:com.prodonik.genprotos.RemoveProductsRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:com.prodonik.genprotos.RemoveProductsRequest)
+    private static final com.prodonik.genprotos.Products.RemoveProductsRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.prodonik.genprotos.Products.RemoveProductsRequest();
+    }
+
+    public static com.prodonik.genprotos.Products.RemoveProductsRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<RemoveProductsRequest>
+        PARSER = new com.google.protobuf.AbstractParser<RemoveProductsRequest>() {
+      @java.lang.Override
+      public RemoveProductsRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<RemoveProductsRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<RemoveProductsRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.prodonik.genprotos.Products.RemoveProductsRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface RemoveProductsResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.prodonik.genprotos.RemoveProductsResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string message = 1;</code>
+     * @return The message.
+     */
+    java.lang.String getMessage();
+    /**
+     * <code>string message = 1;</code>
+     * @return The bytes for message.
+     */
+    com.google.protobuf.ByteString
+        getMessageBytes();
+
+    /**
+     * <code>bool error_occured = 2;</code>
+     * @return The errorOccured.
+     */
+    boolean getErrorOccured();
+  }
+  /**
+   * Protobuf type {@code com.prodonik.genprotos.RemoveProductsResponse}
+   */
+  public static final class RemoveProductsResponse extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:com.prodonik.genprotos.RemoveProductsResponse)
+      RemoveProductsResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 27,
+        /* patch= */ 2,
+        /* suffix= */ "",
+        RemoveProductsResponse.class.getName());
+    }
+    // Use RemoveProductsResponse.newBuilder() to construct.
+    private RemoveProductsResponse(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private RemoveProductsResponse() {
+      message_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.prodonik.genprotos.Products.internal_static_com_prodonik_genprotos_RemoveProductsResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.prodonik.genprotos.Products.internal_static_com_prodonik_genprotos_RemoveProductsResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.prodonik.genprotos.Products.RemoveProductsResponse.class, com.prodonik.genprotos.Products.RemoveProductsResponse.Builder.class);
+    }
+
+    public static final int MESSAGE_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object message_ = "";
+    /**
+     * <code>string message = 1;</code>
+     * @return The message.
+     */
+    @java.lang.Override
+    public java.lang.String getMessage() {
+      java.lang.Object ref = message_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        message_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string message = 1;</code>
+     * @return The bytes for message.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getMessageBytes() {
+      java.lang.Object ref = message_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        message_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ERROR_OCCURED_FIELD_NUMBER = 2;
+    private boolean errorOccured_ = false;
+    /**
+     * <code>bool error_occured = 2;</code>
+     * @return The errorOccured.
+     */
+    @java.lang.Override
+    public boolean getErrorOccured() {
+      return errorOccured_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(message_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, message_);
+      }
+      if (errorOccured_ != false) {
+        output.writeBool(2, errorOccured_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(message_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, message_);
+      }
+      if (errorOccured_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(2, errorOccured_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.prodonik.genprotos.Products.RemoveProductsResponse)) {
+        return super.equals(obj);
+      }
+      com.prodonik.genprotos.Products.RemoveProductsResponse other = (com.prodonik.genprotos.Products.RemoveProductsResponse) obj;
+
+      if (!getMessage()
+          .equals(other.getMessage())) return false;
+      if (getErrorOccured()
+          != other.getErrorOccured()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getMessage().hashCode();
+      hash = (37 * hash) + ERROR_OCCURED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getErrorOccured());
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.prodonik.genprotos.Products.RemoveProductsResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.prodonik.genprotos.Products.RemoveProductsResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.prodonik.genprotos.Products.RemoveProductsResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.prodonik.genprotos.Products.RemoveProductsResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.prodonik.genprotos.Products.RemoveProductsResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.prodonik.genprotos.Products.RemoveProductsResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.prodonik.genprotos.Products.RemoveProductsResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.prodonik.genprotos.Products.RemoveProductsResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.prodonik.genprotos.Products.RemoveProductsResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.prodonik.genprotos.Products.RemoveProductsResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.prodonik.genprotos.Products.RemoveProductsResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.prodonik.genprotos.Products.RemoveProductsResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.prodonik.genprotos.Products.RemoveProductsResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.prodonik.genprotos.RemoveProductsResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.prodonik.genprotos.RemoveProductsResponse)
+        com.prodonik.genprotos.Products.RemoveProductsResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.prodonik.genprotos.Products.internal_static_com_prodonik_genprotos_RemoveProductsResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.prodonik.genprotos.Products.internal_static_com_prodonik_genprotos_RemoveProductsResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.prodonik.genprotos.Products.RemoveProductsResponse.class, com.prodonik.genprotos.Products.RemoveProductsResponse.Builder.class);
+      }
+
+      // Construct using com.prodonik.genprotos.Products.RemoveProductsResponse.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        message_ = "";
+        errorOccured_ = false;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.prodonik.genprotos.Products.internal_static_com_prodonik_genprotos_RemoveProductsResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public com.prodonik.genprotos.Products.RemoveProductsResponse getDefaultInstanceForType() {
+        return com.prodonik.genprotos.Products.RemoveProductsResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.prodonik.genprotos.Products.RemoveProductsResponse build() {
+        com.prodonik.genprotos.Products.RemoveProductsResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.prodonik.genprotos.Products.RemoveProductsResponse buildPartial() {
+        com.prodonik.genprotos.Products.RemoveProductsResponse result = new com.prodonik.genprotos.Products.RemoveProductsResponse(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.prodonik.genprotos.Products.RemoveProductsResponse result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.message_ = message_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.errorOccured_ = errorOccured_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.prodonik.genprotos.Products.RemoveProductsResponse) {
+          return mergeFrom((com.prodonik.genprotos.Products.RemoveProductsResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.prodonik.genprotos.Products.RemoveProductsResponse other) {
+        if (other == com.prodonik.genprotos.Products.RemoveProductsResponse.getDefaultInstance()) return this;
+        if (!other.getMessage().isEmpty()) {
+          message_ = other.message_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (other.getErrorOccured() != false) {
+          setErrorOccured(other.getErrorOccured());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                message_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 16: {
+                errorOccured_ = input.readBool();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object message_ = "";
+      /**
+       * <code>string message = 1;</code>
+       * @return The message.
+       */
+      public java.lang.String getMessage() {
+        java.lang.Object ref = message_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          message_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string message = 1;</code>
+       * @return The bytes for message.
+       */
+      public com.google.protobuf.ByteString
+          getMessageBytes() {
+        java.lang.Object ref = message_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          message_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string message = 1;</code>
+       * @param value The message to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMessage(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        message_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string message = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMessage() {
+        message_ = getDefaultInstance().getMessage();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string message = 1;</code>
+       * @param value The bytes for message to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMessageBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        message_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private boolean errorOccured_ ;
+      /**
+       * <code>bool error_occured = 2;</code>
+       * @return The errorOccured.
+       */
+      @java.lang.Override
+      public boolean getErrorOccured() {
+        return errorOccured_;
+      }
+      /**
+       * <code>bool error_occured = 2;</code>
+       * @param value The errorOccured to set.
+       * @return This builder for chaining.
+       */
+      public Builder setErrorOccured(boolean value) {
+
+        errorOccured_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool error_occured = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearErrorOccured() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        errorOccured_ = false;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:com.prodonik.genprotos.RemoveProductsResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:com.prodonik.genprotos.RemoveProductsResponse)
+    private static final com.prodonik.genprotos.Products.RemoveProductsResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.prodonik.genprotos.Products.RemoveProductsResponse();
+    }
+
+    public static com.prodonik.genprotos.Products.RemoveProductsResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<RemoveProductsResponse>
+        PARSER = new com.google.protobuf.AbstractParser<RemoveProductsResponse>() {
+      @java.lang.Override
+      public RemoveProductsResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<RemoveProductsResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<RemoveProductsResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.prodonik.genprotos.Products.RemoveProductsResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface CategoryOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.prodonik.genprotos.Category)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string category_id = 1;</code>
+     * @return The categoryId.
+     */
+    java.lang.String getCategoryId();
+    /**
+     * <code>string category_id = 1;</code>
+     * @return The bytes for categoryId.
+     */
+    com.google.protobuf.ByteString
+        getCategoryIdBytes();
+
+    /**
+     * <code>string name = 2;</code>
+     * @return The name.
+     */
+    java.lang.String getName();
+    /**
+     * <code>string name = 2;</code>
+     * @return The bytes for name.
+     */
+    com.google.protobuf.ByteString
+        getNameBytes();
+
+    /**
+     * <code>.google.protobuf.StringValue description = 3;</code>
+     * @return Whether the description field is set.
+     */
+    boolean hasDescription();
+    /**
+     * <code>.google.protobuf.StringValue description = 3;</code>
+     * @return The description.
+     */
+    com.google.protobuf.StringValue getDescription();
+    /**
+     * <code>.google.protobuf.StringValue description = 3;</code>
+     */
+    com.google.protobuf.StringValueOrBuilder getDescriptionOrBuilder();
+  }
+  /**
+   * Protobuf type {@code com.prodonik.genprotos.Category}
+   */
+  public static final class Category extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:com.prodonik.genprotos.Category)
+      CategoryOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 27,
+        /* patch= */ 2,
+        /* suffix= */ "",
+        Category.class.getName());
+    }
+    // Use Category.newBuilder() to construct.
+    private Category(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private Category() {
+      categoryId_ = "";
+      name_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.prodonik.genprotos.Products.internal_static_com_prodonik_genprotos_Category_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.prodonik.genprotos.Products.internal_static_com_prodonik_genprotos_Category_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.prodonik.genprotos.Products.Category.class, com.prodonik.genprotos.Products.Category.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int CATEGORY_ID_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object categoryId_ = "";
+    /**
+     * <code>string category_id = 1;</code>
+     * @return The categoryId.
+     */
+    @java.lang.Override
+    public java.lang.String getCategoryId() {
+      java.lang.Object ref = categoryId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        categoryId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string category_id = 1;</code>
+     * @return The bytes for categoryId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCategoryIdBytes() {
+      java.lang.Object ref = categoryId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        categoryId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int NAME_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
+    /**
+     * <code>string name = 2;</code>
+     * @return The name.
+     */
+    @java.lang.Override
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string name = 2;</code>
+     * @return The bytes for name.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DESCRIPTION_FIELD_NUMBER = 3;
+    private com.google.protobuf.StringValue description_;
+    /**
+     * <code>.google.protobuf.StringValue description = 3;</code>
+     * @return Whether the description field is set.
+     */
+    @java.lang.Override
+    public boolean hasDescription() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <code>.google.protobuf.StringValue description = 3;</code>
+     * @return The description.
+     */
+    @java.lang.Override
+    public com.google.protobuf.StringValue getDescription() {
+      return description_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : description_;
+    }
+    /**
+     * <code>.google.protobuf.StringValue description = 3;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.StringValueOrBuilder getDescriptionOrBuilder() {
+      return description_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : description_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(categoryId_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, categoryId_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, name_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(3, getDescription());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(categoryId_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, categoryId_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, name_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getDescription());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.prodonik.genprotos.Products.Category)) {
+        return super.equals(obj);
+      }
+      com.prodonik.genprotos.Products.Category other = (com.prodonik.genprotos.Products.Category) obj;
+
+      if (!getCategoryId()
+          .equals(other.getCategoryId())) return false;
+      if (!getName()
+          .equals(other.getName())) return false;
+      if (hasDescription() != other.hasDescription()) return false;
+      if (hasDescription()) {
+        if (!getDescription()
+            .equals(other.getDescription())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + CATEGORY_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getCategoryId().hashCode();
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      if (hasDescription()) {
+        hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+        hash = (53 * hash) + getDescription().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.prodonik.genprotos.Products.Category parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.prodonik.genprotos.Products.Category parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.prodonik.genprotos.Products.Category parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.prodonik.genprotos.Products.Category parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.prodonik.genprotos.Products.Category parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.prodonik.genprotos.Products.Category parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.prodonik.genprotos.Products.Category parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.prodonik.genprotos.Products.Category parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.prodonik.genprotos.Products.Category parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.prodonik.genprotos.Products.Category parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.prodonik.genprotos.Products.Category parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.prodonik.genprotos.Products.Category parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.prodonik.genprotos.Products.Category prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.prodonik.genprotos.Category}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.prodonik.genprotos.Category)
+        com.prodonik.genprotos.Products.CategoryOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.prodonik.genprotos.Products.internal_static_com_prodonik_genprotos_Category_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.prodonik.genprotos.Products.internal_static_com_prodonik_genprotos_Category_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.prodonik.genprotos.Products.Category.class, com.prodonik.genprotos.Products.Category.Builder.class);
+      }
+
+      // Construct using com.prodonik.genprotos.Products.Category.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage
+                .alwaysUseFieldBuilders) {
+          getDescriptionFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        categoryId_ = "";
+        name_ = "";
+        description_ = null;
+        if (descriptionBuilder_ != null) {
+          descriptionBuilder_.dispose();
+          descriptionBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.prodonik.genprotos.Products.internal_static_com_prodonik_genprotos_Category_descriptor;
+      }
+
+      @java.lang.Override
+      public com.prodonik.genprotos.Products.Category getDefaultInstanceForType() {
+        return com.prodonik.genprotos.Products.Category.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.prodonik.genprotos.Products.Category build() {
+        com.prodonik.genprotos.Products.Category result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.prodonik.genprotos.Products.Category buildPartial() {
+        com.prodonik.genprotos.Products.Category result = new com.prodonik.genprotos.Products.Category(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.prodonik.genprotos.Products.Category result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.categoryId_ = categoryId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.name_ = name_;
+        }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.description_ = descriptionBuilder_ == null
+              ? description_
+              : descriptionBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.prodonik.genprotos.Products.Category) {
+          return mergeFrom((com.prodonik.genprotos.Products.Category)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.prodonik.genprotos.Products.Category other) {
+        if (other == com.prodonik.genprotos.Products.Category.getDefaultInstance()) return this;
+        if (!other.getCategoryId().isEmpty()) {
+          categoryId_ = other.categoryId_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        if (other.hasDescription()) {
+          mergeDescription(other.getDescription());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                categoryId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 18: {
+                name_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              case 26: {
+                input.readMessage(
+                    getDescriptionFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object categoryId_ = "";
+      /**
+       * <code>string category_id = 1;</code>
+       * @return The categoryId.
+       */
+      public java.lang.String getCategoryId() {
+        java.lang.Object ref = categoryId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          categoryId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string category_id = 1;</code>
+       * @return The bytes for categoryId.
+       */
+      public com.google.protobuf.ByteString
+          getCategoryIdBytes() {
+        java.lang.Object ref = categoryId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          categoryId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string category_id = 1;</code>
+       * @param value The categoryId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCategoryId(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        categoryId_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string category_id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCategoryId() {
+        categoryId_ = getDefaultInstance().getCategoryId();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string category_id = 1;</code>
+       * @param value The bytes for categoryId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCategoryIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        categoryId_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object name_ = "";
+      /**
+       * <code>string name = 2;</code>
+       * @return The name.
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string name = 2;</code>
+       * @return The bytes for name.
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string name = 2;</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setName(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        name_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string name = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearName() {
+        name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string name = 2;</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        name_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.StringValue description_;
+      private com.google.protobuf.SingleFieldBuilder<
+          com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder> descriptionBuilder_;
+      /**
+       * <code>.google.protobuf.StringValue description = 3;</code>
+       * @return Whether the description field is set.
+       */
+      public boolean hasDescription() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+      /**
+       * <code>.google.protobuf.StringValue description = 3;</code>
+       * @return The description.
+       */
+      public com.google.protobuf.StringValue getDescription() {
+        if (descriptionBuilder_ == null) {
+          return description_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : description_;
+        } else {
+          return descriptionBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.google.protobuf.StringValue description = 3;</code>
+       */
+      public Builder setDescription(com.google.protobuf.StringValue value) {
+        if (descriptionBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          description_ = value;
+        } else {
+          descriptionBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.StringValue description = 3;</code>
+       */
+      public Builder setDescription(
+          com.google.protobuf.StringValue.Builder builderForValue) {
+        if (descriptionBuilder_ == null) {
+          description_ = builderForValue.build();
+        } else {
+          descriptionBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.StringValue description = 3;</code>
+       */
+      public Builder mergeDescription(com.google.protobuf.StringValue value) {
+        if (descriptionBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0) &&
+            description_ != null &&
+            description_ != com.google.protobuf.StringValue.getDefaultInstance()) {
+            getDescriptionBuilder().mergeFrom(value);
+          } else {
+            description_ = value;
+          }
+        } else {
+          descriptionBuilder_.mergeFrom(value);
+        }
+        if (description_ != null) {
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.StringValue description = 3;</code>
+       */
+      public Builder clearDescription() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        description_ = null;
+        if (descriptionBuilder_ != null) {
+          descriptionBuilder_.dispose();
+          descriptionBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.StringValue description = 3;</code>
+       */
+      public com.google.protobuf.StringValue.Builder getDescriptionBuilder() {
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return getDescriptionFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.google.protobuf.StringValue description = 3;</code>
+       */
+      public com.google.protobuf.StringValueOrBuilder getDescriptionOrBuilder() {
+        if (descriptionBuilder_ != null) {
+          return descriptionBuilder_.getMessageOrBuilder();
+        } else {
+          return description_ == null ?
+              com.google.protobuf.StringValue.getDefaultInstance() : description_;
+        }
+      }
+      /**
+       * <code>.google.protobuf.StringValue description = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder> 
+          getDescriptionFieldBuilder() {
+        if (descriptionBuilder_ == null) {
+          descriptionBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder>(
+                  getDescription(),
+                  getParentForChildren(),
+                  isClean());
+          description_ = null;
+        }
+        return descriptionBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:com.prodonik.genprotos.Category)
+    }
+
+    // @@protoc_insertion_point(class_scope:com.prodonik.genprotos.Category)
+    private static final com.prodonik.genprotos.Products.Category DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.prodonik.genprotos.Products.Category();
+    }
+
+    public static com.prodonik.genprotos.Products.Category getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Category>
+        PARSER = new com.google.protobuf.AbstractParser<Category>() {
+      @java.lang.Override
+      public Category parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<Category> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Category> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.prodonik.genprotos.Products.Category getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface CategoryIdOrBuilder extends
       // @@protoc_insertion_point(interface_extends:com.prodonik.genprotos.CategoryId)
       com.google.protobuf.MessageOrBuilder {
@@ -8110,16 +10442,4371 @@ public final class Products {
 
   }
 
+  public interface GetProductsHistoryRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.prodonik.genprotos.GetProductsHistoryRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string client_id = 1;</code>
+     * @return The clientId.
+     */
+    java.lang.String getClientId();
+    /**
+     * <code>string client_id = 1;</code>
+     * @return The bytes for clientId.
+     */
+    com.google.protobuf.ByteString
+        getClientIdBytes();
+  }
+  /**
+   * Protobuf type {@code com.prodonik.genprotos.GetProductsHistoryRequest}
+   */
+  public static final class GetProductsHistoryRequest extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:com.prodonik.genprotos.GetProductsHistoryRequest)
+      GetProductsHistoryRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 27,
+        /* patch= */ 2,
+        /* suffix= */ "",
+        GetProductsHistoryRequest.class.getName());
+    }
+    // Use GetProductsHistoryRequest.newBuilder() to construct.
+    private GetProductsHistoryRequest(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private GetProductsHistoryRequest() {
+      clientId_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.prodonik.genprotos.Products.internal_static_com_prodonik_genprotos_GetProductsHistoryRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.prodonik.genprotos.Products.internal_static_com_prodonik_genprotos_GetProductsHistoryRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.prodonik.genprotos.Products.GetProductsHistoryRequest.class, com.prodonik.genprotos.Products.GetProductsHistoryRequest.Builder.class);
+    }
+
+    public static final int CLIENT_ID_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object clientId_ = "";
+    /**
+     * <code>string client_id = 1;</code>
+     * @return The clientId.
+     */
+    @java.lang.Override
+    public java.lang.String getClientId() {
+      java.lang.Object ref = clientId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        clientId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string client_id = 1;</code>
+     * @return The bytes for clientId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getClientIdBytes() {
+      java.lang.Object ref = clientId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        clientId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(clientId_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, clientId_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(clientId_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, clientId_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.prodonik.genprotos.Products.GetProductsHistoryRequest)) {
+        return super.equals(obj);
+      }
+      com.prodonik.genprotos.Products.GetProductsHistoryRequest other = (com.prodonik.genprotos.Products.GetProductsHistoryRequest) obj;
+
+      if (!getClientId()
+          .equals(other.getClientId())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + CLIENT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getClientId().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.prodonik.genprotos.Products.GetProductsHistoryRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.prodonik.genprotos.Products.GetProductsHistoryRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.prodonik.genprotos.Products.GetProductsHistoryRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.prodonik.genprotos.Products.GetProductsHistoryRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.prodonik.genprotos.Products.GetProductsHistoryRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.prodonik.genprotos.Products.GetProductsHistoryRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.prodonik.genprotos.Products.GetProductsHistoryRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.prodonik.genprotos.Products.GetProductsHistoryRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.prodonik.genprotos.Products.GetProductsHistoryRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.prodonik.genprotos.Products.GetProductsHistoryRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.prodonik.genprotos.Products.GetProductsHistoryRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.prodonik.genprotos.Products.GetProductsHistoryRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.prodonik.genprotos.Products.GetProductsHistoryRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.prodonik.genprotos.GetProductsHistoryRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.prodonik.genprotos.GetProductsHistoryRequest)
+        com.prodonik.genprotos.Products.GetProductsHistoryRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.prodonik.genprotos.Products.internal_static_com_prodonik_genprotos_GetProductsHistoryRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.prodonik.genprotos.Products.internal_static_com_prodonik_genprotos_GetProductsHistoryRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.prodonik.genprotos.Products.GetProductsHistoryRequest.class, com.prodonik.genprotos.Products.GetProductsHistoryRequest.Builder.class);
+      }
+
+      // Construct using com.prodonik.genprotos.Products.GetProductsHistoryRequest.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        clientId_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.prodonik.genprotos.Products.internal_static_com_prodonik_genprotos_GetProductsHistoryRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public com.prodonik.genprotos.Products.GetProductsHistoryRequest getDefaultInstanceForType() {
+        return com.prodonik.genprotos.Products.GetProductsHistoryRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.prodonik.genprotos.Products.GetProductsHistoryRequest build() {
+        com.prodonik.genprotos.Products.GetProductsHistoryRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.prodonik.genprotos.Products.GetProductsHistoryRequest buildPartial() {
+        com.prodonik.genprotos.Products.GetProductsHistoryRequest result = new com.prodonik.genprotos.Products.GetProductsHistoryRequest(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.prodonik.genprotos.Products.GetProductsHistoryRequest result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.clientId_ = clientId_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.prodonik.genprotos.Products.GetProductsHistoryRequest) {
+          return mergeFrom((com.prodonik.genprotos.Products.GetProductsHistoryRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.prodonik.genprotos.Products.GetProductsHistoryRequest other) {
+        if (other == com.prodonik.genprotos.Products.GetProductsHistoryRequest.getDefaultInstance()) return this;
+        if (!other.getClientId().isEmpty()) {
+          clientId_ = other.clientId_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                clientId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object clientId_ = "";
+      /**
+       * <code>string client_id = 1;</code>
+       * @return The clientId.
+       */
+      public java.lang.String getClientId() {
+        java.lang.Object ref = clientId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          clientId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string client_id = 1;</code>
+       * @return The bytes for clientId.
+       */
+      public com.google.protobuf.ByteString
+          getClientIdBytes() {
+        java.lang.Object ref = clientId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          clientId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string client_id = 1;</code>
+       * @param value The clientId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setClientId(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        clientId_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string client_id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearClientId() {
+        clientId_ = getDefaultInstance().getClientId();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string client_id = 1;</code>
+       * @param value The bytes for clientId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setClientIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        clientId_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:com.prodonik.genprotos.GetProductsHistoryRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:com.prodonik.genprotos.GetProductsHistoryRequest)
+    private static final com.prodonik.genprotos.Products.GetProductsHistoryRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.prodonik.genprotos.Products.GetProductsHistoryRequest();
+    }
+
+    public static com.prodonik.genprotos.Products.GetProductsHistoryRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GetProductsHistoryRequest>
+        PARSER = new com.google.protobuf.AbstractParser<GetProductsHistoryRequest>() {
+      @java.lang.Override
+      public GetProductsHistoryRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<GetProductsHistoryRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GetProductsHistoryRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.prodonik.genprotos.Products.GetProductsHistoryRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface CreateProductsHistoryRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.prodonik.genprotos.CreateProductsHistoryRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string product_id = 1;</code>
+     * @return The productId.
+     */
+    java.lang.String getProductId();
+    /**
+     * <code>string product_id = 1;</code>
+     * @return The bytes for productId.
+     */
+    com.google.protobuf.ByteString
+        getProductIdBytes();
+
+    /**
+     * <code>int32 number_of_bought_products = 2;</code>
+     * @return The numberOfBoughtProducts.
+     */
+    int getNumberOfBoughtProducts();
+
+    /**
+     * <code>string client_id = 3;</code>
+     * @return The clientId.
+     */
+    java.lang.String getClientId();
+    /**
+     * <code>string client_id = 3;</code>
+     * @return The bytes for clientId.
+     */
+    com.google.protobuf.ByteString
+        getClientIdBytes();
+
+    /**
+     * <code>.google.protobuf.Timestamp bought_at = 4;</code>
+     * @return Whether the boughtAt field is set.
+     */
+    boolean hasBoughtAt();
+    /**
+     * <code>.google.protobuf.Timestamp bought_at = 4;</code>
+     * @return The boughtAt.
+     */
+    com.google.protobuf.Timestamp getBoughtAt();
+    /**
+     * <code>.google.protobuf.Timestamp bought_at = 4;</code>
+     */
+    com.google.protobuf.TimestampOrBuilder getBoughtAtOrBuilder();
+  }
+  /**
+   * Protobuf type {@code com.prodonik.genprotos.CreateProductsHistoryRequest}
+   */
+  public static final class CreateProductsHistoryRequest extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:com.prodonik.genprotos.CreateProductsHistoryRequest)
+      CreateProductsHistoryRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 27,
+        /* patch= */ 2,
+        /* suffix= */ "",
+        CreateProductsHistoryRequest.class.getName());
+    }
+    // Use CreateProductsHistoryRequest.newBuilder() to construct.
+    private CreateProductsHistoryRequest(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private CreateProductsHistoryRequest() {
+      productId_ = "";
+      clientId_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.prodonik.genprotos.Products.internal_static_com_prodonik_genprotos_CreateProductsHistoryRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.prodonik.genprotos.Products.internal_static_com_prodonik_genprotos_CreateProductsHistoryRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.prodonik.genprotos.Products.CreateProductsHistoryRequest.class, com.prodonik.genprotos.Products.CreateProductsHistoryRequest.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int PRODUCT_ID_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object productId_ = "";
+    /**
+     * <code>string product_id = 1;</code>
+     * @return The productId.
+     */
+    @java.lang.Override
+    public java.lang.String getProductId() {
+      java.lang.Object ref = productId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        productId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string product_id = 1;</code>
+     * @return The bytes for productId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getProductIdBytes() {
+      java.lang.Object ref = productId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        productId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int NUMBER_OF_BOUGHT_PRODUCTS_FIELD_NUMBER = 2;
+    private int numberOfBoughtProducts_ = 0;
+    /**
+     * <code>int32 number_of_bought_products = 2;</code>
+     * @return The numberOfBoughtProducts.
+     */
+    @java.lang.Override
+    public int getNumberOfBoughtProducts() {
+      return numberOfBoughtProducts_;
+    }
+
+    public static final int CLIENT_ID_FIELD_NUMBER = 3;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object clientId_ = "";
+    /**
+     * <code>string client_id = 3;</code>
+     * @return The clientId.
+     */
+    @java.lang.Override
+    public java.lang.String getClientId() {
+      java.lang.Object ref = clientId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        clientId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string client_id = 3;</code>
+     * @return The bytes for clientId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getClientIdBytes() {
+      java.lang.Object ref = clientId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        clientId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int BOUGHT_AT_FIELD_NUMBER = 4;
+    private com.google.protobuf.Timestamp boughtAt_;
+    /**
+     * <code>.google.protobuf.Timestamp bought_at = 4;</code>
+     * @return Whether the boughtAt field is set.
+     */
+    @java.lang.Override
+    public boolean hasBoughtAt() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <code>.google.protobuf.Timestamp bought_at = 4;</code>
+     * @return The boughtAt.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getBoughtAt() {
+      return boughtAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : boughtAt_;
+    }
+    /**
+     * <code>.google.protobuf.Timestamp bought_at = 4;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getBoughtAtOrBuilder() {
+      return boughtAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : boughtAt_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(productId_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, productId_);
+      }
+      if (numberOfBoughtProducts_ != 0) {
+        output.writeInt32(2, numberOfBoughtProducts_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(clientId_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 3, clientId_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(4, getBoughtAt());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(productId_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, productId_);
+      }
+      if (numberOfBoughtProducts_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, numberOfBoughtProducts_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(clientId_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(3, clientId_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, getBoughtAt());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.prodonik.genprotos.Products.CreateProductsHistoryRequest)) {
+        return super.equals(obj);
+      }
+      com.prodonik.genprotos.Products.CreateProductsHistoryRequest other = (com.prodonik.genprotos.Products.CreateProductsHistoryRequest) obj;
+
+      if (!getProductId()
+          .equals(other.getProductId())) return false;
+      if (getNumberOfBoughtProducts()
+          != other.getNumberOfBoughtProducts()) return false;
+      if (!getClientId()
+          .equals(other.getClientId())) return false;
+      if (hasBoughtAt() != other.hasBoughtAt()) return false;
+      if (hasBoughtAt()) {
+        if (!getBoughtAt()
+            .equals(other.getBoughtAt())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + PRODUCT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getProductId().hashCode();
+      hash = (37 * hash) + NUMBER_OF_BOUGHT_PRODUCTS_FIELD_NUMBER;
+      hash = (53 * hash) + getNumberOfBoughtProducts();
+      hash = (37 * hash) + CLIENT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getClientId().hashCode();
+      if (hasBoughtAt()) {
+        hash = (37 * hash) + BOUGHT_AT_FIELD_NUMBER;
+        hash = (53 * hash) + getBoughtAt().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.prodonik.genprotos.Products.CreateProductsHistoryRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.prodonik.genprotos.Products.CreateProductsHistoryRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.prodonik.genprotos.Products.CreateProductsHistoryRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.prodonik.genprotos.Products.CreateProductsHistoryRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.prodonik.genprotos.Products.CreateProductsHistoryRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.prodonik.genprotos.Products.CreateProductsHistoryRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.prodonik.genprotos.Products.CreateProductsHistoryRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.prodonik.genprotos.Products.CreateProductsHistoryRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.prodonik.genprotos.Products.CreateProductsHistoryRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.prodonik.genprotos.Products.CreateProductsHistoryRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.prodonik.genprotos.Products.CreateProductsHistoryRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.prodonik.genprotos.Products.CreateProductsHistoryRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.prodonik.genprotos.Products.CreateProductsHistoryRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.prodonik.genprotos.CreateProductsHistoryRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.prodonik.genprotos.CreateProductsHistoryRequest)
+        com.prodonik.genprotos.Products.CreateProductsHistoryRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.prodonik.genprotos.Products.internal_static_com_prodonik_genprotos_CreateProductsHistoryRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.prodonik.genprotos.Products.internal_static_com_prodonik_genprotos_CreateProductsHistoryRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.prodonik.genprotos.Products.CreateProductsHistoryRequest.class, com.prodonik.genprotos.Products.CreateProductsHistoryRequest.Builder.class);
+      }
+
+      // Construct using com.prodonik.genprotos.Products.CreateProductsHistoryRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage
+                .alwaysUseFieldBuilders) {
+          getBoughtAtFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        productId_ = "";
+        numberOfBoughtProducts_ = 0;
+        clientId_ = "";
+        boughtAt_ = null;
+        if (boughtAtBuilder_ != null) {
+          boughtAtBuilder_.dispose();
+          boughtAtBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.prodonik.genprotos.Products.internal_static_com_prodonik_genprotos_CreateProductsHistoryRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public com.prodonik.genprotos.Products.CreateProductsHistoryRequest getDefaultInstanceForType() {
+        return com.prodonik.genprotos.Products.CreateProductsHistoryRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.prodonik.genprotos.Products.CreateProductsHistoryRequest build() {
+        com.prodonik.genprotos.Products.CreateProductsHistoryRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.prodonik.genprotos.Products.CreateProductsHistoryRequest buildPartial() {
+        com.prodonik.genprotos.Products.CreateProductsHistoryRequest result = new com.prodonik.genprotos.Products.CreateProductsHistoryRequest(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.prodonik.genprotos.Products.CreateProductsHistoryRequest result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.productId_ = productId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.numberOfBoughtProducts_ = numberOfBoughtProducts_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.clientId_ = clientId_;
+        }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.boughtAt_ = boughtAtBuilder_ == null
+              ? boughtAt_
+              : boughtAtBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.prodonik.genprotos.Products.CreateProductsHistoryRequest) {
+          return mergeFrom((com.prodonik.genprotos.Products.CreateProductsHistoryRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.prodonik.genprotos.Products.CreateProductsHistoryRequest other) {
+        if (other == com.prodonik.genprotos.Products.CreateProductsHistoryRequest.getDefaultInstance()) return this;
+        if (!other.getProductId().isEmpty()) {
+          productId_ = other.productId_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (other.getNumberOfBoughtProducts() != 0) {
+          setNumberOfBoughtProducts(other.getNumberOfBoughtProducts());
+        }
+        if (!other.getClientId().isEmpty()) {
+          clientId_ = other.clientId_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        if (other.hasBoughtAt()) {
+          mergeBoughtAt(other.getBoughtAt());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                productId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 16: {
+                numberOfBoughtProducts_ = input.readInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+              case 26: {
+                clientId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
+              case 34: {
+                input.readMessage(
+                    getBoughtAtFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object productId_ = "";
+      /**
+       * <code>string product_id = 1;</code>
+       * @return The productId.
+       */
+      public java.lang.String getProductId() {
+        java.lang.Object ref = productId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          productId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string product_id = 1;</code>
+       * @return The bytes for productId.
+       */
+      public com.google.protobuf.ByteString
+          getProductIdBytes() {
+        java.lang.Object ref = productId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          productId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string product_id = 1;</code>
+       * @param value The productId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProductId(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        productId_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string product_id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearProductId() {
+        productId_ = getDefaultInstance().getProductId();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string product_id = 1;</code>
+       * @param value The bytes for productId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProductIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        productId_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private int numberOfBoughtProducts_ ;
+      /**
+       * <code>int32 number_of_bought_products = 2;</code>
+       * @return The numberOfBoughtProducts.
+       */
+      @java.lang.Override
+      public int getNumberOfBoughtProducts() {
+        return numberOfBoughtProducts_;
+      }
+      /**
+       * <code>int32 number_of_bought_products = 2;</code>
+       * @param value The numberOfBoughtProducts to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNumberOfBoughtProducts(int value) {
+
+        numberOfBoughtProducts_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 number_of_bought_products = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearNumberOfBoughtProducts() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        numberOfBoughtProducts_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object clientId_ = "";
+      /**
+       * <code>string client_id = 3;</code>
+       * @return The clientId.
+       */
+      public java.lang.String getClientId() {
+        java.lang.Object ref = clientId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          clientId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string client_id = 3;</code>
+       * @return The bytes for clientId.
+       */
+      public com.google.protobuf.ByteString
+          getClientIdBytes() {
+        java.lang.Object ref = clientId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          clientId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string client_id = 3;</code>
+       * @param value The clientId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setClientId(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        clientId_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string client_id = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearClientId() {
+        clientId_ = getDefaultInstance().getClientId();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string client_id = 3;</code>
+       * @param value The bytes for clientId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setClientIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        clientId_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.Timestamp boughtAt_;
+      private com.google.protobuf.SingleFieldBuilder<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> boughtAtBuilder_;
+      /**
+       * <code>.google.protobuf.Timestamp bought_at = 4;</code>
+       * @return Whether the boughtAt field is set.
+       */
+      public boolean hasBoughtAt() {
+        return ((bitField0_ & 0x00000008) != 0);
+      }
+      /**
+       * <code>.google.protobuf.Timestamp bought_at = 4;</code>
+       * @return The boughtAt.
+       */
+      public com.google.protobuf.Timestamp getBoughtAt() {
+        if (boughtAtBuilder_ == null) {
+          return boughtAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : boughtAt_;
+        } else {
+          return boughtAtBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.google.protobuf.Timestamp bought_at = 4;</code>
+       */
+      public Builder setBoughtAt(com.google.protobuf.Timestamp value) {
+        if (boughtAtBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          boughtAt_ = value;
+        } else {
+          boughtAtBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Timestamp bought_at = 4;</code>
+       */
+      public Builder setBoughtAt(
+          com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (boughtAtBuilder_ == null) {
+          boughtAt_ = builderForValue.build();
+        } else {
+          boughtAtBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Timestamp bought_at = 4;</code>
+       */
+      public Builder mergeBoughtAt(com.google.protobuf.Timestamp value) {
+        if (boughtAtBuilder_ == null) {
+          if (((bitField0_ & 0x00000008) != 0) &&
+            boughtAt_ != null &&
+            boughtAt_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getBoughtAtBuilder().mergeFrom(value);
+          } else {
+            boughtAt_ = value;
+          }
+        } else {
+          boughtAtBuilder_.mergeFrom(value);
+        }
+        if (boughtAt_ != null) {
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Timestamp bought_at = 4;</code>
+       */
+      public Builder clearBoughtAt() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        boughtAt_ = null;
+        if (boughtAtBuilder_ != null) {
+          boughtAtBuilder_.dispose();
+          boughtAtBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Timestamp bought_at = 4;</code>
+       */
+      public com.google.protobuf.Timestamp.Builder getBoughtAtBuilder() {
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return getBoughtAtFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.google.protobuf.Timestamp bought_at = 4;</code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getBoughtAtOrBuilder() {
+        if (boughtAtBuilder_ != null) {
+          return boughtAtBuilder_.getMessageOrBuilder();
+        } else {
+          return boughtAt_ == null ?
+              com.google.protobuf.Timestamp.getDefaultInstance() : boughtAt_;
+        }
+      }
+      /**
+       * <code>.google.protobuf.Timestamp bought_at = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+          getBoughtAtFieldBuilder() {
+        if (boughtAtBuilder_ == null) {
+          boughtAtBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                  getBoughtAt(),
+                  getParentForChildren(),
+                  isClean());
+          boughtAt_ = null;
+        }
+        return boughtAtBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:com.prodonik.genprotos.CreateProductsHistoryRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:com.prodonik.genprotos.CreateProductsHistoryRequest)
+    private static final com.prodonik.genprotos.Products.CreateProductsHistoryRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.prodonik.genprotos.Products.CreateProductsHistoryRequest();
+    }
+
+    public static com.prodonik.genprotos.Products.CreateProductsHistoryRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<CreateProductsHistoryRequest>
+        PARSER = new com.google.protobuf.AbstractParser<CreateProductsHistoryRequest>() {
+      @java.lang.Override
+      public CreateProductsHistoryRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<CreateProductsHistoryRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<CreateProductsHistoryRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.prodonik.genprotos.Products.CreateProductsHistoryRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ProductsHistoryResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.prodonik.genprotos.ProductsHistoryResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string history_id = 1;</code>
+     * @return The historyId.
+     */
+    java.lang.String getHistoryId();
+    /**
+     * <code>string history_id = 1;</code>
+     * @return The bytes for historyId.
+     */
+    com.google.protobuf.ByteString
+        getHistoryIdBytes();
+
+    /**
+     * <code>string product_id = 2;</code>
+     * @return The productId.
+     */
+    java.lang.String getProductId();
+    /**
+     * <code>string product_id = 2;</code>
+     * @return The bytes for productId.
+     */
+    com.google.protobuf.ByteString
+        getProductIdBytes();
+
+    /**
+     * <code>int32 number_of_bought_products = 3;</code>
+     * @return The numberOfBoughtProducts.
+     */
+    int getNumberOfBoughtProducts();
+
+    /**
+     * <code>string client_id = 4;</code>
+     * @return The clientId.
+     */
+    java.lang.String getClientId();
+    /**
+     * <code>string client_id = 4;</code>
+     * @return The bytes for clientId.
+     */
+    com.google.protobuf.ByteString
+        getClientIdBytes();
+
+    /**
+     * <code>.google.protobuf.Timestamp bought_at = 5;</code>
+     * @return Whether the boughtAt field is set.
+     */
+    boolean hasBoughtAt();
+    /**
+     * <code>.google.protobuf.Timestamp bought_at = 5;</code>
+     * @return The boughtAt.
+     */
+    com.google.protobuf.Timestamp getBoughtAt();
+    /**
+     * <code>.google.protobuf.Timestamp bought_at = 5;</code>
+     */
+    com.google.protobuf.TimestampOrBuilder getBoughtAtOrBuilder();
+  }
+  /**
+   * Protobuf type {@code com.prodonik.genprotos.ProductsHistoryResponse}
+   */
+  public static final class ProductsHistoryResponse extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:com.prodonik.genprotos.ProductsHistoryResponse)
+      ProductsHistoryResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 27,
+        /* patch= */ 2,
+        /* suffix= */ "",
+        ProductsHistoryResponse.class.getName());
+    }
+    // Use ProductsHistoryResponse.newBuilder() to construct.
+    private ProductsHistoryResponse(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private ProductsHistoryResponse() {
+      historyId_ = "";
+      productId_ = "";
+      clientId_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.prodonik.genprotos.Products.internal_static_com_prodonik_genprotos_ProductsHistoryResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.prodonik.genprotos.Products.internal_static_com_prodonik_genprotos_ProductsHistoryResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.prodonik.genprotos.Products.ProductsHistoryResponse.class, com.prodonik.genprotos.Products.ProductsHistoryResponse.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int HISTORY_ID_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object historyId_ = "";
+    /**
+     * <code>string history_id = 1;</code>
+     * @return The historyId.
+     */
+    @java.lang.Override
+    public java.lang.String getHistoryId() {
+      java.lang.Object ref = historyId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        historyId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string history_id = 1;</code>
+     * @return The bytes for historyId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getHistoryIdBytes() {
+      java.lang.Object ref = historyId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        historyId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PRODUCT_ID_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object productId_ = "";
+    /**
+     * <code>string product_id = 2;</code>
+     * @return The productId.
+     */
+    @java.lang.Override
+    public java.lang.String getProductId() {
+      java.lang.Object ref = productId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        productId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string product_id = 2;</code>
+     * @return The bytes for productId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getProductIdBytes() {
+      java.lang.Object ref = productId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        productId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int NUMBER_OF_BOUGHT_PRODUCTS_FIELD_NUMBER = 3;
+    private int numberOfBoughtProducts_ = 0;
+    /**
+     * <code>int32 number_of_bought_products = 3;</code>
+     * @return The numberOfBoughtProducts.
+     */
+    @java.lang.Override
+    public int getNumberOfBoughtProducts() {
+      return numberOfBoughtProducts_;
+    }
+
+    public static final int CLIENT_ID_FIELD_NUMBER = 4;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object clientId_ = "";
+    /**
+     * <code>string client_id = 4;</code>
+     * @return The clientId.
+     */
+    @java.lang.Override
+    public java.lang.String getClientId() {
+      java.lang.Object ref = clientId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        clientId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string client_id = 4;</code>
+     * @return The bytes for clientId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getClientIdBytes() {
+      java.lang.Object ref = clientId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        clientId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int BOUGHT_AT_FIELD_NUMBER = 5;
+    private com.google.protobuf.Timestamp boughtAt_;
+    /**
+     * <code>.google.protobuf.Timestamp bought_at = 5;</code>
+     * @return Whether the boughtAt field is set.
+     */
+    @java.lang.Override
+    public boolean hasBoughtAt() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <code>.google.protobuf.Timestamp bought_at = 5;</code>
+     * @return The boughtAt.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getBoughtAt() {
+      return boughtAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : boughtAt_;
+    }
+    /**
+     * <code>.google.protobuf.Timestamp bought_at = 5;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getBoughtAtOrBuilder() {
+      return boughtAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : boughtAt_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(historyId_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, historyId_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(productId_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, productId_);
+      }
+      if (numberOfBoughtProducts_ != 0) {
+        output.writeInt32(3, numberOfBoughtProducts_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(clientId_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 4, clientId_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(5, getBoughtAt());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(historyId_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, historyId_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(productId_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, productId_);
+      }
+      if (numberOfBoughtProducts_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, numberOfBoughtProducts_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(clientId_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(4, clientId_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(5, getBoughtAt());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.prodonik.genprotos.Products.ProductsHistoryResponse)) {
+        return super.equals(obj);
+      }
+      com.prodonik.genprotos.Products.ProductsHistoryResponse other = (com.prodonik.genprotos.Products.ProductsHistoryResponse) obj;
+
+      if (!getHistoryId()
+          .equals(other.getHistoryId())) return false;
+      if (!getProductId()
+          .equals(other.getProductId())) return false;
+      if (getNumberOfBoughtProducts()
+          != other.getNumberOfBoughtProducts()) return false;
+      if (!getClientId()
+          .equals(other.getClientId())) return false;
+      if (hasBoughtAt() != other.hasBoughtAt()) return false;
+      if (hasBoughtAt()) {
+        if (!getBoughtAt()
+            .equals(other.getBoughtAt())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + HISTORY_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getHistoryId().hashCode();
+      hash = (37 * hash) + PRODUCT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getProductId().hashCode();
+      hash = (37 * hash) + NUMBER_OF_BOUGHT_PRODUCTS_FIELD_NUMBER;
+      hash = (53 * hash) + getNumberOfBoughtProducts();
+      hash = (37 * hash) + CLIENT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getClientId().hashCode();
+      if (hasBoughtAt()) {
+        hash = (37 * hash) + BOUGHT_AT_FIELD_NUMBER;
+        hash = (53 * hash) + getBoughtAt().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.prodonik.genprotos.Products.ProductsHistoryResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.prodonik.genprotos.Products.ProductsHistoryResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.prodonik.genprotos.Products.ProductsHistoryResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.prodonik.genprotos.Products.ProductsHistoryResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.prodonik.genprotos.Products.ProductsHistoryResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.prodonik.genprotos.Products.ProductsHistoryResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.prodonik.genprotos.Products.ProductsHistoryResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.prodonik.genprotos.Products.ProductsHistoryResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.prodonik.genprotos.Products.ProductsHistoryResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.prodonik.genprotos.Products.ProductsHistoryResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.prodonik.genprotos.Products.ProductsHistoryResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.prodonik.genprotos.Products.ProductsHistoryResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.prodonik.genprotos.Products.ProductsHistoryResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.prodonik.genprotos.ProductsHistoryResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.prodonik.genprotos.ProductsHistoryResponse)
+        com.prodonik.genprotos.Products.ProductsHistoryResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.prodonik.genprotos.Products.internal_static_com_prodonik_genprotos_ProductsHistoryResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.prodonik.genprotos.Products.internal_static_com_prodonik_genprotos_ProductsHistoryResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.prodonik.genprotos.Products.ProductsHistoryResponse.class, com.prodonik.genprotos.Products.ProductsHistoryResponse.Builder.class);
+      }
+
+      // Construct using com.prodonik.genprotos.Products.ProductsHistoryResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage
+                .alwaysUseFieldBuilders) {
+          getBoughtAtFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        historyId_ = "";
+        productId_ = "";
+        numberOfBoughtProducts_ = 0;
+        clientId_ = "";
+        boughtAt_ = null;
+        if (boughtAtBuilder_ != null) {
+          boughtAtBuilder_.dispose();
+          boughtAtBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.prodonik.genprotos.Products.internal_static_com_prodonik_genprotos_ProductsHistoryResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public com.prodonik.genprotos.Products.ProductsHistoryResponse getDefaultInstanceForType() {
+        return com.prodonik.genprotos.Products.ProductsHistoryResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.prodonik.genprotos.Products.ProductsHistoryResponse build() {
+        com.prodonik.genprotos.Products.ProductsHistoryResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.prodonik.genprotos.Products.ProductsHistoryResponse buildPartial() {
+        com.prodonik.genprotos.Products.ProductsHistoryResponse result = new com.prodonik.genprotos.Products.ProductsHistoryResponse(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.prodonik.genprotos.Products.ProductsHistoryResponse result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.historyId_ = historyId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.productId_ = productId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.numberOfBoughtProducts_ = numberOfBoughtProducts_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.clientId_ = clientId_;
+        }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.boughtAt_ = boughtAtBuilder_ == null
+              ? boughtAt_
+              : boughtAtBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.prodonik.genprotos.Products.ProductsHistoryResponse) {
+          return mergeFrom((com.prodonik.genprotos.Products.ProductsHistoryResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.prodonik.genprotos.Products.ProductsHistoryResponse other) {
+        if (other == com.prodonik.genprotos.Products.ProductsHistoryResponse.getDefaultInstance()) return this;
+        if (!other.getHistoryId().isEmpty()) {
+          historyId_ = other.historyId_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getProductId().isEmpty()) {
+          productId_ = other.productId_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        if (other.getNumberOfBoughtProducts() != 0) {
+          setNumberOfBoughtProducts(other.getNumberOfBoughtProducts());
+        }
+        if (!other.getClientId().isEmpty()) {
+          clientId_ = other.clientId_;
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
+        if (other.hasBoughtAt()) {
+          mergeBoughtAt(other.getBoughtAt());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                historyId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 18: {
+                productId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              case 24: {
+                numberOfBoughtProducts_ = input.readInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
+              case 34: {
+                clientId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
+              case 42: {
+                input.readMessage(
+                    getBoughtAtFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object historyId_ = "";
+      /**
+       * <code>string history_id = 1;</code>
+       * @return The historyId.
+       */
+      public java.lang.String getHistoryId() {
+        java.lang.Object ref = historyId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          historyId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string history_id = 1;</code>
+       * @return The bytes for historyId.
+       */
+      public com.google.protobuf.ByteString
+          getHistoryIdBytes() {
+        java.lang.Object ref = historyId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          historyId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string history_id = 1;</code>
+       * @param value The historyId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHistoryId(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        historyId_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string history_id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearHistoryId() {
+        historyId_ = getDefaultInstance().getHistoryId();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string history_id = 1;</code>
+       * @param value The bytes for historyId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHistoryIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        historyId_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object productId_ = "";
+      /**
+       * <code>string product_id = 2;</code>
+       * @return The productId.
+       */
+      public java.lang.String getProductId() {
+        java.lang.Object ref = productId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          productId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string product_id = 2;</code>
+       * @return The bytes for productId.
+       */
+      public com.google.protobuf.ByteString
+          getProductIdBytes() {
+        java.lang.Object ref = productId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          productId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string product_id = 2;</code>
+       * @param value The productId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProductId(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        productId_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string product_id = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearProductId() {
+        productId_ = getDefaultInstance().getProductId();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string product_id = 2;</code>
+       * @param value The bytes for productId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProductIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        productId_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private int numberOfBoughtProducts_ ;
+      /**
+       * <code>int32 number_of_bought_products = 3;</code>
+       * @return The numberOfBoughtProducts.
+       */
+      @java.lang.Override
+      public int getNumberOfBoughtProducts() {
+        return numberOfBoughtProducts_;
+      }
+      /**
+       * <code>int32 number_of_bought_products = 3;</code>
+       * @param value The numberOfBoughtProducts to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNumberOfBoughtProducts(int value) {
+
+        numberOfBoughtProducts_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 number_of_bought_products = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearNumberOfBoughtProducts() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        numberOfBoughtProducts_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object clientId_ = "";
+      /**
+       * <code>string client_id = 4;</code>
+       * @return The clientId.
+       */
+      public java.lang.String getClientId() {
+        java.lang.Object ref = clientId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          clientId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string client_id = 4;</code>
+       * @return The bytes for clientId.
+       */
+      public com.google.protobuf.ByteString
+          getClientIdBytes() {
+        java.lang.Object ref = clientId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          clientId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string client_id = 4;</code>
+       * @param value The clientId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setClientId(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        clientId_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string client_id = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearClientId() {
+        clientId_ = getDefaultInstance().getClientId();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string client_id = 4;</code>
+       * @param value The bytes for clientId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setClientIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        clientId_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.Timestamp boughtAt_;
+      private com.google.protobuf.SingleFieldBuilder<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> boughtAtBuilder_;
+      /**
+       * <code>.google.protobuf.Timestamp bought_at = 5;</code>
+       * @return Whether the boughtAt field is set.
+       */
+      public boolean hasBoughtAt() {
+        return ((bitField0_ & 0x00000010) != 0);
+      }
+      /**
+       * <code>.google.protobuf.Timestamp bought_at = 5;</code>
+       * @return The boughtAt.
+       */
+      public com.google.protobuf.Timestamp getBoughtAt() {
+        if (boughtAtBuilder_ == null) {
+          return boughtAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : boughtAt_;
+        } else {
+          return boughtAtBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.google.protobuf.Timestamp bought_at = 5;</code>
+       */
+      public Builder setBoughtAt(com.google.protobuf.Timestamp value) {
+        if (boughtAtBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          boughtAt_ = value;
+        } else {
+          boughtAtBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Timestamp bought_at = 5;</code>
+       */
+      public Builder setBoughtAt(
+          com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (boughtAtBuilder_ == null) {
+          boughtAt_ = builderForValue.build();
+        } else {
+          boughtAtBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Timestamp bought_at = 5;</code>
+       */
+      public Builder mergeBoughtAt(com.google.protobuf.Timestamp value) {
+        if (boughtAtBuilder_ == null) {
+          if (((bitField0_ & 0x00000010) != 0) &&
+            boughtAt_ != null &&
+            boughtAt_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getBoughtAtBuilder().mergeFrom(value);
+          } else {
+            boughtAt_ = value;
+          }
+        } else {
+          boughtAtBuilder_.mergeFrom(value);
+        }
+        if (boughtAt_ != null) {
+          bitField0_ |= 0x00000010;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Timestamp bought_at = 5;</code>
+       */
+      public Builder clearBoughtAt() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        boughtAt_ = null;
+        if (boughtAtBuilder_ != null) {
+          boughtAtBuilder_.dispose();
+          boughtAtBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Timestamp bought_at = 5;</code>
+       */
+      public com.google.protobuf.Timestamp.Builder getBoughtAtBuilder() {
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return getBoughtAtFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.google.protobuf.Timestamp bought_at = 5;</code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getBoughtAtOrBuilder() {
+        if (boughtAtBuilder_ != null) {
+          return boughtAtBuilder_.getMessageOrBuilder();
+        } else {
+          return boughtAt_ == null ?
+              com.google.protobuf.Timestamp.getDefaultInstance() : boughtAt_;
+        }
+      }
+      /**
+       * <code>.google.protobuf.Timestamp bought_at = 5;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+          getBoughtAtFieldBuilder() {
+        if (boughtAtBuilder_ == null) {
+          boughtAtBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                  getBoughtAt(),
+                  getParentForChildren(),
+                  isClean());
+          boughtAt_ = null;
+        }
+        return boughtAtBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:com.prodonik.genprotos.ProductsHistoryResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:com.prodonik.genprotos.ProductsHistoryResponse)
+    private static final com.prodonik.genprotos.Products.ProductsHistoryResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.prodonik.genprotos.Products.ProductsHistoryResponse();
+    }
+
+    public static com.prodonik.genprotos.Products.ProductsHistoryResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ProductsHistoryResponse>
+        PARSER = new com.google.protobuf.AbstractParser<ProductsHistoryResponse>() {
+      @java.lang.Override
+      public ProductsHistoryResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<ProductsHistoryResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ProductsHistoryResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.prodonik.genprotos.Products.ProductsHistoryResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface CreateProductsHistoryResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.prodonik.genprotos.CreateProductsHistoryResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string history_id = 1;</code>
+     * @return The historyId.
+     */
+    java.lang.String getHistoryId();
+    /**
+     * <code>string history_id = 1;</code>
+     * @return The bytes for historyId.
+     */
+    com.google.protobuf.ByteString
+        getHistoryIdBytes();
+
+    /**
+     * <code>string product_id = 2;</code>
+     * @return The productId.
+     */
+    java.lang.String getProductId();
+    /**
+     * <code>string product_id = 2;</code>
+     * @return The bytes for productId.
+     */
+    com.google.protobuf.ByteString
+        getProductIdBytes();
+
+    /**
+     * <code>int32 number_of_bought_products = 3;</code>
+     * @return The numberOfBoughtProducts.
+     */
+    int getNumberOfBoughtProducts();
+
+    /**
+     * <code>string client_id = 4;</code>
+     * @return The clientId.
+     */
+    java.lang.String getClientId();
+    /**
+     * <code>string client_id = 4;</code>
+     * @return The bytes for clientId.
+     */
+    com.google.protobuf.ByteString
+        getClientIdBytes();
+
+    /**
+     * <code>.google.protobuf.Timestamp bought_at = 5;</code>
+     * @return Whether the boughtAt field is set.
+     */
+    boolean hasBoughtAt();
+    /**
+     * <code>.google.protobuf.Timestamp bought_at = 5;</code>
+     * @return The boughtAt.
+     */
+    com.google.protobuf.Timestamp getBoughtAt();
+    /**
+     * <code>.google.protobuf.Timestamp bought_at = 5;</code>
+     */
+    com.google.protobuf.TimestampOrBuilder getBoughtAtOrBuilder();
+  }
+  /**
+   * Protobuf type {@code com.prodonik.genprotos.CreateProductsHistoryResponse}
+   */
+  public static final class CreateProductsHistoryResponse extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:com.prodonik.genprotos.CreateProductsHistoryResponse)
+      CreateProductsHistoryResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 27,
+        /* patch= */ 2,
+        /* suffix= */ "",
+        CreateProductsHistoryResponse.class.getName());
+    }
+    // Use CreateProductsHistoryResponse.newBuilder() to construct.
+    private CreateProductsHistoryResponse(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private CreateProductsHistoryResponse() {
+      historyId_ = "";
+      productId_ = "";
+      clientId_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.prodonik.genprotos.Products.internal_static_com_prodonik_genprotos_CreateProductsHistoryResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.prodonik.genprotos.Products.internal_static_com_prodonik_genprotos_CreateProductsHistoryResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.prodonik.genprotos.Products.CreateProductsHistoryResponse.class, com.prodonik.genprotos.Products.CreateProductsHistoryResponse.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int HISTORY_ID_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object historyId_ = "";
+    /**
+     * <code>string history_id = 1;</code>
+     * @return The historyId.
+     */
+    @java.lang.Override
+    public java.lang.String getHistoryId() {
+      java.lang.Object ref = historyId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        historyId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string history_id = 1;</code>
+     * @return The bytes for historyId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getHistoryIdBytes() {
+      java.lang.Object ref = historyId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        historyId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PRODUCT_ID_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object productId_ = "";
+    /**
+     * <code>string product_id = 2;</code>
+     * @return The productId.
+     */
+    @java.lang.Override
+    public java.lang.String getProductId() {
+      java.lang.Object ref = productId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        productId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string product_id = 2;</code>
+     * @return The bytes for productId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getProductIdBytes() {
+      java.lang.Object ref = productId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        productId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int NUMBER_OF_BOUGHT_PRODUCTS_FIELD_NUMBER = 3;
+    private int numberOfBoughtProducts_ = 0;
+    /**
+     * <code>int32 number_of_bought_products = 3;</code>
+     * @return The numberOfBoughtProducts.
+     */
+    @java.lang.Override
+    public int getNumberOfBoughtProducts() {
+      return numberOfBoughtProducts_;
+    }
+
+    public static final int CLIENT_ID_FIELD_NUMBER = 4;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object clientId_ = "";
+    /**
+     * <code>string client_id = 4;</code>
+     * @return The clientId.
+     */
+    @java.lang.Override
+    public java.lang.String getClientId() {
+      java.lang.Object ref = clientId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        clientId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string client_id = 4;</code>
+     * @return The bytes for clientId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getClientIdBytes() {
+      java.lang.Object ref = clientId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        clientId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int BOUGHT_AT_FIELD_NUMBER = 5;
+    private com.google.protobuf.Timestamp boughtAt_;
+    /**
+     * <code>.google.protobuf.Timestamp bought_at = 5;</code>
+     * @return Whether the boughtAt field is set.
+     */
+    @java.lang.Override
+    public boolean hasBoughtAt() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <code>.google.protobuf.Timestamp bought_at = 5;</code>
+     * @return The boughtAt.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getBoughtAt() {
+      return boughtAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : boughtAt_;
+    }
+    /**
+     * <code>.google.protobuf.Timestamp bought_at = 5;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getBoughtAtOrBuilder() {
+      return boughtAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : boughtAt_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(historyId_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, historyId_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(productId_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, productId_);
+      }
+      if (numberOfBoughtProducts_ != 0) {
+        output.writeInt32(3, numberOfBoughtProducts_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(clientId_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 4, clientId_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(5, getBoughtAt());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(historyId_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, historyId_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(productId_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, productId_);
+      }
+      if (numberOfBoughtProducts_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, numberOfBoughtProducts_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(clientId_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(4, clientId_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(5, getBoughtAt());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.prodonik.genprotos.Products.CreateProductsHistoryResponse)) {
+        return super.equals(obj);
+      }
+      com.prodonik.genprotos.Products.CreateProductsHistoryResponse other = (com.prodonik.genprotos.Products.CreateProductsHistoryResponse) obj;
+
+      if (!getHistoryId()
+          .equals(other.getHistoryId())) return false;
+      if (!getProductId()
+          .equals(other.getProductId())) return false;
+      if (getNumberOfBoughtProducts()
+          != other.getNumberOfBoughtProducts()) return false;
+      if (!getClientId()
+          .equals(other.getClientId())) return false;
+      if (hasBoughtAt() != other.hasBoughtAt()) return false;
+      if (hasBoughtAt()) {
+        if (!getBoughtAt()
+            .equals(other.getBoughtAt())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + HISTORY_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getHistoryId().hashCode();
+      hash = (37 * hash) + PRODUCT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getProductId().hashCode();
+      hash = (37 * hash) + NUMBER_OF_BOUGHT_PRODUCTS_FIELD_NUMBER;
+      hash = (53 * hash) + getNumberOfBoughtProducts();
+      hash = (37 * hash) + CLIENT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getClientId().hashCode();
+      if (hasBoughtAt()) {
+        hash = (37 * hash) + BOUGHT_AT_FIELD_NUMBER;
+        hash = (53 * hash) + getBoughtAt().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.prodonik.genprotos.Products.CreateProductsHistoryResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.prodonik.genprotos.Products.CreateProductsHistoryResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.prodonik.genprotos.Products.CreateProductsHistoryResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.prodonik.genprotos.Products.CreateProductsHistoryResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.prodonik.genprotos.Products.CreateProductsHistoryResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.prodonik.genprotos.Products.CreateProductsHistoryResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.prodonik.genprotos.Products.CreateProductsHistoryResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.prodonik.genprotos.Products.CreateProductsHistoryResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.prodonik.genprotos.Products.CreateProductsHistoryResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.prodonik.genprotos.Products.CreateProductsHistoryResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.prodonik.genprotos.Products.CreateProductsHistoryResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.prodonik.genprotos.Products.CreateProductsHistoryResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.prodonik.genprotos.Products.CreateProductsHistoryResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.prodonik.genprotos.CreateProductsHistoryResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.prodonik.genprotos.CreateProductsHistoryResponse)
+        com.prodonik.genprotos.Products.CreateProductsHistoryResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.prodonik.genprotos.Products.internal_static_com_prodonik_genprotos_CreateProductsHistoryResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.prodonik.genprotos.Products.internal_static_com_prodonik_genprotos_CreateProductsHistoryResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.prodonik.genprotos.Products.CreateProductsHistoryResponse.class, com.prodonik.genprotos.Products.CreateProductsHistoryResponse.Builder.class);
+      }
+
+      // Construct using com.prodonik.genprotos.Products.CreateProductsHistoryResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage
+                .alwaysUseFieldBuilders) {
+          getBoughtAtFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        historyId_ = "";
+        productId_ = "";
+        numberOfBoughtProducts_ = 0;
+        clientId_ = "";
+        boughtAt_ = null;
+        if (boughtAtBuilder_ != null) {
+          boughtAtBuilder_.dispose();
+          boughtAtBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.prodonik.genprotos.Products.internal_static_com_prodonik_genprotos_CreateProductsHistoryResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public com.prodonik.genprotos.Products.CreateProductsHistoryResponse getDefaultInstanceForType() {
+        return com.prodonik.genprotos.Products.CreateProductsHistoryResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.prodonik.genprotos.Products.CreateProductsHistoryResponse build() {
+        com.prodonik.genprotos.Products.CreateProductsHistoryResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.prodonik.genprotos.Products.CreateProductsHistoryResponse buildPartial() {
+        com.prodonik.genprotos.Products.CreateProductsHistoryResponse result = new com.prodonik.genprotos.Products.CreateProductsHistoryResponse(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.prodonik.genprotos.Products.CreateProductsHistoryResponse result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.historyId_ = historyId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.productId_ = productId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.numberOfBoughtProducts_ = numberOfBoughtProducts_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.clientId_ = clientId_;
+        }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.boughtAt_ = boughtAtBuilder_ == null
+              ? boughtAt_
+              : boughtAtBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.prodonik.genprotos.Products.CreateProductsHistoryResponse) {
+          return mergeFrom((com.prodonik.genprotos.Products.CreateProductsHistoryResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.prodonik.genprotos.Products.CreateProductsHistoryResponse other) {
+        if (other == com.prodonik.genprotos.Products.CreateProductsHistoryResponse.getDefaultInstance()) return this;
+        if (!other.getHistoryId().isEmpty()) {
+          historyId_ = other.historyId_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getProductId().isEmpty()) {
+          productId_ = other.productId_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        if (other.getNumberOfBoughtProducts() != 0) {
+          setNumberOfBoughtProducts(other.getNumberOfBoughtProducts());
+        }
+        if (!other.getClientId().isEmpty()) {
+          clientId_ = other.clientId_;
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
+        if (other.hasBoughtAt()) {
+          mergeBoughtAt(other.getBoughtAt());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                historyId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 18: {
+                productId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              case 24: {
+                numberOfBoughtProducts_ = input.readInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
+              case 34: {
+                clientId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
+              case 42: {
+                input.readMessage(
+                    getBoughtAtFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object historyId_ = "";
+      /**
+       * <code>string history_id = 1;</code>
+       * @return The historyId.
+       */
+      public java.lang.String getHistoryId() {
+        java.lang.Object ref = historyId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          historyId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string history_id = 1;</code>
+       * @return The bytes for historyId.
+       */
+      public com.google.protobuf.ByteString
+          getHistoryIdBytes() {
+        java.lang.Object ref = historyId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          historyId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string history_id = 1;</code>
+       * @param value The historyId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHistoryId(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        historyId_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string history_id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearHistoryId() {
+        historyId_ = getDefaultInstance().getHistoryId();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string history_id = 1;</code>
+       * @param value The bytes for historyId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHistoryIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        historyId_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object productId_ = "";
+      /**
+       * <code>string product_id = 2;</code>
+       * @return The productId.
+       */
+      public java.lang.String getProductId() {
+        java.lang.Object ref = productId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          productId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string product_id = 2;</code>
+       * @return The bytes for productId.
+       */
+      public com.google.protobuf.ByteString
+          getProductIdBytes() {
+        java.lang.Object ref = productId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          productId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string product_id = 2;</code>
+       * @param value The productId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProductId(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        productId_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string product_id = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearProductId() {
+        productId_ = getDefaultInstance().getProductId();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string product_id = 2;</code>
+       * @param value The bytes for productId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProductIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        productId_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private int numberOfBoughtProducts_ ;
+      /**
+       * <code>int32 number_of_bought_products = 3;</code>
+       * @return The numberOfBoughtProducts.
+       */
+      @java.lang.Override
+      public int getNumberOfBoughtProducts() {
+        return numberOfBoughtProducts_;
+      }
+      /**
+       * <code>int32 number_of_bought_products = 3;</code>
+       * @param value The numberOfBoughtProducts to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNumberOfBoughtProducts(int value) {
+
+        numberOfBoughtProducts_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 number_of_bought_products = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearNumberOfBoughtProducts() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        numberOfBoughtProducts_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object clientId_ = "";
+      /**
+       * <code>string client_id = 4;</code>
+       * @return The clientId.
+       */
+      public java.lang.String getClientId() {
+        java.lang.Object ref = clientId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          clientId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string client_id = 4;</code>
+       * @return The bytes for clientId.
+       */
+      public com.google.protobuf.ByteString
+          getClientIdBytes() {
+        java.lang.Object ref = clientId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          clientId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string client_id = 4;</code>
+       * @param value The clientId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setClientId(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        clientId_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string client_id = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearClientId() {
+        clientId_ = getDefaultInstance().getClientId();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string client_id = 4;</code>
+       * @param value The bytes for clientId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setClientIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        clientId_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.Timestamp boughtAt_;
+      private com.google.protobuf.SingleFieldBuilder<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> boughtAtBuilder_;
+      /**
+       * <code>.google.protobuf.Timestamp bought_at = 5;</code>
+       * @return Whether the boughtAt field is set.
+       */
+      public boolean hasBoughtAt() {
+        return ((bitField0_ & 0x00000010) != 0);
+      }
+      /**
+       * <code>.google.protobuf.Timestamp bought_at = 5;</code>
+       * @return The boughtAt.
+       */
+      public com.google.protobuf.Timestamp getBoughtAt() {
+        if (boughtAtBuilder_ == null) {
+          return boughtAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : boughtAt_;
+        } else {
+          return boughtAtBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.google.protobuf.Timestamp bought_at = 5;</code>
+       */
+      public Builder setBoughtAt(com.google.protobuf.Timestamp value) {
+        if (boughtAtBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          boughtAt_ = value;
+        } else {
+          boughtAtBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Timestamp bought_at = 5;</code>
+       */
+      public Builder setBoughtAt(
+          com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (boughtAtBuilder_ == null) {
+          boughtAt_ = builderForValue.build();
+        } else {
+          boughtAtBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Timestamp bought_at = 5;</code>
+       */
+      public Builder mergeBoughtAt(com.google.protobuf.Timestamp value) {
+        if (boughtAtBuilder_ == null) {
+          if (((bitField0_ & 0x00000010) != 0) &&
+            boughtAt_ != null &&
+            boughtAt_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getBoughtAtBuilder().mergeFrom(value);
+          } else {
+            boughtAt_ = value;
+          }
+        } else {
+          boughtAtBuilder_.mergeFrom(value);
+        }
+        if (boughtAt_ != null) {
+          bitField0_ |= 0x00000010;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Timestamp bought_at = 5;</code>
+       */
+      public Builder clearBoughtAt() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        boughtAt_ = null;
+        if (boughtAtBuilder_ != null) {
+          boughtAtBuilder_.dispose();
+          boughtAtBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Timestamp bought_at = 5;</code>
+       */
+      public com.google.protobuf.Timestamp.Builder getBoughtAtBuilder() {
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return getBoughtAtFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.google.protobuf.Timestamp bought_at = 5;</code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getBoughtAtOrBuilder() {
+        if (boughtAtBuilder_ != null) {
+          return boughtAtBuilder_.getMessageOrBuilder();
+        } else {
+          return boughtAt_ == null ?
+              com.google.protobuf.Timestamp.getDefaultInstance() : boughtAt_;
+        }
+      }
+      /**
+       * <code>.google.protobuf.Timestamp bought_at = 5;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+          getBoughtAtFieldBuilder() {
+        if (boughtAtBuilder_ == null) {
+          boughtAtBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                  getBoughtAt(),
+                  getParentForChildren(),
+                  isClean());
+          boughtAt_ = null;
+        }
+        return boughtAtBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:com.prodonik.genprotos.CreateProductsHistoryResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:com.prodonik.genprotos.CreateProductsHistoryResponse)
+    private static final com.prodonik.genprotos.Products.CreateProductsHistoryResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.prodonik.genprotos.Products.CreateProductsHistoryResponse();
+    }
+
+    public static com.prodonik.genprotos.Products.CreateProductsHistoryResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<CreateProductsHistoryResponse>
+        PARSER = new com.google.protobuf.AbstractParser<CreateProductsHistoryResponse>() {
+      @java.lang.Override
+      public CreateProductsHistoryResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<CreateProductsHistoryResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<CreateProductsHistoryResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.prodonik.genprotos.Products.CreateProductsHistoryResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface GetProductsHistoryResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.prodonik.genprotos.GetProductsHistoryResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated .com.prodonik.genprotos.CreateProductsHistoryResponse products = 1;</code>
+     */
+    java.util.List<com.prodonik.genprotos.Products.CreateProductsHistoryResponse> 
+        getProductsList();
+    /**
+     * <code>repeated .com.prodonik.genprotos.CreateProductsHistoryResponse products = 1;</code>
+     */
+    com.prodonik.genprotos.Products.CreateProductsHistoryResponse getProducts(int index);
+    /**
+     * <code>repeated .com.prodonik.genprotos.CreateProductsHistoryResponse products = 1;</code>
+     */
+    int getProductsCount();
+    /**
+     * <code>repeated .com.prodonik.genprotos.CreateProductsHistoryResponse products = 1;</code>
+     */
+    java.util.List<? extends com.prodonik.genprotos.Products.CreateProductsHistoryResponseOrBuilder> 
+        getProductsOrBuilderList();
+    /**
+     * <code>repeated .com.prodonik.genprotos.CreateProductsHistoryResponse products = 1;</code>
+     */
+    com.prodonik.genprotos.Products.CreateProductsHistoryResponseOrBuilder getProductsOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code com.prodonik.genprotos.GetProductsHistoryResponse}
+   */
+  public static final class GetProductsHistoryResponse extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:com.prodonik.genprotos.GetProductsHistoryResponse)
+      GetProductsHistoryResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 27,
+        /* patch= */ 2,
+        /* suffix= */ "",
+        GetProductsHistoryResponse.class.getName());
+    }
+    // Use GetProductsHistoryResponse.newBuilder() to construct.
+    private GetProductsHistoryResponse(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private GetProductsHistoryResponse() {
+      products_ = java.util.Collections.emptyList();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.prodonik.genprotos.Products.internal_static_com_prodonik_genprotos_GetProductsHistoryResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.prodonik.genprotos.Products.internal_static_com_prodonik_genprotos_GetProductsHistoryResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.prodonik.genprotos.Products.GetProductsHistoryResponse.class, com.prodonik.genprotos.Products.GetProductsHistoryResponse.Builder.class);
+    }
+
+    public static final int PRODUCTS_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private java.util.List<com.prodonik.genprotos.Products.CreateProductsHistoryResponse> products_;
+    /**
+     * <code>repeated .com.prodonik.genprotos.CreateProductsHistoryResponse products = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.prodonik.genprotos.Products.CreateProductsHistoryResponse> getProductsList() {
+      return products_;
+    }
+    /**
+     * <code>repeated .com.prodonik.genprotos.CreateProductsHistoryResponse products = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.prodonik.genprotos.Products.CreateProductsHistoryResponseOrBuilder> 
+        getProductsOrBuilderList() {
+      return products_;
+    }
+    /**
+     * <code>repeated .com.prodonik.genprotos.CreateProductsHistoryResponse products = 1;</code>
+     */
+    @java.lang.Override
+    public int getProductsCount() {
+      return products_.size();
+    }
+    /**
+     * <code>repeated .com.prodonik.genprotos.CreateProductsHistoryResponse products = 1;</code>
+     */
+    @java.lang.Override
+    public com.prodonik.genprotos.Products.CreateProductsHistoryResponse getProducts(int index) {
+      return products_.get(index);
+    }
+    /**
+     * <code>repeated .com.prodonik.genprotos.CreateProductsHistoryResponse products = 1;</code>
+     */
+    @java.lang.Override
+    public com.prodonik.genprotos.Products.CreateProductsHistoryResponseOrBuilder getProductsOrBuilder(
+        int index) {
+      return products_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < products_.size(); i++) {
+        output.writeMessage(1, products_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < products_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, products_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.prodonik.genprotos.Products.GetProductsHistoryResponse)) {
+        return super.equals(obj);
+      }
+      com.prodonik.genprotos.Products.GetProductsHistoryResponse other = (com.prodonik.genprotos.Products.GetProductsHistoryResponse) obj;
+
+      if (!getProductsList()
+          .equals(other.getProductsList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getProductsCount() > 0) {
+        hash = (37 * hash) + PRODUCTS_FIELD_NUMBER;
+        hash = (53 * hash) + getProductsList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.prodonik.genprotos.Products.GetProductsHistoryResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.prodonik.genprotos.Products.GetProductsHistoryResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.prodonik.genprotos.Products.GetProductsHistoryResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.prodonik.genprotos.Products.GetProductsHistoryResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.prodonik.genprotos.Products.GetProductsHistoryResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.prodonik.genprotos.Products.GetProductsHistoryResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.prodonik.genprotos.Products.GetProductsHistoryResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.prodonik.genprotos.Products.GetProductsHistoryResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.prodonik.genprotos.Products.GetProductsHistoryResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.prodonik.genprotos.Products.GetProductsHistoryResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.prodonik.genprotos.Products.GetProductsHistoryResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.prodonik.genprotos.Products.GetProductsHistoryResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.prodonik.genprotos.Products.GetProductsHistoryResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.prodonik.genprotos.GetProductsHistoryResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.prodonik.genprotos.GetProductsHistoryResponse)
+        com.prodonik.genprotos.Products.GetProductsHistoryResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.prodonik.genprotos.Products.internal_static_com_prodonik_genprotos_GetProductsHistoryResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.prodonik.genprotos.Products.internal_static_com_prodonik_genprotos_GetProductsHistoryResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.prodonik.genprotos.Products.GetProductsHistoryResponse.class, com.prodonik.genprotos.Products.GetProductsHistoryResponse.Builder.class);
+      }
+
+      // Construct using com.prodonik.genprotos.Products.GetProductsHistoryResponse.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        if (productsBuilder_ == null) {
+          products_ = java.util.Collections.emptyList();
+        } else {
+          products_ = null;
+          productsBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.prodonik.genprotos.Products.internal_static_com_prodonik_genprotos_GetProductsHistoryResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public com.prodonik.genprotos.Products.GetProductsHistoryResponse getDefaultInstanceForType() {
+        return com.prodonik.genprotos.Products.GetProductsHistoryResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.prodonik.genprotos.Products.GetProductsHistoryResponse build() {
+        com.prodonik.genprotos.Products.GetProductsHistoryResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.prodonik.genprotos.Products.GetProductsHistoryResponse buildPartial() {
+        com.prodonik.genprotos.Products.GetProductsHistoryResponse result = new com.prodonik.genprotos.Products.GetProductsHistoryResponse(this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(com.prodonik.genprotos.Products.GetProductsHistoryResponse result) {
+        if (productsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            products_ = java.util.Collections.unmodifiableList(products_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.products_ = products_;
+        } else {
+          result.products_ = productsBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(com.prodonik.genprotos.Products.GetProductsHistoryResponse result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.prodonik.genprotos.Products.GetProductsHistoryResponse) {
+          return mergeFrom((com.prodonik.genprotos.Products.GetProductsHistoryResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.prodonik.genprotos.Products.GetProductsHistoryResponse other) {
+        if (other == com.prodonik.genprotos.Products.GetProductsHistoryResponse.getDefaultInstance()) return this;
+        if (productsBuilder_ == null) {
+          if (!other.products_.isEmpty()) {
+            if (products_.isEmpty()) {
+              products_ = other.products_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureProductsIsMutable();
+              products_.addAll(other.products_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.products_.isEmpty()) {
+            if (productsBuilder_.isEmpty()) {
+              productsBuilder_.dispose();
+              productsBuilder_ = null;
+              products_ = other.products_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              productsBuilder_ = 
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                   getProductsFieldBuilder() : null;
+            } else {
+              productsBuilder_.addAllMessages(other.products_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                com.prodonik.genprotos.Products.CreateProductsHistoryResponse m =
+                    input.readMessage(
+                        com.prodonik.genprotos.Products.CreateProductsHistoryResponse.parser(),
+                        extensionRegistry);
+                if (productsBuilder_ == null) {
+                  ensureProductsIsMutable();
+                  products_.add(m);
+                } else {
+                  productsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<com.prodonik.genprotos.Products.CreateProductsHistoryResponse> products_ =
+        java.util.Collections.emptyList();
+      private void ensureProductsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          products_ = new java.util.ArrayList<com.prodonik.genprotos.Products.CreateProductsHistoryResponse>(products_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.prodonik.genprotos.Products.CreateProductsHistoryResponse, com.prodonik.genprotos.Products.CreateProductsHistoryResponse.Builder, com.prodonik.genprotos.Products.CreateProductsHistoryResponseOrBuilder> productsBuilder_;
+
+      /**
+       * <code>repeated .com.prodonik.genprotos.CreateProductsHistoryResponse products = 1;</code>
+       */
+      public java.util.List<com.prodonik.genprotos.Products.CreateProductsHistoryResponse> getProductsList() {
+        if (productsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(products_);
+        } else {
+          return productsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .com.prodonik.genprotos.CreateProductsHistoryResponse products = 1;</code>
+       */
+      public int getProductsCount() {
+        if (productsBuilder_ == null) {
+          return products_.size();
+        } else {
+          return productsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .com.prodonik.genprotos.CreateProductsHistoryResponse products = 1;</code>
+       */
+      public com.prodonik.genprotos.Products.CreateProductsHistoryResponse getProducts(int index) {
+        if (productsBuilder_ == null) {
+          return products_.get(index);
+        } else {
+          return productsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .com.prodonik.genprotos.CreateProductsHistoryResponse products = 1;</code>
+       */
+      public Builder setProducts(
+          int index, com.prodonik.genprotos.Products.CreateProductsHistoryResponse value) {
+        if (productsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureProductsIsMutable();
+          products_.set(index, value);
+          onChanged();
+        } else {
+          productsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.prodonik.genprotos.CreateProductsHistoryResponse products = 1;</code>
+       */
+      public Builder setProducts(
+          int index, com.prodonik.genprotos.Products.CreateProductsHistoryResponse.Builder builderForValue) {
+        if (productsBuilder_ == null) {
+          ensureProductsIsMutable();
+          products_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          productsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.prodonik.genprotos.CreateProductsHistoryResponse products = 1;</code>
+       */
+      public Builder addProducts(com.prodonik.genprotos.Products.CreateProductsHistoryResponse value) {
+        if (productsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureProductsIsMutable();
+          products_.add(value);
+          onChanged();
+        } else {
+          productsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.prodonik.genprotos.CreateProductsHistoryResponse products = 1;</code>
+       */
+      public Builder addProducts(
+          int index, com.prodonik.genprotos.Products.CreateProductsHistoryResponse value) {
+        if (productsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureProductsIsMutable();
+          products_.add(index, value);
+          onChanged();
+        } else {
+          productsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.prodonik.genprotos.CreateProductsHistoryResponse products = 1;</code>
+       */
+      public Builder addProducts(
+          com.prodonik.genprotos.Products.CreateProductsHistoryResponse.Builder builderForValue) {
+        if (productsBuilder_ == null) {
+          ensureProductsIsMutable();
+          products_.add(builderForValue.build());
+          onChanged();
+        } else {
+          productsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.prodonik.genprotos.CreateProductsHistoryResponse products = 1;</code>
+       */
+      public Builder addProducts(
+          int index, com.prodonik.genprotos.Products.CreateProductsHistoryResponse.Builder builderForValue) {
+        if (productsBuilder_ == null) {
+          ensureProductsIsMutable();
+          products_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          productsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.prodonik.genprotos.CreateProductsHistoryResponse products = 1;</code>
+       */
+      public Builder addAllProducts(
+          java.lang.Iterable<? extends com.prodonik.genprotos.Products.CreateProductsHistoryResponse> values) {
+        if (productsBuilder_ == null) {
+          ensureProductsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, products_);
+          onChanged();
+        } else {
+          productsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.prodonik.genprotos.CreateProductsHistoryResponse products = 1;</code>
+       */
+      public Builder clearProducts() {
+        if (productsBuilder_ == null) {
+          products_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          productsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.prodonik.genprotos.CreateProductsHistoryResponse products = 1;</code>
+       */
+      public Builder removeProducts(int index) {
+        if (productsBuilder_ == null) {
+          ensureProductsIsMutable();
+          products_.remove(index);
+          onChanged();
+        } else {
+          productsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.prodonik.genprotos.CreateProductsHistoryResponse products = 1;</code>
+       */
+      public com.prodonik.genprotos.Products.CreateProductsHistoryResponse.Builder getProductsBuilder(
+          int index) {
+        return getProductsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .com.prodonik.genprotos.CreateProductsHistoryResponse products = 1;</code>
+       */
+      public com.prodonik.genprotos.Products.CreateProductsHistoryResponseOrBuilder getProductsOrBuilder(
+          int index) {
+        if (productsBuilder_ == null) {
+          return products_.get(index);  } else {
+          return productsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .com.prodonik.genprotos.CreateProductsHistoryResponse products = 1;</code>
+       */
+      public java.util.List<? extends com.prodonik.genprotos.Products.CreateProductsHistoryResponseOrBuilder> 
+           getProductsOrBuilderList() {
+        if (productsBuilder_ != null) {
+          return productsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(products_);
+        }
+      }
+      /**
+       * <code>repeated .com.prodonik.genprotos.CreateProductsHistoryResponse products = 1;</code>
+       */
+      public com.prodonik.genprotos.Products.CreateProductsHistoryResponse.Builder addProductsBuilder() {
+        return getProductsFieldBuilder().addBuilder(
+            com.prodonik.genprotos.Products.CreateProductsHistoryResponse.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .com.prodonik.genprotos.CreateProductsHistoryResponse products = 1;</code>
+       */
+      public com.prodonik.genprotos.Products.CreateProductsHistoryResponse.Builder addProductsBuilder(
+          int index) {
+        return getProductsFieldBuilder().addBuilder(
+            index, com.prodonik.genprotos.Products.CreateProductsHistoryResponse.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .com.prodonik.genprotos.CreateProductsHistoryResponse products = 1;</code>
+       */
+      public java.util.List<com.prodonik.genprotos.Products.CreateProductsHistoryResponse.Builder> 
+           getProductsBuilderList() {
+        return getProductsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.prodonik.genprotos.Products.CreateProductsHistoryResponse, com.prodonik.genprotos.Products.CreateProductsHistoryResponse.Builder, com.prodonik.genprotos.Products.CreateProductsHistoryResponseOrBuilder> 
+          getProductsFieldBuilder() {
+        if (productsBuilder_ == null) {
+          productsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+              com.prodonik.genprotos.Products.CreateProductsHistoryResponse, com.prodonik.genprotos.Products.CreateProductsHistoryResponse.Builder, com.prodonik.genprotos.Products.CreateProductsHistoryResponseOrBuilder>(
+                  products_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          products_ = null;
+        }
+        return productsBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:com.prodonik.genprotos.GetProductsHistoryResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:com.prodonik.genprotos.GetProductsHistoryResponse)
+    private static final com.prodonik.genprotos.Products.GetProductsHistoryResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.prodonik.genprotos.Products.GetProductsHistoryResponse();
+    }
+
+    public static com.prodonik.genprotos.Products.GetProductsHistoryResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GetProductsHistoryResponse>
+        PARSER = new com.google.protobuf.AbstractParser<GetProductsHistoryResponse>() {
+      @java.lang.Override
+      public GetProductsHistoryResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<GetProductsHistoryResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GetProductsHistoryResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.prodonik.genprotos.Products.GetProductsHistoryResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_prodonik_genprotos_Product_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_com_prodonik_genprotos_Product_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_prodonik_genprotos_Category_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_com_prodonik_genprotos_Category_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_prodonik_genprotos_ProductId_descriptor;
   private static final 
@@ -8146,6 +14833,31 @@ public final class Products {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_com_prodonik_genprotos_GetAllProductsResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_prodonik_genprotos_GetByRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_prodonik_genprotos_GetByRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_prodonik_genprotos_GetByResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_prodonik_genprotos_GetByResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_prodonik_genprotos_RemoveProductsRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_prodonik_genprotos_RemoveProductsRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_prodonik_genprotos_RemoveProductsResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_prodonik_genprotos_RemoveProductsResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_prodonik_genprotos_Category_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_prodonik_genprotos_Category_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_prodonik_genprotos_CategoryId_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -8170,6 +14882,31 @@ public final class Products {
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_com_prodonik_genprotos_GetAllCategoriesResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_prodonik_genprotos_GetProductsHistoryRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_prodonik_genprotos_GetProductsHistoryRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_prodonik_genprotos_CreateProductsHistoryRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_prodonik_genprotos_CreateProductsHistoryRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_prodonik_genprotos_ProductsHistoryResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_prodonik_genprotos_ProductsHistoryResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_prodonik_genprotos_CreateProductsHistoryResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_prodonik_genprotos_CreateProductsHistoryResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_prodonik_genprotos_GetProductsHistoryResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_prodonik_genprotos_GetProductsHistoryResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -8181,137 +14918,231 @@ public final class Products {
     java.lang.String[] descriptorData = {
       "\n\016products.proto\022\026com.prodonik.genprotos" +
       "\032\036google/protobuf/wrappers.proto\032\033google" +
-      "/protobuf/empty.proto\"\222\001\n\007Product\022\n\n\002id\030" +
-      "\001 \001(\t\022\014\n\004name\030\002 \001(\t\0221\n\013description\030\003 \001(\013" +
-      "2\034.google.protobuf.StringValue\022\r\n\005price\030" +
-      "\004 \001(\001\022\026\n\016stock_quantity\030\005 \001(\005\022\023\n\013categor" +
-      "y_id\030\006 \001(\t\"\212\001\n\010Category\022\n\n\002id\030\001 \001(\t\022\014\n\004n" +
-      "ame\030\002 \001(\t\0221\n\013description\030\003 \001(\0132\034.google." +
-      "protobuf.StringValue\0221\n\010products\030\004 \003(\0132\037" +
-      ".com.prodonik.genprotos.Product\"\027\n\tProdu" +
-      "ctId\022\n\n\002id\030\001 \001(\t\"\033\n\013ProductName\022\014\n\004name\030" +
-      "\001 \001(\t\"B\n\016ProductRequest\0220\n\007product\030\001 \001(\013" +
-      "2\037.com.prodonik.genprotos.Product\"\"\n\024Del" +
-      "eteProductRequest\022\n\n\002id\030\001 \001(\t\"K\n\026GetAllP" +
-      "roductsResponse\0221\n\010products\030\001 \003(\0132\037.com." +
-      "prodonik.genprotos.Product\"\030\n\nCategoryId" +
-      "\022\n\n\002id\030\001 \001(\t\"\034\n\014CategoryName\022\014\n\004name\030\001 \001" +
-      "(\t\"E\n\017CategoryRequest\0222\n\010category\030\001 \001(\0132" +
-      " .com.prodonik.genprotos.Category\"#\n\025Del" +
-      "eteCategoryRequest\022\n\n\002id\030\001 \001(\t\"P\n\030GetAll" +
-      "CategoriesResponse\0224\n\ncategories\030\001 \003(\0132 " +
-      ".com.prodonik.genprotos.Category2\245\004\n\016Pro" +
-      "ductService\022X\n\rCreateProduct\022&.com.prodo" +
-      "nik.genprotos.ProductRequest\032\037.com.prodo" +
-      "nik.genprotos.Product\022X\n\rUpdateProduct\022&" +
-      ".com.prodonik.genprotos.ProductRequest\032\037" +
-      ".com.prodonik.genprotos.Product\022T\n\016GetPr" +
-      "oductById\022!.com.prodonik.genprotos.Produ" +
-      "ctId\032\037.com.prodonik.genprotos.Product\022X\n" +
-      "\020GetProductByName\022#.com.prodonik.genprot" +
-      "os.ProductName\032\037.com.prodonik.genprotos." +
-      "Product\022X\n\016GetAllProducts\022\026.google.proto" +
-      "buf.Empty\032..com.prodonik.genprotos.GetAl" +
-      "lProductsResponse\022U\n\rDeleteProduct\022,.com" +
-      ".prodonik.genprotos.DeleteProductRequest" +
-      "\032\026.google.protobuf.Empty2\270\004\n\017CategorySer" +
-      "vice\022[\n\016CreateCategory\022\'.com.prodonik.ge" +
-      "nprotos.CategoryRequest\032 .com.prodonik.g" +
-      "enprotos.Category\022[\n\016UpdateCategory\022\'.co" +
-      "m.prodonik.genprotos.CategoryRequest\032 .c" +
-      "om.prodonik.genprotos.Category\022W\n\017GetCat" +
-      "egoryById\022\".com.prodonik.genprotos.Categ" +
-      "oryId\032 .com.prodonik.genprotos.Category\022" +
-      "[\n\021GetCategoryByName\022$.com.prodonik.genp" +
-      "rotos.CategoryName\032 .com.prodonik.genpro" +
-      "tos.Category\022\\\n\020GetAllCategories\022\026.googl" +
-      "e.protobuf.Empty\0320.com.prodonik.genproto" +
-      "s.GetAllCategoriesResponse\022W\n\016DeleteCate" +
-      "gory\022-.com.prodonik.genprotos.DeleteCate" +
-      "goryRequest\032\026.google.protobuf.Emptyb\006pro" +
-      "to3"
+      "/protobuf/empty.proto\032\037google/protobuf/t" +
+      "imestamp.proto\"\245\001\n\007Product\022\n\n\002id\030\001 \001(\t\022\014" +
+      "\n\004name\030\002 \001(\t\0221\n\013description\030\003 \001(\0132\034.goog" +
+      "le.protobuf.StringValue\022\r\n\005price\030\004 \001(\001\022\026" +
+      "\n\016stock_quantity\030\005 \001(\005\022\023\n\013category_id\030\006 " +
+      "\001(\t\022\021\n\tseller_id\030\007 \001(\t\"\027\n\tProductId\022\n\n\002i" +
+      "d\030\001 \001(\t\"\033\n\013ProductName\022\014\n\004name\030\001 \001(\t\"B\n\016" +
+      "ProductRequest\0220\n\007product\030\001 \001(\0132\037.com.pr" +
+      "odonik.genprotos.Product\"\"\n\024DeleteProduc" +
+      "tRequest\022\n\n\002id\030\001 \001(\t\"K\n\026GetAllProductsRe" +
+      "sponse\0221\n\010products\030\001 \003(\0132\037.com.prodonik." +
+      "genprotos.Product\"\036\n\014GetByRequest\022\016\n\006reu" +
+      "ier\030\001 \001(\t\"B\n\rGetByResponse\0221\n\010products\030\001" +
+      " \003(\0132\037.com.prodonik.genprotos.Product\"Z\n" +
+      "\025RemoveProductsRequest\022\022\n\nproduct_id\030\001 \001" +
+      "(\t\022\032\n\022number_of_products\030\002 \001(\005\022\021\n\tclient" +
+      "_id\030\003 \001(\t\"@\n\026RemoveProductsResponse\022\017\n\007m" +
+      "essage\030\001 \001(\t\022\025\n\rerror_occured\030\002 \001(\010\"`\n\010C" +
+      "ategory\022\023\n\013category_id\030\001 \001(\t\022\014\n\004name\030\002 \001" +
+      "(\t\0221\n\013description\030\003 \001(\0132\034.google.protobu" +
+      "f.StringValue\"\030\n\nCategoryId\022\n\n\002id\030\001 \001(\t\"" +
+      "\034\n\014CategoryName\022\014\n\004name\030\001 \001(\t\"E\n\017Categor" +
+      "yRequest\0222\n\010category\030\001 \001(\0132 .com.prodoni" +
+      "k.genprotos.Category\"#\n\025DeleteCategoryRe" +
+      "quest\022\n\n\002id\030\001 \001(\t\"P\n\030GetAllCategoriesRes" +
+      "ponse\0224\n\ncategories\030\001 \003(\0132 .com.prodonik" +
+      ".genprotos.Category\".\n\031GetProductsHistor" +
+      "yRequest\022\021\n\tclient_id\030\001 \001(\t\"\227\001\n\034CreatePr" +
+      "oductsHistoryRequest\022\022\n\nproduct_id\030\001 \001(\t" +
+      "\022!\n\031number_of_bought_products\030\002 \001(\005\022\021\n\tc" +
+      "lient_id\030\003 \001(\t\022-\n\tbought_at\030\004 \001(\0132\032.goog" +
+      "le.protobuf.Timestamp\"\246\001\n\027ProductsHistor" +
+      "yResponse\022\022\n\nhistory_id\030\001 \001(\t\022\022\n\nproduct" +
+      "_id\030\002 \001(\t\022!\n\031number_of_bought_products\030\003" +
+      " \001(\005\022\021\n\tclient_id\030\004 \001(\t\022-\n\tbought_at\030\005 \001" +
+      "(\0132\032.google.protobuf.Timestamp\"\254\001\n\035Creat" +
+      "eProductsHistoryResponse\022\022\n\nhistory_id\030\001" +
+      " \001(\t\022\022\n\nproduct_id\030\002 \001(\t\022!\n\031number_of_bo" +
+      "ught_products\030\003 \001(\005\022\021\n\tclient_id\030\004 \001(\t\022-" +
+      "\n\tbought_at\030\005 \001(\0132\032.google.protobuf.Time" +
+      "stamp\"e\n\032GetProductsHistoryResponse\022G\n\010p" +
+      "roducts\030\001 \003(\01325.com.prodonik.genprotos.C" +
+      "reateProductsHistoryResponse2\367\005\n\016Product" +
+      "Service\022X\n\rCreateProduct\022&.com.prodonik." +
+      "genprotos.ProductRequest\032\037.com.prodonik." +
+      "genprotos.Product\022X\n\rUpdateProduct\022&.com" +
+      ".prodonik.genprotos.ProductRequest\032\037.com" +
+      ".prodonik.genprotos.Product\022T\n\016GetProduc" +
+      "tById\022!.com.prodonik.genprotos.ProductId" +
+      "\032\037.com.prodonik.genprotos.Product\022X\n\020Get" +
+      "ProductByName\022#.com.prodonik.genprotos.P" +
+      "roductName\032\037.com.prodonik.genprotos.Prod" +
+      "uct\022X\n\016GetAllProducts\022\026.google.protobuf." +
+      "Empty\032..com.prodonik.genprotos.GetAllPro" +
+      "ductsResponse\022U\n\rDeleteProduct\022,.com.pro" +
+      "donik.genprotos.DeleteProductRequest\032\026.g" +
+      "oogle.protobuf.Empty\022h\n\031GetProductsByCat" +
+      "egoryName\022$.com.prodonik.genprotos.GetBy" +
+      "Request\032%.com.prodonik.genprotos.GetByRe" +
+      "sponse\022f\n\027GetProductsByCategoryId\022$.com." +
+      "prodonik.genprotos.GetByRequest\032%.com.pr" +
+      "odonik.genprotos.GetByResponse2\202\001\n\017Purch" +
+      "aseService\022o\n\016RemoveProducts\022-.com.prodo" +
+      "nik.genprotos.RemoveProductsRequest\032..co" +
+      "m.prodonik.genprotos.RemoveProductsRespo" +
+      "nse2\270\004\n\017CategoryService\022[\n\016CreateCategor" +
+      "y\022\'.com.prodonik.genprotos.CategoryReque" +
+      "st\032 .com.prodonik.genprotos.Category\022[\n\016" +
+      "UpdateCategory\022\'.com.prodonik.genprotos." +
+      "CategoryRequest\032 .com.prodonik.genprotos" +
+      ".Category\022W\n\017GetCategoryById\022\".com.prodo" +
+      "nik.genprotos.CategoryId\032 .com.prodonik." +
+      "genprotos.Category\022[\n\021GetCategoryByName\022" +
+      "$.com.prodonik.genprotos.CategoryName\032 ." +
+      "com.prodonik.genprotos.Category\022\\\n\020GetAl" +
+      "lCategories\022\026.google.protobuf.Empty\0320.co" +
+      "m.prodonik.genprotos.GetAllCategoriesRes" +
+      "ponse\022W\n\016DeleteCategory\022-.com.prodonik.g" +
+      "enprotos.DeleteCategoryRequest\032\026.google." +
+      "protobuf.Empty2\213\002\n\016HistoryService\022{\n\022Get" +
+      "ProductsHistory\0221.com.prodonik.genprotos" +
+      ".GetProductsHistoryRequest\0322.com.prodoni" +
+      "k.genprotos.GetProductsHistoryResponse\022|" +
+      "\n\rCreateHistory\0224.com.prodonik.genprotos" +
+      ".CreateProductsHistoryRequest\0325.com.prod" +
+      "onik.genprotos.CreateProductsHistoryResp" +
+      "onseb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.protobuf.WrappersProto.getDescriptor(),
           com.google.protobuf.EmptyProto.getDescriptor(),
+          com.google.protobuf.TimestampProto.getDescriptor(),
         });
     internal_static_com_prodonik_genprotos_Product_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_com_prodonik_genprotos_Product_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_prodonik_genprotos_Product_descriptor,
-        new java.lang.String[] { "Id", "Name", "Description", "Price", "StockQuantity", "CategoryId", });
-    internal_static_com_prodonik_genprotos_Category_descriptor =
-      getDescriptor().getMessageTypes().get(1);
-    internal_static_com_prodonik_genprotos_Category_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_com_prodonik_genprotos_Category_descriptor,
-        new java.lang.String[] { "Id", "Name", "Description", "Products", });
+        new java.lang.String[] { "Id", "Name", "Description", "Price", "StockQuantity", "CategoryId", "SellerId", });
     internal_static_com_prodonik_genprotos_ProductId_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(1);
     internal_static_com_prodonik_genprotos_ProductId_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_prodonik_genprotos_ProductId_descriptor,
         new java.lang.String[] { "Id", });
     internal_static_com_prodonik_genprotos_ProductName_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(2);
     internal_static_com_prodonik_genprotos_ProductName_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_prodonik_genprotos_ProductName_descriptor,
         new java.lang.String[] { "Name", });
     internal_static_com_prodonik_genprotos_ProductRequest_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_com_prodonik_genprotos_ProductRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_prodonik_genprotos_ProductRequest_descriptor,
         new java.lang.String[] { "Product", });
     internal_static_com_prodonik_genprotos_DeleteProductRequest_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_com_prodonik_genprotos_DeleteProductRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_prodonik_genprotos_DeleteProductRequest_descriptor,
         new java.lang.String[] { "Id", });
     internal_static_com_prodonik_genprotos_GetAllProductsResponse_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_com_prodonik_genprotos_GetAllProductsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_prodonik_genprotos_GetAllProductsResponse_descriptor,
         new java.lang.String[] { "Products", });
-    internal_static_com_prodonik_genprotos_CategoryId_descriptor =
+    internal_static_com_prodonik_genprotos_GetByRequest_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_com_prodonik_genprotos_GetByRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_prodonik_genprotos_GetByRequest_descriptor,
+        new java.lang.String[] { "Reuier", });
+    internal_static_com_prodonik_genprotos_GetByResponse_descriptor =
       getDescriptor().getMessageTypes().get(7);
+    internal_static_com_prodonik_genprotos_GetByResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_prodonik_genprotos_GetByResponse_descriptor,
+        new java.lang.String[] { "Products", });
+    internal_static_com_prodonik_genprotos_RemoveProductsRequest_descriptor =
+      getDescriptor().getMessageTypes().get(8);
+    internal_static_com_prodonik_genprotos_RemoveProductsRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_prodonik_genprotos_RemoveProductsRequest_descriptor,
+        new java.lang.String[] { "ProductId", "NumberOfProducts", "ClientId", });
+    internal_static_com_prodonik_genprotos_RemoveProductsResponse_descriptor =
+      getDescriptor().getMessageTypes().get(9);
+    internal_static_com_prodonik_genprotos_RemoveProductsResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_prodonik_genprotos_RemoveProductsResponse_descriptor,
+        new java.lang.String[] { "Message", "ErrorOccured", });
+    internal_static_com_prodonik_genprotos_Category_descriptor =
+      getDescriptor().getMessageTypes().get(10);
+    internal_static_com_prodonik_genprotos_Category_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_prodonik_genprotos_Category_descriptor,
+        new java.lang.String[] { "CategoryId", "Name", "Description", });
+    internal_static_com_prodonik_genprotos_CategoryId_descriptor =
+      getDescriptor().getMessageTypes().get(11);
     internal_static_com_prodonik_genprotos_CategoryId_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_prodonik_genprotos_CategoryId_descriptor,
         new java.lang.String[] { "Id", });
     internal_static_com_prodonik_genprotos_CategoryName_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_com_prodonik_genprotos_CategoryName_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_prodonik_genprotos_CategoryName_descriptor,
         new java.lang.String[] { "Name", });
     internal_static_com_prodonik_genprotos_CategoryRequest_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_com_prodonik_genprotos_CategoryRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_prodonik_genprotos_CategoryRequest_descriptor,
         new java.lang.String[] { "Category", });
     internal_static_com_prodonik_genprotos_DeleteCategoryRequest_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_com_prodonik_genprotos_DeleteCategoryRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_prodonik_genprotos_DeleteCategoryRequest_descriptor,
         new java.lang.String[] { "Id", });
     internal_static_com_prodonik_genprotos_GetAllCategoriesResponse_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_com_prodonik_genprotos_GetAllCategoriesResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_prodonik_genprotos_GetAllCategoriesResponse_descriptor,
         new java.lang.String[] { "Categories", });
+    internal_static_com_prodonik_genprotos_GetProductsHistoryRequest_descriptor =
+      getDescriptor().getMessageTypes().get(16);
+    internal_static_com_prodonik_genprotos_GetProductsHistoryRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_prodonik_genprotos_GetProductsHistoryRequest_descriptor,
+        new java.lang.String[] { "ClientId", });
+    internal_static_com_prodonik_genprotos_CreateProductsHistoryRequest_descriptor =
+      getDescriptor().getMessageTypes().get(17);
+    internal_static_com_prodonik_genprotos_CreateProductsHistoryRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_prodonik_genprotos_CreateProductsHistoryRequest_descriptor,
+        new java.lang.String[] { "ProductId", "NumberOfBoughtProducts", "ClientId", "BoughtAt", });
+    internal_static_com_prodonik_genprotos_ProductsHistoryResponse_descriptor =
+      getDescriptor().getMessageTypes().get(18);
+    internal_static_com_prodonik_genprotos_ProductsHistoryResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_prodonik_genprotos_ProductsHistoryResponse_descriptor,
+        new java.lang.String[] { "HistoryId", "ProductId", "NumberOfBoughtProducts", "ClientId", "BoughtAt", });
+    internal_static_com_prodonik_genprotos_CreateProductsHistoryResponse_descriptor =
+      getDescriptor().getMessageTypes().get(19);
+    internal_static_com_prodonik_genprotos_CreateProductsHistoryResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_prodonik_genprotos_CreateProductsHistoryResponse_descriptor,
+        new java.lang.String[] { "HistoryId", "ProductId", "NumberOfBoughtProducts", "ClientId", "BoughtAt", });
+    internal_static_com_prodonik_genprotos_GetProductsHistoryResponse_descriptor =
+      getDescriptor().getMessageTypes().get(20);
+    internal_static_com_prodonik_genprotos_GetProductsHistoryResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_prodonik_genprotos_GetProductsHistoryResponse_descriptor,
+        new java.lang.String[] { "Products", });
     descriptor.resolveAllFeaturesImmutable();
     com.google.protobuf.WrappersProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();
+    com.google.protobuf.TimestampProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

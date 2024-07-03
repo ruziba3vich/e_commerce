@@ -2,12 +2,15 @@ package com.prodonik.products.storage;
 
 import java.util.Optional;
 import java.util.UUID;
+import java.util.stream.Collectors;
 import java.util.List;
 import java.util.ArrayList;
 
 import org.springframework.stereotype.Service;
 
 import com.prodonik.genprotos.Products.GetAllProductsResponse;
+import com.prodonik.genprotos.Products.GetByRequest;
+import com.prodonik.genprotos.Products.GetByResponse;
 import com.prodonik.genprotos.Products.Product;
 import com.prodonik.products.convertor.Converter;
 import com.prodonik.products.entities.EProduct;
@@ -72,5 +75,27 @@ public class ProductStorage {
         return GetAllProductsResponse.newBuilder()
                 .addAllProducts(grpcProducts)
                 .build();
+    }
+
+    public GetByResponse getProductsByCategoryName(GetByRequest request) {
+        List<EProduct> products = this.productRepo.getProductsByCategoryName(request.getReuier());
+        List<Product> response = products.stream()
+                                         .map(p -> this.convertor.convertProductToProto(p))
+                                         .collect(Collectors.toList());
+        return GetByResponse.newBuilder()
+                            .addAllProducts(response)
+                            .build();
+    }
+
+    public GetByResponse getProductsByCategoryId(GetByRequest request) {
+        List<EProduct> products = this.productRepo.getProductsByCategoryId(
+            UUID.fromString(request.getReuier())
+        );
+        List<Product> response = products.stream()
+                                         .map(p -> this.convertor.convertProductToProto(p))
+                                         .collect(Collectors.toList());
+        return GetByResponse.newBuilder()
+                            .addAllProducts(response)
+                            .build();
     }
 }
