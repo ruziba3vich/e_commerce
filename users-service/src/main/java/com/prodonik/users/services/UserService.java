@@ -14,6 +14,8 @@ import com.prodonik.genprotos.Users.DeleteUserRequest;
 import com.prodonik.genprotos.Users.DeleteUserResponse;
 import com.prodonik.genprotos.Users.GetAllUsersResponse;
 import com.prodonik.genprotos.Users.GetUserRequest;
+import com.prodonik.genprotos.Users.UpdateUserBalanceRequest;
+import com.prodonik.genprotos.Users.UpdateUserBalanceResponse;
 import com.prodonik.genprotos.Users.UpdateUserRequest;
 import com.prodonik.genprotos.Users.User;
 import com.prodonik.users.errors.UserAlreadyExistsException;
@@ -116,4 +118,22 @@ public class UserService extends UserServiceGrpc.UserServiceImplBase {
             responseObserver.onError(Status.INTERNAL.withCause(e).asException());
         }
     }
+
+    @Override
+    public void updateUserBalance(UpdateUserBalanceRequest request, StreamObserver<UpdateUserBalanceResponse> responseObserver) {
+        try {
+            logger.info("came request to UPDATE USER BALANCE BY ID METHOD");
+            this.userRepoImple.updateUserBalance(request);
+            responseObserver.onNext(
+                UpdateUserBalanceResponse.newBuilder()
+                                            .setMessage("comleted successfully")
+                                            .build()
+            );
+            responseObserver.onCompleted();
+        } catch (Exception e) {
+            responseObserver.onError(Status.INVALID_ARGUMENT.withDescription(e.getMessage()).asException());
+        }
+    }
 }
+
+// this.userRepoImple.updateUserBalance(request)

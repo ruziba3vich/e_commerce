@@ -115,6 +115,12 @@ public final class Users {
      * <code>.com.prodonik.genprotos.Role role = 7;</code>
      */
     com.prodonik.genprotos.Users.RoleOrBuilder getRoleOrBuilder();
+
+    /**
+     * <code>int64 balance = 8;</code>
+     * @return The balance.
+     */
+    long getBalance();
   }
   /**
    * Protobuf type {@code com.prodonik.genprotos.User}
@@ -420,6 +426,17 @@ public final class Users {
       return role_ == null ? com.prodonik.genprotos.Users.Role.getDefaultInstance() : role_;
     }
 
+    public static final int BALANCE_FIELD_NUMBER = 8;
+    private long balance_ = 0L;
+    /**
+     * <code>int64 balance = 8;</code>
+     * @return The balance.
+     */
+    @java.lang.Override
+    public long getBalance() {
+      return balance_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -455,6 +472,9 @@ public final class Users {
       if (((bitField0_ & 0x00000001) != 0)) {
         output.writeMessage(7, getRole());
       }
+      if (balance_ != 0L) {
+        output.writeInt64(8, balance_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -485,6 +505,10 @@ public final class Users {
       if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(7, getRole());
+      }
+      if (balance_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(8, balance_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -518,6 +542,8 @@ public final class Users {
         if (!getRole()
             .equals(other.getRole())) return false;
       }
+      if (getBalance()
+          != other.getBalance()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -545,6 +571,9 @@ public final class Users {
         hash = (37 * hash) + ROLE_FIELD_NUMBER;
         hash = (53 * hash) + getRole().hashCode();
       }
+      hash = (37 * hash) + BALANCE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getBalance());
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -693,6 +722,7 @@ public final class Users {
           roleBuilder_.dispose();
           roleBuilder_ = null;
         }
+        balance_ = 0L;
         return this;
       }
 
@@ -751,6 +781,9 @@ public final class Users {
               : roleBuilder_.build();
           to_bitField0_ |= 0x00000001;
         }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.balance_ = balance_;
+        }
         result.bitField0_ |= to_bitField0_;
       }
 
@@ -798,6 +831,9 @@ public final class Users {
         }
         if (other.hasRole()) {
           mergeRole(other.getRole());
+        }
+        if (other.getBalance() != 0L) {
+          setBalance(other.getBalance());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -862,6 +898,11 @@ public final class Users {
                 bitField0_ |= 0x00000040;
                 break;
               } // case 58
+              case 64: {
+                balance_ = input.readInt64();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 64
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -1430,6 +1471,38 @@ public final class Users {
           role_ = null;
         }
         return roleBuilder_;
+      }
+
+      private long balance_ ;
+      /**
+       * <code>int64 balance = 8;</code>
+       * @return The balance.
+       */
+      @java.lang.Override
+      public long getBalance() {
+        return balance_;
+      }
+      /**
+       * <code>int64 balance = 8;</code>
+       * @param value The balance to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBalance(long value) {
+
+        balance_ = value;
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 balance = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearBalance() {
+        bitField0_ = (bitField0_ & ~0x00000080);
+        balance_ = 0L;
+        onChanged();
+        return this;
       }
 
       // @@protoc_insertion_point(builder_scope:com.prodonik.genprotos.User)
@@ -5699,6 +5772,1099 @@ public final class Users {
 
   }
 
+  public interface UpdateUserBalanceRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.prodonik.genprotos.UpdateUserBalanceRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>int64 newBalance = 1;</code>
+     * @return The newBalance.
+     */
+    long getNewBalance();
+
+    /**
+     * <code>string user_id = 2;</code>
+     * @return The userId.
+     */
+    java.lang.String getUserId();
+    /**
+     * <code>string user_id = 2;</code>
+     * @return The bytes for userId.
+     */
+    com.google.protobuf.ByteString
+        getUserIdBytes();
+  }
+  /**
+   * Protobuf type {@code com.prodonik.genprotos.UpdateUserBalanceRequest}
+   */
+  public static final class UpdateUserBalanceRequest extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:com.prodonik.genprotos.UpdateUserBalanceRequest)
+      UpdateUserBalanceRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 27,
+        /* patch= */ 2,
+        /* suffix= */ "",
+        UpdateUserBalanceRequest.class.getName());
+    }
+    // Use UpdateUserBalanceRequest.newBuilder() to construct.
+    private UpdateUserBalanceRequest(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private UpdateUserBalanceRequest() {
+      userId_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.prodonik.genprotos.Users.internal_static_com_prodonik_genprotos_UpdateUserBalanceRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.prodonik.genprotos.Users.internal_static_com_prodonik_genprotos_UpdateUserBalanceRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.prodonik.genprotos.Users.UpdateUserBalanceRequest.class, com.prodonik.genprotos.Users.UpdateUserBalanceRequest.Builder.class);
+    }
+
+    public static final int NEWBALANCE_FIELD_NUMBER = 1;
+    private long newBalance_ = 0L;
+    /**
+     * <code>int64 newBalance = 1;</code>
+     * @return The newBalance.
+     */
+    @java.lang.Override
+    public long getNewBalance() {
+      return newBalance_;
+    }
+
+    public static final int USER_ID_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object userId_ = "";
+    /**
+     * <code>string user_id = 2;</code>
+     * @return The userId.
+     */
+    @java.lang.Override
+    public java.lang.String getUserId() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        userId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string user_id = 2;</code>
+     * @return The bytes for userId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUserIdBytes() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (newBalance_ != 0L) {
+        output.writeInt64(1, newBalance_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(userId_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, userId_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (newBalance_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(1, newBalance_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(userId_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, userId_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.prodonik.genprotos.Users.UpdateUserBalanceRequest)) {
+        return super.equals(obj);
+      }
+      com.prodonik.genprotos.Users.UpdateUserBalanceRequest other = (com.prodonik.genprotos.Users.UpdateUserBalanceRequest) obj;
+
+      if (getNewBalance()
+          != other.getNewBalance()) return false;
+      if (!getUserId()
+          .equals(other.getUserId())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + NEWBALANCE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getNewBalance());
+      hash = (37 * hash) + USER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getUserId().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.prodonik.genprotos.Users.UpdateUserBalanceRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.prodonik.genprotos.Users.UpdateUserBalanceRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.prodonik.genprotos.Users.UpdateUserBalanceRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.prodonik.genprotos.Users.UpdateUserBalanceRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.prodonik.genprotos.Users.UpdateUserBalanceRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.prodonik.genprotos.Users.UpdateUserBalanceRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.prodonik.genprotos.Users.UpdateUserBalanceRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.prodonik.genprotos.Users.UpdateUserBalanceRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.prodonik.genprotos.Users.UpdateUserBalanceRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.prodonik.genprotos.Users.UpdateUserBalanceRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.prodonik.genprotos.Users.UpdateUserBalanceRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.prodonik.genprotos.Users.UpdateUserBalanceRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.prodonik.genprotos.Users.UpdateUserBalanceRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.prodonik.genprotos.UpdateUserBalanceRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.prodonik.genprotos.UpdateUserBalanceRequest)
+        com.prodonik.genprotos.Users.UpdateUserBalanceRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.prodonik.genprotos.Users.internal_static_com_prodonik_genprotos_UpdateUserBalanceRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.prodonik.genprotos.Users.internal_static_com_prodonik_genprotos_UpdateUserBalanceRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.prodonik.genprotos.Users.UpdateUserBalanceRequest.class, com.prodonik.genprotos.Users.UpdateUserBalanceRequest.Builder.class);
+      }
+
+      // Construct using com.prodonik.genprotos.Users.UpdateUserBalanceRequest.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        newBalance_ = 0L;
+        userId_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.prodonik.genprotos.Users.internal_static_com_prodonik_genprotos_UpdateUserBalanceRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public com.prodonik.genprotos.Users.UpdateUserBalanceRequest getDefaultInstanceForType() {
+        return com.prodonik.genprotos.Users.UpdateUserBalanceRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.prodonik.genprotos.Users.UpdateUserBalanceRequest build() {
+        com.prodonik.genprotos.Users.UpdateUserBalanceRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.prodonik.genprotos.Users.UpdateUserBalanceRequest buildPartial() {
+        com.prodonik.genprotos.Users.UpdateUserBalanceRequest result = new com.prodonik.genprotos.Users.UpdateUserBalanceRequest(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.prodonik.genprotos.Users.UpdateUserBalanceRequest result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.newBalance_ = newBalance_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.userId_ = userId_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.prodonik.genprotos.Users.UpdateUserBalanceRequest) {
+          return mergeFrom((com.prodonik.genprotos.Users.UpdateUserBalanceRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.prodonik.genprotos.Users.UpdateUserBalanceRequest other) {
+        if (other == com.prodonik.genprotos.Users.UpdateUserBalanceRequest.getDefaultInstance()) return this;
+        if (other.getNewBalance() != 0L) {
+          setNewBalance(other.getNewBalance());
+        }
+        if (!other.getUserId().isEmpty()) {
+          userId_ = other.userId_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                newBalance_ = input.readInt64();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 18: {
+                userId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private long newBalance_ ;
+      /**
+       * <code>int64 newBalance = 1;</code>
+       * @return The newBalance.
+       */
+      @java.lang.Override
+      public long getNewBalance() {
+        return newBalance_;
+      }
+      /**
+       * <code>int64 newBalance = 1;</code>
+       * @param value The newBalance to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNewBalance(long value) {
+
+        newBalance_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 newBalance = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearNewBalance() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        newBalance_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object userId_ = "";
+      /**
+       * <code>string user_id = 2;</code>
+       * @return The userId.
+       */
+      public java.lang.String getUserId() {
+        java.lang.Object ref = userId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          userId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string user_id = 2;</code>
+       * @return The bytes for userId.
+       */
+      public com.google.protobuf.ByteString
+          getUserIdBytes() {
+        java.lang.Object ref = userId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string user_id = 2;</code>
+       * @param value The userId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserId(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        userId_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string user_id = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUserId() {
+        userId_ = getDefaultInstance().getUserId();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string user_id = 2;</code>
+       * @param value The bytes for userId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        userId_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:com.prodonik.genprotos.UpdateUserBalanceRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:com.prodonik.genprotos.UpdateUserBalanceRequest)
+    private static final com.prodonik.genprotos.Users.UpdateUserBalanceRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.prodonik.genprotos.Users.UpdateUserBalanceRequest();
+    }
+
+    public static com.prodonik.genprotos.Users.UpdateUserBalanceRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<UpdateUserBalanceRequest>
+        PARSER = new com.google.protobuf.AbstractParser<UpdateUserBalanceRequest>() {
+      @java.lang.Override
+      public UpdateUserBalanceRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<UpdateUserBalanceRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<UpdateUserBalanceRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.prodonik.genprotos.Users.UpdateUserBalanceRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface UpdateUserBalanceResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.prodonik.genprotos.UpdateUserBalanceResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string message = 1;</code>
+     * @return The message.
+     */
+    java.lang.String getMessage();
+    /**
+     * <code>string message = 1;</code>
+     * @return The bytes for message.
+     */
+    com.google.protobuf.ByteString
+        getMessageBytes();
+  }
+  /**
+   * Protobuf type {@code com.prodonik.genprotos.UpdateUserBalanceResponse}
+   */
+  public static final class UpdateUserBalanceResponse extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:com.prodonik.genprotos.UpdateUserBalanceResponse)
+      UpdateUserBalanceResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 27,
+        /* patch= */ 2,
+        /* suffix= */ "",
+        UpdateUserBalanceResponse.class.getName());
+    }
+    // Use UpdateUserBalanceResponse.newBuilder() to construct.
+    private UpdateUserBalanceResponse(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private UpdateUserBalanceResponse() {
+      message_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.prodonik.genprotos.Users.internal_static_com_prodonik_genprotos_UpdateUserBalanceResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.prodonik.genprotos.Users.internal_static_com_prodonik_genprotos_UpdateUserBalanceResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.prodonik.genprotos.Users.UpdateUserBalanceResponse.class, com.prodonik.genprotos.Users.UpdateUserBalanceResponse.Builder.class);
+    }
+
+    public static final int MESSAGE_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object message_ = "";
+    /**
+     * <code>string message = 1;</code>
+     * @return The message.
+     */
+    @java.lang.Override
+    public java.lang.String getMessage() {
+      java.lang.Object ref = message_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        message_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string message = 1;</code>
+     * @return The bytes for message.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getMessageBytes() {
+      java.lang.Object ref = message_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        message_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(message_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, message_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(message_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, message_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.prodonik.genprotos.Users.UpdateUserBalanceResponse)) {
+        return super.equals(obj);
+      }
+      com.prodonik.genprotos.Users.UpdateUserBalanceResponse other = (com.prodonik.genprotos.Users.UpdateUserBalanceResponse) obj;
+
+      if (!getMessage()
+          .equals(other.getMessage())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getMessage().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.prodonik.genprotos.Users.UpdateUserBalanceResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.prodonik.genprotos.Users.UpdateUserBalanceResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.prodonik.genprotos.Users.UpdateUserBalanceResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.prodonik.genprotos.Users.UpdateUserBalanceResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.prodonik.genprotos.Users.UpdateUserBalanceResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.prodonik.genprotos.Users.UpdateUserBalanceResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.prodonik.genprotos.Users.UpdateUserBalanceResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.prodonik.genprotos.Users.UpdateUserBalanceResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.prodonik.genprotos.Users.UpdateUserBalanceResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.prodonik.genprotos.Users.UpdateUserBalanceResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.prodonik.genprotos.Users.UpdateUserBalanceResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.prodonik.genprotos.Users.UpdateUserBalanceResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.prodonik.genprotos.Users.UpdateUserBalanceResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.prodonik.genprotos.UpdateUserBalanceResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.prodonik.genprotos.UpdateUserBalanceResponse)
+        com.prodonik.genprotos.Users.UpdateUserBalanceResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.prodonik.genprotos.Users.internal_static_com_prodonik_genprotos_UpdateUserBalanceResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.prodonik.genprotos.Users.internal_static_com_prodonik_genprotos_UpdateUserBalanceResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.prodonik.genprotos.Users.UpdateUserBalanceResponse.class, com.prodonik.genprotos.Users.UpdateUserBalanceResponse.Builder.class);
+      }
+
+      // Construct using com.prodonik.genprotos.Users.UpdateUserBalanceResponse.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        message_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.prodonik.genprotos.Users.internal_static_com_prodonik_genprotos_UpdateUserBalanceResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public com.prodonik.genprotos.Users.UpdateUserBalanceResponse getDefaultInstanceForType() {
+        return com.prodonik.genprotos.Users.UpdateUserBalanceResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.prodonik.genprotos.Users.UpdateUserBalanceResponse build() {
+        com.prodonik.genprotos.Users.UpdateUserBalanceResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.prodonik.genprotos.Users.UpdateUserBalanceResponse buildPartial() {
+        com.prodonik.genprotos.Users.UpdateUserBalanceResponse result = new com.prodonik.genprotos.Users.UpdateUserBalanceResponse(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.prodonik.genprotos.Users.UpdateUserBalanceResponse result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.message_ = message_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.prodonik.genprotos.Users.UpdateUserBalanceResponse) {
+          return mergeFrom((com.prodonik.genprotos.Users.UpdateUserBalanceResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.prodonik.genprotos.Users.UpdateUserBalanceResponse other) {
+        if (other == com.prodonik.genprotos.Users.UpdateUserBalanceResponse.getDefaultInstance()) return this;
+        if (!other.getMessage().isEmpty()) {
+          message_ = other.message_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                message_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object message_ = "";
+      /**
+       * <code>string message = 1;</code>
+       * @return The message.
+       */
+      public java.lang.String getMessage() {
+        java.lang.Object ref = message_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          message_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string message = 1;</code>
+       * @return The bytes for message.
+       */
+      public com.google.protobuf.ByteString
+          getMessageBytes() {
+        java.lang.Object ref = message_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          message_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string message = 1;</code>
+       * @param value The message to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMessage(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        message_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string message = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMessage() {
+        message_ = getDefaultInstance().getMessage();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string message = 1;</code>
+       * @param value The bytes for message to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMessageBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        message_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:com.prodonik.genprotos.UpdateUserBalanceResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:com.prodonik.genprotos.UpdateUserBalanceResponse)
+    private static final com.prodonik.genprotos.Users.UpdateUserBalanceResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.prodonik.genprotos.Users.UpdateUserBalanceResponse();
+    }
+
+    public static com.prodonik.genprotos.Users.UpdateUserBalanceResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<UpdateUserBalanceResponse>
+        PARSER = new com.google.protobuf.AbstractParser<UpdateUserBalanceResponse>() {
+      @java.lang.Override
+      public UpdateUserBalanceResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<UpdateUserBalanceResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<UpdateUserBalanceResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.prodonik.genprotos.Users.UpdateUserBalanceResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_prodonik_genprotos_User_descriptor;
   private static final 
@@ -5739,6 +6905,16 @@ public final class Users {
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_com_prodonik_genprotos_GetAllUsersResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_prodonik_genprotos_UpdateUserBalanceRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_prodonik_genprotos_UpdateUserBalanceRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_prodonik_genprotos_UpdateUserBalanceResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_prodonik_genprotos_UpdateUserBalanceResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -5749,32 +6925,38 @@ public final class Users {
   static {
     java.lang.String[] descriptorData = {
       "\n\013users.proto\022\026com.prodonik.genprotos\032\033g" +
-      "oogle/protobuf/empty.proto\"\230\001\n\004User\022\n\n\002i" +
+      "oogle/protobuf/empty.proto\"\251\001\n\004User\022\n\n\002i" +
       "d\030\001 \001(\t\022\020\n\010username\030\002 \001(\t\022\020\n\010password\030\003 " +
       "\001(\t\022\r\n\005email\030\004 \001(\t\022\022\n\nfirst_name\030\005 \001(\t\022\021" +
       "\n\tlast_name\030\006 \001(\t\022*\n\004role\030\007 \001(\0132\034.com.pr" +
-      "odonik.genprotos.Role\" \n\004Role\022\n\n\002id\030\001 \001(" +
-      "\t\022\014\n\004name\030\002 \001(\t\"!\n\016GetUserRequest\022\017\n\007use" +
-      "r_id\030\001 \001(\t\"?\n\021CreateUserRequest\022*\n\004user\030" +
-      "\001 \001(\0132\034.com.prodonik.genprotos.User\"X\n\021U" +
-      "pdateUserRequest\022\017\n\007user_id\030\001 \001(\t\0222\n\014upd" +
-      "ated_user\030\002 \001(\0132\034.com.prodonik.genprotos" +
-      ".User\"$\n\021DeleteUserRequest\022\017\n\007user_id\030\001 " +
-      "\001(\t\"%\n\022DeleteUserResponse\022\017\n\007message\030\001 \001" +
-      "(\t\"B\n\023GetAllUsersResponse\022+\n\005users\030\001 \003(\013" +
-      "2\034.com.prodonik.genprotos.User2\311\003\n\013UserS" +
-      "ervice\022S\n\013GetUserById\022&.com.prodonik.gen" +
-      "protos.GetUserRequest\032\034.com.prodonik.gen" +
-      "protos.User\022R\n\013GetAllUsers\022\026.google.prot" +
-      "obuf.Empty\032+.com.prodonik.genprotos.GetA" +
-      "llUsersResponse\022U\n\nCreateUser\022).com.prod" +
-      "onik.genprotos.CreateUserRequest\032\034.com.p" +
-      "rodonik.genprotos.User\022U\n\nUpdateUser\022).c" +
-      "om.prodonik.genprotos.UpdateUserRequest\032" +
-      "\034.com.prodonik.genprotos.User\022c\n\nDeleteU" +
-      "ser\022).com.prodonik.genprotos.DeleteUserR" +
-      "equest\032*.com.prodonik.genprotos.DeleteUs" +
-      "erResponseb\006proto3"
+      "odonik.genprotos.Role\022\017\n\007balance\030\010 \001(\003\" " +
+      "\n\004Role\022\n\n\002id\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\"!\n\016GetU" +
+      "serRequest\022\017\n\007user_id\030\001 \001(\t\"?\n\021CreateUse" +
+      "rRequest\022*\n\004user\030\001 \001(\0132\034.com.prodonik.ge" +
+      "nprotos.User\"X\n\021UpdateUserRequest\022\017\n\007use" +
+      "r_id\030\001 \001(\t\0222\n\014updated_user\030\002 \001(\0132\034.com.p" +
+      "rodonik.genprotos.User\"$\n\021DeleteUserRequ" +
+      "est\022\017\n\007user_id\030\001 \001(\t\"%\n\022DeleteUserRespon" +
+      "se\022\017\n\007message\030\001 \001(\t\"B\n\023GetAllUsersRespon" +
+      "se\022+\n\005users\030\001 \003(\0132\034.com.prodonik.genprot" +
+      "os.User\"?\n\030UpdateUserBalanceRequest\022\022\n\nn" +
+      "ewBalance\030\001 \001(\003\022\017\n\007user_id\030\002 \001(\t\",\n\031Upda" +
+      "teUserBalanceResponse\022\017\n\007message\030\001 \001(\t2\303" +
+      "\004\n\013UserService\022S\n\013GetUserById\022&.com.prod" +
+      "onik.genprotos.GetUserRequest\032\034.com.prod" +
+      "onik.genprotos.User\022R\n\013GetAllUsers\022\026.goo" +
+      "gle.protobuf.Empty\032+.com.prodonik.genpro" +
+      "tos.GetAllUsersResponse\022U\n\nCreateUser\022)." +
+      "com.prodonik.genprotos.CreateUserRequest" +
+      "\032\034.com.prodonik.genprotos.User\022U\n\nUpdate" +
+      "User\022).com.prodonik.genprotos.UpdateUser" +
+      "Request\032\034.com.prodonik.genprotos.User\022c\n" +
+      "\nDeleteUser\022).com.prodonik.genprotos.Del" +
+      "eteUserRequest\032*.com.prodonik.genprotos." +
+      "DeleteUserResponse\022x\n\021UpdateUserBalance\022" +
+      "0.com.prodonik.genprotos.UpdateUserBalan" +
+      "ceRequest\0321.com.prodonik.genprotos.Updat" +
+      "eUserBalanceResponseb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -5786,7 +6968,7 @@ public final class Users {
     internal_static_com_prodonik_genprotos_User_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_prodonik_genprotos_User_descriptor,
-        new java.lang.String[] { "Id", "Username", "Password", "Email", "FirstName", "LastName", "Role", });
+        new java.lang.String[] { "Id", "Username", "Password", "Email", "FirstName", "LastName", "Role", "Balance", });
     internal_static_com_prodonik_genprotos_Role_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_com_prodonik_genprotos_Role_fieldAccessorTable = new
@@ -5829,6 +7011,18 @@ public final class Users {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_prodonik_genprotos_GetAllUsersResponse_descriptor,
         new java.lang.String[] { "Users", });
+    internal_static_com_prodonik_genprotos_UpdateUserBalanceRequest_descriptor =
+      getDescriptor().getMessageTypes().get(8);
+    internal_static_com_prodonik_genprotos_UpdateUserBalanceRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_prodonik_genprotos_UpdateUserBalanceRequest_descriptor,
+        new java.lang.String[] { "NewBalance", "UserId", });
+    internal_static_com_prodonik_genprotos_UpdateUserBalanceResponse_descriptor =
+      getDescriptor().getMessageTypes().get(9);
+    internal_static_com_prodonik_genprotos_UpdateUserBalanceResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_prodonik_genprotos_UpdateUserBalanceResponse_descriptor,
+        new java.lang.String[] { "Message", });
     descriptor.resolveAllFeaturesImmutable();
     com.google.protobuf.EmptyProto.getDescriptor();
   }

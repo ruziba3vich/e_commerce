@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
+import com.prodonik.genprotos.Users.UpdateUserBalanceRequest;
 import com.prodonik.genprotos.Users.User;
 import com.prodonik.users.entities.EUser;
 import com.prodonik.users.errors.UserAlreadyExistsException;
@@ -63,6 +64,15 @@ public class UserRepoImple {
             this.userRepo.deleteById(userId);
         } else {
             throw new UserDoesNotExistsException("User not found");
+        }
+    }
+
+    public void updateUserBalance(UpdateUserBalanceRequest request) throws RuntimeException {
+        Optional<EUser> eUser = this.userRepo.findById(UUID.fromString(request.getUserId()));
+        if (eUser.isPresent()) {
+            this.userRepo.updateUserBalance(request.getNewBalance(), UUID.fromString(request.getUserId()));
+        } else {
+            throw new UserDoesNotExistsException("user not found");
         }
     }
 }

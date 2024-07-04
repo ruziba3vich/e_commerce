@@ -170,6 +170,37 @@ public final class UserServiceGrpc {
     return getDeleteUserMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.prodonik.genprotos.Users.UpdateUserBalanceRequest,
+      com.prodonik.genprotos.Users.UpdateUserBalanceResponse> getUpdateUserBalanceMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateUserBalance",
+      requestType = com.prodonik.genprotos.Users.UpdateUserBalanceRequest.class,
+      responseType = com.prodonik.genprotos.Users.UpdateUserBalanceResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.prodonik.genprotos.Users.UpdateUserBalanceRequest,
+      com.prodonik.genprotos.Users.UpdateUserBalanceResponse> getUpdateUserBalanceMethod() {
+    io.grpc.MethodDescriptor<com.prodonik.genprotos.Users.UpdateUserBalanceRequest, com.prodonik.genprotos.Users.UpdateUserBalanceResponse> getUpdateUserBalanceMethod;
+    if ((getUpdateUserBalanceMethod = UserServiceGrpc.getUpdateUserBalanceMethod) == null) {
+      synchronized (UserServiceGrpc.class) {
+        if ((getUpdateUserBalanceMethod = UserServiceGrpc.getUpdateUserBalanceMethod) == null) {
+          UserServiceGrpc.getUpdateUserBalanceMethod = getUpdateUserBalanceMethod =
+              io.grpc.MethodDescriptor.<com.prodonik.genprotos.Users.UpdateUserBalanceRequest, com.prodonik.genprotos.Users.UpdateUserBalanceResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateUserBalance"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.prodonik.genprotos.Users.UpdateUserBalanceRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.prodonik.genprotos.Users.UpdateUserBalanceResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new UserServiceMethodDescriptorSupplier("UpdateUserBalance"))
+              .build();
+        }
+      }
+    }
+    return getUpdateUserBalanceMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -253,6 +284,13 @@ public final class UserServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteUserMethod(), responseObserver);
     }
 
+    /**
+     */
+    public void updateUserBalance(com.prodonik.genprotos.Users.UpdateUserBalanceRequest request,
+        io.grpc.stub.StreamObserver<com.prodonik.genprotos.Users.UpdateUserBalanceResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateUserBalanceMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -290,6 +328,13 @@ public final class UserServiceGrpc {
                 com.prodonik.genprotos.Users.DeleteUserRequest,
                 com.prodonik.genprotos.Users.DeleteUserResponse>(
                   this, METHODID_DELETE_USER)))
+          .addMethod(
+            getUpdateUserBalanceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.prodonik.genprotos.Users.UpdateUserBalanceRequest,
+                com.prodonik.genprotos.Users.UpdateUserBalanceResponse>(
+                  this, METHODID_UPDATE_USER_BALANCE)))
           .build();
     }
   }
@@ -347,6 +392,14 @@ public final class UserServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteUserMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void updateUserBalance(com.prodonik.genprotos.Users.UpdateUserBalanceRequest request,
+        io.grpc.stub.StreamObserver<com.prodonik.genprotos.Users.UpdateUserBalanceResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateUserBalanceMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -396,6 +449,13 @@ public final class UserServiceGrpc {
     public com.prodonik.genprotos.Users.DeleteUserResponse deleteUser(com.prodonik.genprotos.Users.DeleteUserRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteUserMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.prodonik.genprotos.Users.UpdateUserBalanceResponse updateUserBalance(com.prodonik.genprotos.Users.UpdateUserBalanceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateUserBalanceMethod(), getCallOptions(), request);
     }
   }
 
@@ -452,6 +512,14 @@ public final class UserServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteUserMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.prodonik.genprotos.Users.UpdateUserBalanceResponse> updateUserBalance(
+        com.prodonik.genprotos.Users.UpdateUserBalanceRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateUserBalanceMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_GET_USER_BY_ID = 0;
@@ -459,6 +527,7 @@ public final class UserServiceGrpc {
   private static final int METHODID_CREATE_USER = 2;
   private static final int METHODID_UPDATE_USER = 3;
   private static final int METHODID_DELETE_USER = 4;
+  private static final int METHODID_UPDATE_USER_BALANCE = 5;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -496,6 +565,10 @@ public final class UserServiceGrpc {
         case METHODID_DELETE_USER:
           serviceImpl.deleteUser((com.prodonik.genprotos.Users.DeleteUserRequest) request,
               (io.grpc.stub.StreamObserver<com.prodonik.genprotos.Users.DeleteUserResponse>) responseObserver);
+          break;
+        case METHODID_UPDATE_USER_BALANCE:
+          serviceImpl.updateUserBalance((com.prodonik.genprotos.Users.UpdateUserBalanceRequest) request,
+              (io.grpc.stub.StreamObserver<com.prodonik.genprotos.Users.UpdateUserBalanceResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -563,6 +636,7 @@ public final class UserServiceGrpc {
               .addMethod(getCreateUserMethod())
               .addMethod(getUpdateUserMethod())
               .addMethod(getDeleteUserMethod())
+              .addMethod(getUpdateUserBalanceMethod())
               .build();
         }
       }

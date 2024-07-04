@@ -17,6 +17,8 @@ public class Convertor {
         user.setEmail(userProto.getEmail());
         user.setFirstName(userProto.getFirstName());
         user.setLastName(userProto.getLastName());
+        user.setBalance(userProto.getBalance());
+        // user.setRoles(userProto.getRole().stream);
 
         return user;
     }
@@ -26,7 +28,8 @@ public class Convertor {
                 .setId(user.getId().toString())
                 .setUsername(user.getUsername())
                 .setPassword(user.getPassword())
-                .setEmail(user.getEmail());
+                .setEmail(user.getEmail())
+                .setBalance(user.getBalance());
 
         if (user.getFirstName() != null) {
             userProtoBuilder.setFirstName(user.getFirstName());

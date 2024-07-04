@@ -47,6 +47,9 @@ public class EUser {
     @Column(name = "last_name")
     private String lastName;
 
+    @Column(name = "balance")
+    private long balance;
+
     // @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     // private Set<EAddress> addresses;
 
